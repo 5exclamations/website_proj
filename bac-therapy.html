@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="az">
   <head>
     <meta charset="UTF-8" />
@@ -6,44 +6,100 @@
     <title>BAC Azerbaijan | BAC therapy</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="bac">
+  <body data-page="bac" class="bac-page">
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">BAC Azerbaijan</a>
+        <a class="brand" href="index.html">DR. VUSALA GASIMOVA</a>
         <nav class="main-nav" id="main-nav"></nav>
-        <div class="lang-switch" aria-label="Language switcher">
-          <button data-lang="az">AZ</button>
-          <button data-lang="en">EN</button>
-          <button data-lang="ru">RU</button>
+        <div class="nav-right">
+          <div class="lang-switch" aria-label="Language switcher">
+            <button data-lang="az">AZ</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="ru">RU</button>
+          </div>
+          <a class="btn btn-primary book-appointment-trigger" href="#" id="nav-book">Book Appointment</a>
         </div>
       </div>
     </header>
 
-    <main class="section">
-      <div class="container">
-        <h1 id="bac-title"></h1>
-        <p id="bac-intro"></p>
+    <main>
+      <section class="bac-hero">
+        <img class="bac-hero-bg" id="bac-hero-image" alt="BAC therapy" />
+        <div class="container bac-hero-content">
+          <h1 id="bac-title"></h1>
+          <p id="bac-intro"></p>
+          <a class="btn btn-white book-appointment-trigger" href="#" id="bac-book">Book Appointment</a>
+        </div>
+      </section>
 
-        <h2 id="bac-how-title"></h2>
-        <p id="bac-how-text"></p>
+      <section class="section bac-how">
+        <div class="container section-head">
+          <h2 id="bac-how-title"></h2>
+          <p id="bac-how-subtitle">Bio Acoustic Correction Therapy</p>
+          <p id="bac-how-text"></p>
+        </div>
+        <div class="container steps" id="bac-steps"></div>
+      </section>
 
-        <div class="steps" id="bac-steps"></div>
-
-        <h2 id="bac-who-title"></h2>
-        <div class="two-cols">
-          <div class="card">
+      <section class="section bac-benefit">
+        <div class="container section-head">
+          <h2 id="bac-who-title"></h2>
+          <p>Age, Diseases, Restrictions</p>
+        </div>
+        <div class="container two-cols bac-benefit-grid">
+          <div class="card benefit-card">
             <h3 id="bac-children-title"></h3>
             <ul id="bac-children-list"></ul>
           </div>
-          <div class="card">
+          <div class="card benefit-card">
             <h3 id="bac-adults-title"></h3>
             <ul id="bac-adults-list"></ul>
           </div>
         </div>
+      </section>
 
-        <h2 id="faq-title"></h2>
-        <div id="faq-list" class="faq"></div>
-      </div>
+      <section class="section patients-section">
+        <div class="container section-head">
+          <h2>What Our Patients Says</h2>
+        </div>
+        <div class="container testimonials">
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
+            <div class="reviewer">Courtney Henry</div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
+            <div class="reviewer">Courtney Henry</div>
+          </article>
+        </div>
+        <div class="container center-actions">
+          <a class="btn btn-ghost" href="#">See more</a>
+          <a class="btn btn-primary" href="#">Leave a review</a>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container cta-box">
+          <div>
+            <h2 id="transform-title"></h2>
+            <p id="transform-text"></p>
+          </div>
+          <a class="btn btn-white book-appointment-trigger" href="#" id="transform-cta"></a>
+        </div>
+      </section>
+
+      <section class="section faq-section">
+        <div class="container section-head">
+          <h2 id="faq-title"></h2>
+          <p>Bio Acoustic Correction Therapy</p>
+        </div>
+        <div class="container faq-list" id="faq-list"></div>
+        <div class="container center-actions single">
+          <a class="btn btn-primary book-appointment-trigger" href="#" id="faq-ask">Ask question</a>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -52,6 +108,24 @@
         <div class="footer-links" id="footer-links"></div>
       </div>
     </footer>
+
+    <div class="booking-modal" id="booking-modal" aria-hidden="true">
+      <div class="booking-backdrop" data-close-booking></div>
+      <div class="booking-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <button class="booking-close" type="button" data-close-booking aria-label="Close">&times;</button>
+        <h3 id="booking-title">Book Appointment</h3>
+        <p id="booking-subtitle">Please leave your details and we will contact you.</p>
+        <form class="booking-form">
+          <label for="booking-name" id="booking-name-label">Your name, surname</label>
+          <input id="booking-name" type="text" />
+          <label for="booking-phone" id="booking-phone-label">Your number</label>
+          <input id="booking-phone" type="text" />
+          <label for="booking-question" id="booking-question-label">Your question</label>
+          <textarea id="booking-question" rows="4"></textarea>
+          <button type="button" class="btn btn-primary" id="booking-submit">Send message</button>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

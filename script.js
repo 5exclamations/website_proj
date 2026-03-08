@@ -1,6 +1,6 @@
 ﻿const site = {
   az: {
-    nav: { home: "Ana səhifə", bac: "BAK terapiya", services: "Xidmətlər", about: "Haqqımızda", contact: "Əlaqə" },
+    nav: { home: "Ana s\u0259hif\u0259", bac: "BAK terapiya", services: "Xidm\u0259tl\u0259r", about: "Haqq\u0131m\u0131zda", contact: "\u018flaq\u0259", book: "Q\u0259bul \u00fc\u00e7\u00fcn yaz\u0131l" },
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Şərtlər", privacy: "Məxfilik", cookies: "Cookies" },
     home: {
       eyebrow: "Azərbaycanda beyin terapiyasında pioner",
@@ -84,7 +84,7 @@
     }
   },
   en: {
-    nav: { home: "Home", bac: "BAC therapy", services: "Services", about: "About us", contact: "Contact" },
+    nav: { home: "Home", bac: "BAC therapy", services: "Services", about: "About us", contact: "Contact", book: "Book Appointment" },
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
     home: {
       eyebrow: "Pioneer of brain therapy in Azerbaijan",
@@ -160,7 +160,7 @@
     }
   },
   ru: {
-    nav: { home: "Главная", bac: "BAC терапия", services: "Услуги", about: "О нас", contact: "Контакты" },
+    nav: { home: "\u0413\u043b\u0430\u0432\u043d\u0430\u044f", bac: "BAC \u0442\u0435\u0440\u0430\u043f\u0438\u044f", services: "\u0423\u0441\u043b\u0443\u0433\u0438", about: "\u041e \u043d\u0430\u0441", contact: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b", book: "\u0417\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f" },
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
     home: {
       eyebrow: "Пионер Азербайджана в области терапии мозга",
@@ -257,6 +257,13 @@ const imageNames = {
   ]
 };
 
+const serviceImageNames = [
+  imageNames.approach,
+  imageNames.what,
+  imageNames.what,
+  imageNames.integration
+];
+
 function currentLang() { return localStorage.getItem("lang") || "ru"; }
 function setLang(lang) { localStorage.setItem("lang", lang); render(); }
 function el(id) { return document.getElementById(id); }
@@ -282,57 +289,137 @@ function fillList(id, data) { const node = el(id); if (node) node.innerHTML = da
 function renderHome(t) {
   const d = t.home;
   if (!el("hero-title")) return;
-  el("hero-eyebrow").textContent = d.eyebrow;
-  el("hero-title").textContent = d.title;
-  el("hero-subtitle").textContent = d.subtitle;
-  el("hero-text").textContent = d.text;
-  el("hero-cta").textContent = d.cta;
-  el("hero-more").textContent = d.more;
-  el("approach-title").textContent = d.approachTitle;
-  el("approach-text").textContent = d.approachText;
-  el("approach-detail-title").textContent = d.approachDetailTitle;
-  el("approach-detail-text").textContent = d.approachDetailText;
-  el("integration-title").textContent = d.integrationTitle;
-  el("integration-text").textContent = d.integrationText;
-  el("integration-more").textContent = d.integrationMore;
-  el("integration-cta").textContent = d.integrationCta;
-  el("what-title").textContent = d.whatTitle;
-  el("what-subtitle").textContent = d.whatSubtitle;
-  el("what-text").textContent = d.whatText;
-  el("how-title").textContent = d.howTitle;
-  el("how-steps").innerHTML = d.steps.map((s, i) => `<div class="step"><img class="step-image" src="${imgPath(imageNames.steps[i])}" alt="${s.t}"><span>${s.t}</span><p>${s.d}</p></div>`).join("");
-  el("transform-title").textContent = d.transformTitle;
-  el("transform-text").textContent = d.transformText;
-  el("transform-cta").textContent = d.transformCta;
-  el("hero-image").src = imgPath(imageNames.hero);
-  el("approach-image").src = imgPath(imageNames.approach);
-  el("integration-image").src = imgPath(imageNames.integration);
-  el("what-image").src = imgPath(imageNames.what);
+
+  const setText = (id, value) => {
+    const node = el(id);
+    if (node) node.textContent = value;
+  };
+
+  setText("hero-eyebrow", d.eyebrow);
+  setText("hero-title", d.title);
+  setText("hero-subtitle", d.subtitle);
+  setText("how-subtitle", d.whatSubtitle);
+  setText("hero-text", d.text);
+  setText("hero-cta", d.cta);
+  setText("hero-more", d.more);
+  setText("approach-title", d.approachTitle);
+  setText("approach-text", d.approachText);
+  setText("approach-detail-title", d.approachDetailTitle);
+  setText("approach-detail-text", d.approachDetailText);
+  setText("integration-title", d.integrationTitle);
+  setText("integration-text", d.integrationText);
+  setText("integration-more", d.integrationMore);
+  setText("integration-cta", d.integrationCta);
+  setText("what-title", d.whatTitle);
+  setText("what-subtitle", d.whatSubtitle);
+  setText("what-text", d.whatText);
+  setText("how-title", d.howTitle);
+
+  const stepsNode = el("how-steps");
+  if (stepsNode) {
+    stepsNode.innerHTML = d.steps.map((s, i) => `<div class="step"><img class="step-image" src="${imgPath(imageNames.steps[i])}" alt="${s.t}"><span>${s.t}</span><p>${s.d}</p></div>`).join("");
+  }
+
+  setText("transform-title", d.transformTitle);
+  setText("transform-text", d.transformText);
+  setText("transform-cta", d.transformCta);
+
+  const heroImage = el("hero-image");
+  const approachImage = el("approach-image");
+  const integrationImage = el("integration-image");
+  const whatImage = el("what-image");
+  if (heroImage) heroImage.src = imgPath(imageNames.hero);
+  if (approachImage) approachImage.src = imgPath(imageNames.approach);
+  if (integrationImage) integrationImage.src = imgPath(imageNames.integration);
+  if (whatImage) whatImage.src = imgPath(imageNames.what);
 }
 
 function renderBac(t) {
   const d = t.bac;
   if (!el("bac-title")) return;
-  el("bac-title").textContent = d.title;
-  el("bac-intro").textContent = d.intro;
-  el("bac-how-title").textContent = d.howTitle;
-  el("bac-how-text").textContent = d.howText;
-  el("bac-steps").innerHTML = d.steps.map((s) => `<div class="step"><span>${s.t}</span><p>${s.d}</p></div>`).join("");
-  el("bac-who-title").textContent = d.whoTitle;
-  el("bac-children-title").textContent = d.childrenTitle;
-  el("bac-adults-title").textContent = d.adultsTitle;
+
+  const setText = (id, value) => {
+    const node = el(id);
+    if (node) node.textContent = value;
+  };
+
+  setText("bac-title", d.title);
+  setText("bac-intro", d.intro);
+  setText("bac-how-title", d.howTitle);
+  setText("bac-how-text", d.howText);
+  setText("bac-who-title", d.whoTitle);
+  setText("bac-children-title", d.childrenTitle);
+  setText("bac-adults-title", d.adultsTitle);
+  setText("faq-title", d.faqTitle);
+
+  const heroImage = el("bac-hero-image");
+  if (heroImage) heroImage.src = imgPath(imageNames.what);
+
+  const stepsNode = el("bac-steps");
+  if (stepsNode) {
+    stepsNode.innerHTML = d.steps.map((s, i) => `<div class="step"><img class="step-image" src="${imgPath(imageNames.steps[i])}" alt="${s.t}"><span>${s.t}</span><p>${s.d}</p></div>`).join("");
+  }
+
   fillList("bac-children-list", d.children);
   fillList("bac-adults-list", d.adults);
-  el("faq-title").textContent = d.faqTitle;
-  el("faq-list").innerHTML = d.faq.map((f) => `<div class="faq-item"><strong>${f.q}</strong><p>${f.a}</p></div>`).join("");
+
+  const faqNode = el("faq-list");
+  if (faqNode) {
+    faqNode.innerHTML = d.faq.map((f, i) => `
+      <div class="faq-item ${i === 2 ? "open" : ""}">
+        <button class="faq-q" type="button">${f.q}<span>${i === 2 ? "?" : "?"}</span></button>
+        <p class="faq-a">${f.a}</p>
+      </div>
+    `).join("");
+
+    faqNode.querySelectorAll(".faq-q").forEach((btn) => {
+      btn.onclick = () => {
+        const item = btn.closest(".faq-item");
+        if (!item) return;
+        const isOpen = item.classList.contains("open");
+        faqNode.querySelectorAll(".faq-item").forEach((node) => {
+          node.classList.remove("open");
+          const marker = node.querySelector(".faq-q span");
+          if (marker) marker.textContent = "?";
+        });
+        if (!isOpen) {
+          item.classList.add("open");
+          const marker = item.querySelector(".faq-q span");
+          if (marker) marker.textContent = "?";
+        }
+      };
+    });
+  }
 }
 
 function renderServices(t) {
   const d = t.services;
   if (!el("services-title")) return;
-  el("services-title").textContent = d.title;
-  el("services-intro").textContent = d.intro;
-  el("services-cards").innerHTML = d.cards.map((c) => `<article class="card service"><h3>${c.t}</h3><p>${c.d}</p></article>`).join("");
+
+  const setText = (id, value) => {
+    const node = el(id);
+    if (node) node.textContent = value;
+  };
+
+  setText("services-title", d.title);
+  setText("services-intro", d.intro);
+  setText("transform-title", t.home.transformTitle);
+  setText("transform-text", t.home.transformText);
+  setText("transform-cta", t.home.transformCta);
+  setText("services-book", t.home.cta);
+
+  const cardsNode = el("services-cards");
+  if (cardsNode) {
+    cardsNode.innerHTML = d.cards.map((c, i) => `
+      <article class="service-card">
+        <img class="service-photo" src="${imgPath(serviceImageNames[i] || serviceImageNames[1])}" alt="${c.t}" />
+        <div class="service-copy">
+          <h3>${c.t}</h3>
+          <p>${c.d}</p>
+        </div>
+      </article>
+    `).join("");
+  }
 }
 
 function renderAbout(t) {
@@ -375,6 +462,54 @@ function render() {
   renderServices(t);
   renderAbout(t);
   renderContact(t);
+
+  const navBook = el("nav-book");
+  if (navBook) navBook.textContent = t.nav.book || t.home.cta;
+  bindBookingModal(t);
+}
+
+function bindBookingModal(t) {
+  const modal = el("booking-modal");
+  if (!modal) return;
+
+  const title = el("booking-title");
+  const subtitle = el("booking-subtitle");
+  const nameLabel = el("booking-name-label");
+  const phoneLabel = el("booking-phone-label");
+  const questionLabel = el("booking-question-label");
+  const submitBtn = el("booking-submit");
+
+  if (title) title.textContent = t.home?.cta || "Book Appointment";
+  if (subtitle) subtitle.textContent = t.contact?.intro || "Please leave your details and we will contact you.";
+  if (nameLabel) nameLabel.textContent = t.contact?.name || "Your name, surname";
+  if (phoneLabel) phoneLabel.textContent = t.contact?.number || "Your number";
+  if (questionLabel) questionLabel.textContent = t.contact?.question || "Your question";
+  if (submitBtn) submitBtn.textContent = t.contact?.send || "Send message";
+
+  document.querySelectorAll(".book-appointment-trigger").forEach((trigger) => {
+    trigger.onclick = (event) => {
+      event.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+  });
+
+  modal.querySelectorAll("[data-close-booking]").forEach((node) => {
+    node.onclick = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+  });
+
+  document.onkeydown = (event) => {
+    if (event.key === "Escape" && modal.classList.contains("open")) {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+  };
 }
 
 render();

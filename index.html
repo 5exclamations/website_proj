@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="az">
   <head>
     <meta charset="UTF-8" />
@@ -6,75 +6,76 @@
     <title>BAC Azerbaijan | Home</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="home">
+  <body data-page="home" class="home-page">
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">BAC Azerbaijan</a>
+        <a class="brand" href="index.html">DR. VUSALA GASIMOVA</a>
         <nav class="main-nav" id="main-nav"></nav>
-        <div class="lang-switch" aria-label="Language switcher">
-          <button data-lang="az">AZ</button>
-          <button data-lang="en">EN</button>
-          <button data-lang="ru">RU</button>
+        <div class="nav-right">
+          <div class="lang-switch" aria-label="Language switcher">
+            <button data-lang="az">AZ</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="ru">RU</button>
+          </div>
+          <a class="btn btn-primary book-appointment-trigger" href="#" id="nav-book">Book Appointment</a>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero hero-soft-bg">
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow" id="hero-eyebrow"></p>
+          <div class="hero-content">
             <h1 id="hero-title"></h1>
-            <h2 id="hero-subtitle" class="subtitle"></h2>
-            <p id="hero-text"></p>
+            <p id="hero-text" class="hero-text"></p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="contact.html" id="hero-cta"></a>
               <a class="btn btn-ghost" href="about.html" id="hero-more"></a>
             </div>
           </div>
-          <div class="image-frame">
+          <div class="hero-photo-wrap">
             <img id="hero-image" alt="Doctor" />
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section approach-section">
         <div class="container section-head">
           <h2 id="approach-title"></h2>
           <p id="approach-text"></p>
         </div>
 
         <div class="container feature-grid">
-          <div class="image-frame soft">
+          <div class="image-frame soft large-card">
             <img id="approach-image" alt="Neuropsychology and technology" />
           </div>
-          <div>
+          <div class="feature-copy">
             <h3 id="approach-detail-title"></h3>
             <p id="approach-detail-text"></p>
           </div>
         </div>
 
         <div class="container feature-grid reverse">
-          <div>
+          <div class="feature-copy">
             <h3 id="integration-title"></h3>
             <p id="integration-text"></p>
-            <div class="hero-actions">
-              <a class="btn btn-ghost" href="about.html" id="integration-more"></a>
-              <a class="btn btn-primary" href="contact.html" id="integration-cta"></a>
-            </div>
           </div>
-          <div class="image-frame soft">
+          <div class="image-frame soft large-card">
             <img id="integration-image" alt="BAC integration" />
           </div>
         </div>
+
+        <div class="container center-actions">
+          <a class="btn btn-ghost" href="about.html" id="integration-more"></a>
+          <a class="btn btn-primary book-appointment-trigger" href="#" id="integration-cta"></a>
+        </div>
       </section>
 
-      <section class="section">
+      <section class="section what-section">
         <div class="container section-head">
           <h2 id="what-title"></h2>
           <p id="what-subtitle"></p>
         </div>
-        <div class="container">
+        <div class="container what-card">
           <div class="image-frame wide">
             <img id="what-image" alt="What is BAC therapy" />
           </div>
@@ -82,10 +83,36 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
+      <section class="section how-section">
+        <div class="container section-head">
           <h2 id="how-title"></h2>
-          <div class="steps" id="how-steps"></div>
+          <p id="how-subtitle" class="tiny-subtitle"></p>
+        </div>
+        <div class="container steps" id="how-steps"></div>
+        <div class="container center-actions single">
+          <a class="btn btn-ghost" href="bac-therapy.html" id="how-more">Learn more</a>
+        </div>
+      </section>
+
+      <section class="section patients-section">
+        <div class="container section-head">
+          <h2>What Our Patients Says</h2>
+        </div>
+        <div class="container testimonials">
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
+            <div class="reviewer">Courtney Henry</div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
+            <div class="reviewer">Courtney Henry</div>
+          </article>
+        </div>
+        <div class="container center-actions">
+          <a class="btn btn-ghost" href="#">See more</a>
+          <a class="btn btn-primary" href="#">Leave a review</a>
         </div>
       </section>
 
@@ -95,7 +122,7 @@
             <h2 id="transform-title"></h2>
             <p id="transform-text"></p>
           </div>
-          <a class="btn btn-primary" href="contact.html" id="transform-cta"></a>
+          <a class="btn btn-white book-appointment-trigger" href="#" id="transform-cta"></a>
         </div>
       </section>
     </main>
@@ -106,6 +133,24 @@
         <div class="footer-links" id="footer-links"></div>
       </div>
     </footer>
+
+    <div class="booking-modal" id="booking-modal" aria-hidden="true">
+      <div class="booking-backdrop" data-close-booking></div>
+      <div class="booking-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <button class="booking-close" type="button" data-close-booking aria-label="Close">&times;</button>
+        <h3 id="booking-title">Book Appointment</h3>
+        <p id="booking-subtitle">Please leave your details and we will contact you.</p>
+        <form class="booking-form">
+          <label for="booking-name" id="booking-name-label">Your name, surname</label>
+          <input id="booking-name" type="text" />
+          <label for="booking-phone" id="booking-phone-label">Your number</label>
+          <input id="booking-phone" type="text" />
+          <label for="booking-question" id="booking-question-label">Your question</label>
+          <textarea id="booking-question" rows="4"></textarea>
+          <button type="button" class="btn btn-primary" id="booking-submit">Send message</button>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
