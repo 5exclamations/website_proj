@@ -96,23 +96,21 @@
 
       <section class="section patients-section">
         <div class="container section-head">
-          <h2>What Our Patients Says</h2>
+          <h2 id="reviews-title"></h2>
+          <p id="reviews-subtitle"></p>
         </div>
-        <div class="container testimonials">
-          <article class="testimonial-card">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
-            <div class="reviewer">Courtney Henry</div>
-          </article>
-          <article class="testimonial-card">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>"Tincidunt risus, blandit proin semper. Tellus ac pellentesque convallis vitae. Lorem enim cursus et consequat viverra id justo ullamcorper, vel."</p>
-            <div class="reviewer">Courtney Henry</div>
-          </article>
-        </div>
-        <div class="container center-actions">
-          <a class="btn btn-ghost" href="#">See more</a>
-          <a class="btn btn-primary" href="#">Leave a review</a>
+        <div class="container testimonials" id="reviews-list"></div>
+        <div class="container review-form-wrap">
+          <h3 id="review-form-title"></h3>
+          <form class="card form review-form">
+            <label for="review-name" id="review-name-label"></label>
+            <input id="review-name" type="text" required />
+            <label for="review-number" id="review-number-label"></label>
+            <input id="review-number" type="text" required />
+            <label for="review-text" id="review-text-label"></label>
+            <textarea id="review-text" rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary" id="review-submit"></button>
+          </form>
         </div>
       </section>
 

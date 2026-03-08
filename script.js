@@ -79,11 +79,28 @@
         { y: "2024", t: "Terra Kids İnkişaf Mərkəzi" }
       ]
     },
+    reviews: {
+      title: "Pasiyent rəyləri",
+      subtitle: "Mərkəzimizlə bağlı real müsbət təəssüratlar",
+      formTitle: "Öz rəyinizi yazın",
+      name: "Ad və soyad",
+      number: "Nömrə",
+      review: "Rəyiniz",
+      submit: "Rəy göndər",
+      thanks: "Təşəkkür edirik! Rəyiniz əlavə olundu.",
+      items: [
+        { name: "Aysel M.", text: "Qızımın diqqət və nitq inkişafında müsbət dəyişiklikləri qısa müddətdə gördük." },
+        { name: "Elvin R.", text: "Komanda çox diqqətlidir, hər mərhələ aydın izah olundu və nəticə bizi sevindirdi." },
+        { name: "Nərgiz H.", text: "Müalicə prosesi rahat keçdi, oğlumun emosional sabitliyində gözəl irəliləyiş var." }
+      ]
+    },
     contact: {
       title: "Əlaqə",
       intro: "Konsultasiya üçün bizimlə əlaqə saxlayın.",
       phone: "Telefon:",
       address: "Ünvan:",
+      locationTitle: "Xəritədə ünvan",
+      openMap: "Google Maps-də aç",
       note: "Ümumi suallara konsultant cavab verir; klinik müzakirə üçün qəbul tövsiyə olunur.",
       name: "Ad, Soyad",
       number: "Nömrəniz",
@@ -163,11 +180,28 @@
         { y: "2024", t: "Terra Kids Development Centre" }
       ]
     },
+    reviews: {
+      title: "Patient reviews",
+      subtitle: "Positive feedback from families we support",
+      formTitle: "Write your own review",
+      name: "Your name",
+      number: "Your number",
+      review: "Your review",
+      submit: "Send review",
+      thanks: "Thank you! Your review has been added.",
+      items: [
+        { name: "Leyla A.", text: "After the therapy course, our son became calmer and more focused at school." },
+        { name: "Murad K.", text: "Professional approach, clear communication, and noticeable progress after several sessions." },
+        { name: "Nigar P.", text: "The team is caring and supportive. We saw strong improvement in emotional regulation." }
+      ]
+    },
     contact: {
       title: "Contact",
       intro: "Get in touch for consultation.",
       phone: "Phone:",
       address: "Address:",
+      locationTitle: "Location on map",
+      openMap: "Open in Google Maps",
       note: "Consultant helps with general questions; for clinical details, please book a doctor.",
       name: "Your name, surname",
       number: "Your number",
@@ -247,11 +281,28 @@
         { y: "2024", t: "Центр развития Terra Kids" }
       ]
     },
+    reviews: {
+      title: "Отзывы пациентов",
+      subtitle: "Положительные отзывы семей, которым мы помогли",
+      formTitle: "Оставьте свой отзыв",
+      name: "Ваше имя",
+      number: "Ваш номер",
+      review: "Ваш отзыв",
+      submit: "Отправить отзыв",
+      thanks: "Спасибо! Ваш отзыв добавлен.",
+      items: [
+        { name: "Сабина М.", text: "Уже после курса занятий заметили улучшение внимания и поведения у ребёнка." },
+        { name: "Эльнур Т.", text: "Очень профессиональный подход и бережное отношение. Результат нас порадовал." },
+        { name: "Кямаля Р.", text: "Команда всегда на связи, а динамика по эмоциональному состоянию действительно положительная." }
+      ]
+    },
     contact: {
       title: "Свяжитесь с нами",
       intro: "Запишитесь на консультацию.",
       phone: "Телефон:",
       address: "Адрес:",
+      locationTitle: "Адрес на карте",
+      openMap: "Открыть в Google Maps",
       note: "Консультант отвечает на общие вопросы; для клинического обсуждения рекомендуем прием.",
       name: "Ваше имя, фамилия",
       number: "Ваш номер",
@@ -305,7 +356,7 @@ function renderNav(t, page) {
 
 function renderFooter(t) {
   if (el("footer-copy")) el("footer-copy").textContent = t.footer.copy;
-  if (el("footer-links")) el("footer-links").innerHTML = `<a href="#">${t.footer.terms}</a><a href="#">${t.footer.privacy}</a><a href="#">${t.footer.cookies}</a>`;
+  if (el("footer-links")) el("footer-links").innerHTML = `<a href="terms.html">${t.footer.terms}</a><a href="privacy.html">${t.footer.privacy}</a><a href="cookies.html">${t.footer.cookies}</a>`;
 }
 
 function fillList(id, data) { const node = el(id); if (node) node.innerHTML = data.map((x) => `<li>${x}</li>`).join(""); }
@@ -386,6 +437,9 @@ function renderBac(t) {
   setText("bac-children-title", d.childrenTitle);
   setText("bac-adults-title", d.adultsTitle);
   setText("faq-title", d.faqTitle);
+  setText("transform-title", t.home.transformTitle);
+  setText("transform-text", t.home.transformText);
+  setText("transform-cta", t.home.transformCta);
 
   const heroImage = el("bac-hero-image");
   if (heroImage) heroImage.src = imgPath(imageNames.what);
@@ -498,10 +552,59 @@ function renderContact(t) {
   el("contact-phone-label").textContent = d.phone;
   el("contact-address-label").textContent = d.address;
   el("contact-note").textContent = d.note;
+  if (el("contact-location-title")) el("contact-location-title").textContent = d.locationTitle;
+  if (el("contact-map-link")) el("contact-map-link").textContent = d.openMap;
   el("label-name").textContent = d.name;
   el("label-number").textContent = d.number;
   el("label-question").textContent = d.question;
   el("send-btn").textContent = d.send;
+}
+
+function renderReviews(t) {
+  const d = t.reviews;
+  const title = el("reviews-title");
+  const list = el("reviews-list");
+  const form = document.querySelector(".review-form");
+  if (!title || !list || !form || !d) return;
+
+  if (el("reviews-subtitle")) el("reviews-subtitle").textContent = d.subtitle;
+  title.textContent = d.title;
+  if (el("review-form-title")) el("review-form-title").textContent = d.formTitle;
+  if (el("review-name-label")) el("review-name-label").textContent = d.name;
+  if (el("review-number-label")) el("review-number-label").textContent = d.number;
+  if (el("review-text-label")) el("review-text-label").textContent = d.review;
+  if (el("review-submit")) el("review-submit").textContent = d.submit;
+
+  list.innerHTML = d.items.map((r) => `
+    <article class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"${r.text}"</p>
+      <div class="reviewer">${r.name}</div>
+    </article>
+  `).join("");
+
+  form.onsubmit = (event) => {
+    event.preventDefault();
+    const nameInput = el("review-name");
+    const numberInput = el("review-number");
+    const textInput = el("review-text");
+    if (!nameInput || !numberInput || !textInput) return;
+
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+    if (!name || !numberInput.value.trim() || !text) return;
+
+    list.insertAdjacentHTML("afterbegin", `
+      <article class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"${text}"</p>
+        <div class="reviewer">${name}</div>
+      </article>
+    `);
+
+    form.reset();
+    alert(d.thanks);
+  };
 }
 
 function render() {
@@ -518,6 +621,7 @@ function render() {
   renderServices(t);
   renderAbout(t);
   renderContact(t);
+  renderReviews(t);
 
   const navBook = el("nav-book");
   if (navBook) navBook.textContent = t.nav.book || t.home.cta;
