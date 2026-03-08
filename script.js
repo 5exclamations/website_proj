@@ -70,12 +70,12 @@
     },
     services: {
       title: "Xidmətlər",
-      intro: "İnkişaf, emosional və nevroloji çətinliklər üçün kompleks dəstək.",
+      intro: "Neyropsixoloji qiymətləndirmədən BAK terapiyası kimi innovativ üsullara qədər inkişaf, emosional və nevroloji çətinliklərin həlli üçün geniş xidmətlər təqdim edirik.",
       cards: [
-        { t: "Neyropsixoloji qiymətləndirmə", d: "Fərdi korreksiya marşrutu ilə diaqnostika." },
-        { t: "Neyropsixoloji korreksiya", d: "Diqqət, yaddaş və davranışla sistemli iş." },
-        { t: "BAK terapiyası", d: "EEG-akustik geri əlaqə ilə dəstək." },
-        { t: "Transkranial mikropolyarizasiya", d: "Mütəxəssis göstərişi ilə əlavə metod." }
+        { t: "Neyropsixoloji qiymətləndirmə", d: "Koqnitiv, emosional və davranış funksiyalarının qiymətləndirilməsi diaqnostika və müalicə planının qurulmasına kömək edir. İnkişaf gecikməsi, öyrənmə çətinliyi və ya nevroloji vəziyyətləri olan uşaqlar və böyüklər üçün tətbiq olunur." },
+        { t: "Bioakustik beyin korreksiyası", d: "BAK terapiyası beynin funksiyalarını bərpa etməyə yönəlmiş qeyri-invaziv üsuldur: EEG siqnalları real vaxtda səsə çevrilir. Stressi azaldır, diqqəti artırır, beynin özünü tənzimləmə bacarığını gücləndirir. Ətraflı..." },
+        { t: "Neyropsixoloji korreksiya", d: "• Psixo-nitq inkişafında ləngimə\n• Autizm spektr pozuntuları\n• Davranış pozuntuları\n• Diqqət çatışmazlığı və hiperaktivlik pozuntusu (DEHB)\n• Neyrodinamik pozuntular\n• Epilepsiya\n• Ağır çoxsaylı inkişaf pozuntuları\n• Daun sindromu" },
+        { t: "N.Yu. Kojuşko metodu ilə transkranial mikropolyarizasiya", d: "Mikropolyarizasiya uşaqlarda beynin koqnitiv funksiyalarını, yaddaşı, diqqət davamlılığını, görməni və emosional vəziyyəti yaxşılaşdırır. Yuxu proseslərini normallaşdırır, motor və nitq bacarıqlarının inkişafına kömək edir, hiperaktivlik və impulsivliyi azaldır." }
       ]
     },
     about: {
@@ -195,12 +195,12 @@
     },
     services: {
       title: "Services",
-      intro: "Integrated support for developmental, emotional, and neurological needs.",
+      intro: "From neuropsychological evaluations to innovative therapies like BAC Therapy, we provide a range of services designed to address developmental, emotional, and neurological challenges.",
       cards: [
-        { t: "Neuropsychological assessment", d: "Diagnostics and personal correction route." },
-        { t: "Neuropsychological correction", d: "Structured work on attention, memory and behavior." },
-        { t: "BAC therapy", d: "Real-time EEG acoustic feedback support." },
-        { t: "Transcranial micropolarization", d: "Additional method prescribed by specialist." }
+        { t: "Neuropsychological Assessments", d: "Evaluating cognitive, emotional, and behavioral functioning to diagnose and guide treatment. Children and adults with developmental delays, learning difficulties, or neurological conditions." },
+        { t: "Bio-Acoustic Brain Correction", d: "BAC therapy - A non-invasive therapy to restore brain function through real-time EEG transformation into sound. Reduces stress, improves focus, enhances brain self-regulation. Learn more..." },
+        { t: "Neuropsychological correction", d: "• Delay in psycho-speech development\n• Autism spectrum disorder\n• Behavioral disorders\n• Attention deficit and hyperactivity disorder (ADHD)\n• Neurodynamic disorders\n• Epilepsy\n• Severe multiple developmental disorders\n• Down syndrome" },
+        { t: "Transcranial micropolarization using the N.Yu. Kozhushko method", d: "Micropolarization improves the brain's cognitive functions, memory, attention span, vision, and emotional state in children. It normalizes sleep processes, aids in the development of motor and speech skills, and reduces hyperactivity and impulsiveness." }
       ]
     },
     about: {
@@ -320,12 +320,12 @@
     },
     services: {
       title: "Услуги",
-      intro: "Комплексная помощь при проблемах развития, эмоциональных и неврологических состояниях.",
+      intro: "От нейропсихологической диагностики до инновационных методов, таких как BAC-терапия: мы предоставляем комплекс услуг для работы с проблемами развития, эмоциональными и неврологическими нарушениями.",
       cards: [
-        { t: "Нейропсихологическая оценка", d: "Диагностика и индивидуальный маршрут коррекции." },
-        { t: "Нейропсихологическая коррекция", d: "Системная работа с вниманием, памятью и поведением." },
-        { t: "BAC-терапия", d: "Поддержка через ЭЭГ-акустическую обратную связь." },
-        { t: "Транскраниальная микрополяризация", d: "Дополнительный метод по назначению специалиста." }
+        { t: "Нейропсихологическая диагностика", d: "Оценка когнитивных, эмоциональных и поведенческих функций помогает поставить точный диагноз и определить тактику коррекции. Подходит детям и взрослым с задержками развития, трудностями обучения и неврологическими состояниями." },
+        { t: "Биоакустическая коррекция мозга", d: "BAC-терапия — неинвазивный метод восстановления функций мозга через преобразование ЭЭГ в звук в реальном времени. Снижает стресс, улучшает концентрацию и усиливает саморегуляцию мозга. Подробнее..." },
+        { t: "Нейропсихологическая коррекция", d: "• Задержка психоречевого развития\n• Расстройства аутистического спектра\n• Поведенческие нарушения\n• Синдром дефицита внимания и гиперактивности (СДВГ)\n• Нейродинамические нарушения\n• Эпилепсия\n• Тяжёлые множественные нарушения развития\n• Синдром Дауна" },
+        { t: "Транскраниальная микрополяризация по методу Н.Ю. Кожушко", d: "Микрополяризация улучшает когнитивные функции мозга, память, устойчивость внимания, зрительные функции и эмоциональное состояние у детей. Нормализует сон, способствует развитию моторики и речи, снижает гиперактивность и импульсивность." }
       ]
     },
     about: {
