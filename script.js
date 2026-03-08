@@ -62,7 +62,6 @@
         { q: "Nəticəyə zəmanət varmı?", a: "Hər pasiyentin klinik vəziyyəti fərqli olduğu üçün mütləq zəmanət verilmir, lakin düzgün seçilmiş kursda çox hallarda müsbət dinamika müşahidə olunur." },
         { q: "Nəticə nə qədər müddətdə görünür?", a: "Bir çox pasiyentdə ilk dəyişikliklər bir neçə seansdan sonra hiss edilir, daha sabit nəticələr isə tam kursdan sonra qiymətləndirilir." },
         { q: "Proseduru daimi etmək lazımdırmı? Nəticə müvəqqətidirmi?", a: "BAK terapiyası adətən kurs şəklində tətbiq olunur. Nəticənin davamlılığı diaqnozdan, həyat tərzindən və əlavə reabilitasiya tədbirlərindən asılıdır." },
-        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "Bu bənd məlumat xarakterli əlavə sual nümunəsi kimi təqdim olunur; fərdi cavab üçün konsultasiya tələb olunur." },
         { q: "Kimlər BAK terapiyasından çəkinməlidir?", a: "Kəskin psixi və ya somatik vəziyyətlərdə, həmçinin xüsusi tibbi əks-göstəriş olduqda terapiya yalnız həkim rəyindən sonra planlanmalıdır." },
         { q: "BAK terapiyasının üstünlükləri nələrdir?", a: "Metod qeyri-invaziv və ağrısızdır, beyin özünü tənzimləmə mexanizmlərini aktivləşdirir və kompleks reabilitasiyada əlavə dəstək verir." },
         { q: "BAK terapiyası ağrılı və ya invazivdirmi?", a: "Xeyr. Sensorlar yalnız dəri səthinə yerləşdirilir, prosedur kəsik və inyeksiya tələb etmir, adətən komfortlu keçirilir." }
@@ -189,7 +188,6 @@
         { q: "Is there a guarantee of results?", a: "No method can guarantee identical outcomes for every patient. Results depend on diagnosis, baseline condition, and adherence to the recommended plan." },
         { q: "How soon can I see results?", a: "Many patients notice early positive changes within the first sessions, while stable clinical effects are usually evaluated after completing a full course." },
         { q: "Do I need to undergo the procedure constantly? Is the result temporary?", a: "BAC Therapy is typically delivered in courses rather than continuously. Duration of results varies and is influenced by diagnosis, lifestyle, and complementary rehabilitation." },
-        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "This item is kept as an additional placeholder-style FAQ line; for a personalized response, specialist consultation is required." },
         { q: "Who should avoid BAC Therapy?", a: "Patients in acute medical or psychiatric states, or with specific contraindications, should undergo physician evaluation before starting therapy." },
         { q: "What are the benefits of BAC Therapy?", a: "BAC Therapy is non-invasive and painless, supports brain self-regulation, and can be integrated into broader neurorehabilitation programs." },
         { q: "Is BAC Therapy painful or invasive?", a: "No. Sensors are placed on the scalp surface only; there are no injections or surgical interventions during the procedure." }
@@ -316,7 +314,6 @@
         { q: "Есть ли гарантия результата?", a: "Универсальной гарантии быть не может: результат зависит от диагноза, исходного состояния и соблюдения индивидуального плана терапии." },
         { q: "Через сколько можно увидеть результат?", a: "У многих пациентов первые положительные изменения заметны уже в начале курса, а устойчивый эффект оценивается после его завершения." },
         { q: "Нужно ли проходить процедуру постоянно? Временный ли эффект?", a: "Обычно BAC-терапия проводится курсами, а не постоянно. Длительность эффекта индивидуальна и зависит от диагноза, образа жизни и дополнительной реабилитации." },
-        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "Этот пункт сохранён как дополнительная строка FAQ; для персонального ответа необходима консультация специалиста." },
         { q: "Кому следует избегать BAC-терапии?", a: "При острых медицинских или психических состояниях, а также при специфических противопоказаниях, решение принимается только после консультации врача." },
         { q: "Каковы преимущества BAC-терапии?", a: "Метод безболезненный и неинвазивный, поддерживает механизмы саморегуляции мозга и хорошо дополняет комплексные программы нейрореабилитации." },
         { q: "BAC-терапия болезненна или инвазивна?", a: "Нет. Датчики устанавливаются поверхностно на кожу головы, процедура не требует инъекций и хирургического вмешательства." }
@@ -416,6 +413,32 @@ const clinicInfo = {
   instagramUrl: "https://www.instagram.com/neyropsixoloq_qasimova_vusale?igsh=MWw1ZG9xenF0eDBqZA%3D%3D&utm_source=qr",
   whatsappUrl: "https://wa.me/994554770266"
 };
+
+const WEB3FORMS_ACCESS_KEY = "d1e6672b-1203-42d9-a873-8fb29e168a58";
+
+function hasWeb3FormsKey() {
+  return WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY";
+}
+
+async function submitToWeb3Forms(payload) {
+  if (!hasWeb3FormsKey()) {
+    alert("Set your Web3Forms key in script.js (WEB3FORMS_ACCESS_KEY) to enable submissions.");
+    return false;
+  }
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      email: "tekraru@gmail.com",
+      ...payload
+    })
+  });
+
+  const data = await response.json();
+  return Boolean(data.success);
+}
 
 function socialIcon(kind) {
   if (kind === "instagram") {
@@ -669,6 +692,37 @@ function renderContact(t) {
   el("label-number").textContent = d.number;
   el("label-question").textContent = d.question;
   el("send-btn").textContent = d.send;
+
+  const contactForm = document.querySelector(".contact-page form.card.form:not(.review-form)");
+  const sendBtn = el("send-btn");
+  if (contactForm && sendBtn) {
+    sendBtn.onclick = async () => {
+      const inputNodes = contactForm.querySelectorAll("input");
+      const nameValue = inputNodes[0]?.value?.trim() || "";
+      const phoneValue = inputNodes[1]?.value?.trim() || "";
+      const messageValue = contactForm.querySelector("textarea")?.value?.trim() || "";
+      if (!nameValue || !phoneValue || !messageValue) return;
+
+      sendBtn.disabled = true;
+      const ok = await submitToWeb3Forms({
+        subject: `Contact form | ${document.documentElement.lang.toUpperCase()}`,
+        from_name: nameValue,
+        name: nameValue,
+        phone: phoneValue,
+        message: messageValue,
+        form_type: "contact",
+        source_page: window.location.pathname
+      });
+      sendBtn.disabled = false;
+
+      if (ok) {
+        contactForm.reset();
+        alert("Sent successfully.");
+      } else {
+        alert("Could not send right now. Please try again.");
+      }
+    };
+  }
 }
 
 function renderReviews(t) {
@@ -694,7 +748,7 @@ function renderReviews(t) {
     </article>
   `).join("");
 
-  form.onsubmit = (event) => {
+  form.onsubmit = async (event) => {
     event.preventDefault();
     const nameInput = el("review-name");
     const numberInput = el("review-number");
@@ -704,6 +758,25 @@ function renderReviews(t) {
     const name = nameInput.value.trim();
     const text = textInput.value.trim();
     if (!name || !numberInput.value.trim() || !text) return;
+
+    const submitButton = el("review-submit");
+    if (submitButton) submitButton.disabled = true;
+
+    const ok = await submitToWeb3Forms({
+      subject: `Review form | ${document.documentElement.lang.toUpperCase()}`,
+      from_name: name,
+      name,
+      phone: numberInput.value.trim(),
+      message: text,
+      form_type: "review",
+      source_page: window.location.pathname
+    });
+
+    if (submitButton) submitButton.disabled = false;
+    if (!ok) {
+      alert("Could not send right now. Please try again.");
+      return;
+    }
 
     list.insertAdjacentHTML("afterbegin", `
       <article class="testimonial-card">
@@ -756,6 +829,38 @@ function bindBookingModal(t) {
   if (phoneLabel) phoneLabel.textContent = t.contact?.number || "Your number";
   if (questionLabel) questionLabel.textContent = t.contact?.question || "Your question";
   if (submitBtn) submitBtn.textContent = t.contact?.send || "Send message";
+
+  if (submitBtn) {
+    submitBtn.onclick = async () => {
+      const nameValue = el("booking-name")?.value?.trim() || "";
+      const phoneValue = el("booking-phone")?.value?.trim() || "";
+      const messageValue = el("booking-question")?.value?.trim() || "";
+      if (!nameValue || !phoneValue || !messageValue) return;
+
+      submitBtn.disabled = true;
+      const ok = await submitToWeb3Forms({
+        subject: `Book appointment | ${document.documentElement.lang.toUpperCase()}`,
+        from_name: nameValue,
+        name: nameValue,
+        phone: phoneValue,
+        message: messageValue,
+        form_type: "booking",
+        source_page: window.location.pathname
+      });
+      submitBtn.disabled = false;
+
+      if (ok) {
+        const bookingForm = modal.querySelector(".booking-form");
+        if (bookingForm) bookingForm.reset();
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        alert("Sent successfully.");
+      } else {
+        alert("Could not send right now. Please try again.");
+      }
+    };
+  }
 
   const dialog = modal.querySelector(".booking-dialog");
   if (dialog) {
