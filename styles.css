@@ -222,6 +222,10 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
   display: grid;
   gap: 0.55rem;
 }
+.contact-page #contact-note {
+  color: #d94b5f;
+  font-weight: 600;
+}
 .map-card {
   margin-top: 0.9rem;
   background: #fff;
@@ -244,6 +248,17 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
   height: 250px;
   border: 0;
   display: block;
+}
+.contact-socials {
+  margin-top: 0.55rem;
+  display: flex;
+  gap: 0.8rem;
+}
+.contact-socials a {
+  color: #5a68af;
+  font-size: 0.84rem;
+  text-decoration: none;
+  font-weight: 700;
 }
 .review-section-contact {
   margin-top: 2.2rem;
@@ -466,6 +481,33 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
 .booking-form {
   display: grid;
   gap: 0.35rem;
+}
+.booking-extra {
+  margin: 0.2rem 0 0.9rem;
+  padding: 0.75rem;
+  background: #f8faff;
+  border: 1px solid #e1e8ff;
+  border-radius: 10px;
+  display: grid;
+  gap: 0.35rem;
+}
+.booking-extra p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.booking-extra .booking-note {
+  color: #d94b5f;
+  font-weight: 600;
+}
+.booking-extra a {
+  color: #5868b4;
+  text-decoration: none;
+  font-weight: 700;
+}
+.booking-extra .booking-socials {
+  display: flex;
+  gap: 0.7rem;
 }
 .booking-form label {
   color: #5562ad;

@@ -80,14 +80,14 @@
     },
     about: {
       title: "Mənim yolum",
-      intro: "Neque, pulvinar vestibulum non aliquam.",
+      intro: "Neyropsixologiya üzrə təhsil, klinik təcrübə və davamlı peşəkar inkişaf yolu.",
       educationTitle: "Təhsil",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "İş təcrübəsi",
       experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
       stats: [{ n: "19+", l: "İl təcrübəsi" }, { n: "7+", l: "Sertifikat" }],
       certsTitle: "Sertifikatlar",
-      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
+      certsIntro: "Neyropsixologiya və reabilitasiya metodları üzrə peşəkar sertifikatlar.",
       certs: [
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
@@ -117,7 +117,9 @@
       address: "Ünvan:",
       locationTitle: "Xəritədə ünvan",
       openMap: "Google Maps-də aç",
-      note: "Ümumi suallara konsultant cavab verir; klinik müzakirə üçün qəbul tövsiyə olunur.",
+      instagram: "Instagram",
+      whatsapp: "WhatsApp",
+      note: "*Our consultant is available to answer your general questions and assist with scheduling. Please note, for detailed discussions about your specific concerns, we encourage you to book a consultation with Dr. Vusala.",
       name: "Ad, Soyad",
       number: "Nömrəniz",
       question: "Sualınız",
@@ -205,14 +207,14 @@
     },
     about: {
       title: "My journey",
-      intro: "Neque, pulvinar vestibulum non aliquam.",
+      intro: "Education, clinical practice, and continuous professional growth in neuropsychology.",
       educationTitle: "Education",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Experience",
       experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
       stats: [{ n: "19+", l: "Years of experience" }, { n: "7+", l: "Certifications" }],
       certsTitle: "Certifications",
-      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
+      certsIntro: "Professional certifications in neuropsychology and rehabilitation methods.",
       certs: [
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
@@ -242,7 +244,9 @@
       address: "Address:",
       locationTitle: "Location on map",
       openMap: "Open in Google Maps",
-      note: "Consultant helps with general questions; for clinical details, please book a doctor.",
+      instagram: "Instagram",
+      whatsapp: "WhatsApp",
+      note: "*Our consultant is available to answer your general questions and assist with scheduling. Please note, for detailed discussions about your specific concerns, we encourage you to book a consultation with Dr. Vusala.",
       name: "Your name, surname",
       number: "Your number",
       question: "Your question",
@@ -330,14 +334,14 @@
     },
     about: {
       title: "Мой путь",
-      intro: "Neque, pulvinar vestibulum non aliquam.",
+      intro: "Образование, клиническая практика и постоянное профессиональное развитие в нейропсихологии.",
       educationTitle: "Образование",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Опыт работы",
       experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
       stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификаций" }],
       certsTitle: "Сертификаты",
-      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
+      certsIntro: "Профессиональные сертификаты по нейропсихологии и методам реабилитации.",
       certs: [
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
@@ -367,7 +371,9 @@
       address: "Адрес:",
       locationTitle: "Адрес на карте",
       openMap: "Открыть в Google Maps",
-      note: "Консультант отвечает на общие вопросы; для клинического обсуждения рекомендуем прием.",
+      instagram: "Instagram",
+      whatsapp: "WhatsApp",
+      note: "*Our consultant is available to answer your general questions and assist with scheduling. Please note, for detailed discussions about your specific concerns, we encourage you to book a consultation with Dr. Vusala.",
       name: "Ваше имя, фамилия",
       number: "Ваш номер",
       question: "Ваш вопрос",
@@ -403,6 +409,14 @@ const serviceImageNames = [
   imageNames.integration
 ];
 
+const clinicInfo = {
+  phone: "+994 55 477 02 66",
+  address: "Aşıq Molla Cümə 3, Baku 1075, Azerbaijan",
+  mapUrl: "https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7",
+  instagramUrl: "https://instagram.com/",
+  whatsappUrl: "https://wa.me/994554770266"
+};
+
 function currentLang() { return localStorage.getItem("lang") || "ru"; }
 function setLang(lang) { localStorage.setItem("lang", lang); render(); }
 function el(id) { return document.getElementById(id); }
@@ -420,7 +434,15 @@ function renderNav(t, page) {
 
 function renderFooter(t) {
   if (el("footer-copy")) el("footer-copy").textContent = t.footer.copy;
-  if (el("footer-links")) el("footer-links").innerHTML = `<a href="terms.html">${t.footer.terms}</a><a href="privacy.html">${t.footer.privacy}</a><a href="cookies.html">${t.footer.cookies}</a>`;
+  if (el("footer-links")) {
+    el("footer-links").innerHTML = `
+      <a href="terms.html">${t.footer.terms}</a>
+      <a href="privacy.html">${t.footer.privacy}</a>
+      <a href="cookies.html">${t.footer.cookies}</a>
+      <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener">Instagram</a>
+      <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener">WhatsApp</a>
+    `;
+  }
 }
 
 function fillList(id, data) { const node = el(id); if (node) node.innerHTML = data.map((x) => `<li>${x}</li>`).join(""); }
@@ -620,6 +642,8 @@ function renderContact(t) {
   el("contact-note").textContent = d.note;
   if (el("contact-location-title")) el("contact-location-title").textContent = d.locationTitle;
   if (el("contact-map-link")) el("contact-map-link").textContent = d.openMap;
+  if (el("contact-instagram-link")) el("contact-instagram-link").textContent = d.instagram || "Instagram";
+  if (el("contact-whatsapp-link")) el("contact-whatsapp-link").textContent = d.whatsapp || "WhatsApp";
   el("label-name").textContent = d.name;
   el("label-number").textContent = d.number;
   el("label-question").textContent = d.question;
@@ -711,6 +735,28 @@ function bindBookingModal(t) {
   if (phoneLabel) phoneLabel.textContent = t.contact?.number || "Your number";
   if (questionLabel) questionLabel.textContent = t.contact?.question || "Your question";
   if (submitBtn) submitBtn.textContent = t.contact?.send || "Send message";
+
+  const dialog = modal.querySelector(".booking-dialog");
+  if (dialog) {
+    let extra = dialog.querySelector(".booking-extra");
+    if (!extra) {
+      extra = document.createElement("div");
+      extra.className = "booking-extra";
+      const formNode = dialog.querySelector(".booking-form");
+      if (formNode) dialog.insertBefore(extra, formNode);
+    }
+
+    extra.innerHTML = `
+      <p><strong>${t.contact?.phone || "Phone:"}</strong> ${clinicInfo.phone}</p>
+      <p><strong>${t.contact?.address || "Address:"}</strong> ${clinicInfo.address}</p>
+      <p class="booking-note">${t.contact?.note || ""}</p>
+      <p><a href="${clinicInfo.mapUrl}" target="_blank" rel="noopener">${t.contact?.openMap || "Open in Google Maps"}</a></p>
+      <p class="booking-socials">
+        <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener">${t.contact?.instagram || "Instagram"}</a>
+        <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener">${t.contact?.whatsapp || "WhatsApp"}</a>
+      </p>
+    `;
+  }
 
   document.querySelectorAll(".book-appointment-trigger").forEach((trigger) => {
     trigger.onclick = (event) => {
