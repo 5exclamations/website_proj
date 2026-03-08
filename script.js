@@ -80,19 +80,19 @@
     },
     about: {
       title: "Mənim yolum",
-      intro: "Təhsil, klinik təcrübə və davamlı peşəkar inkişaf",
+      intro: "Neque, pulvinar vestibulum non aliquam.",
       educationTitle: "Təhsil",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
+      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "İş təcrübəsi",
-      experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danışıq", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
-      stats: [{ n: "19+", l: "İl təcrübə" }, { n: "7+", l: "Sertifikat" }],
+      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
+      stats: [{ n: "19+", l: "İl təcrübəsi" }, { n: "7+", l: "Sertifikat" }],
       certsTitle: "Sertifikatlar",
-      certsIntro: "Neyropsixologiya və korreksiya metodları üzrə ixtisasartırma",
+      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
       certs: [
-        { y: "2014", t: "Renessans Psixologiya Mərkəzi" },
-        { y: "2017", t: "Nərmin Tibb Mərkəzi" },
-        { y: "2022", t: "Loqos Uşaq İnkişaf Mərkəzi" },
-        { y: "2024", t: "Terra Kids İnkişaf Mərkəzi" }
+        { y: "2014", t: "Renesans centre of psychology" },
+        { y: "2017", t: "Narinj medical centre" },
+        { y: "2022", t: "Loqos Kids development centre" },
+        { y: "2024", t: "Tolerans Kids devlopment centre" }
       ]
     },
     reviews: {
@@ -205,19 +205,19 @@
     },
     about: {
       title: "My journey",
-      intro: "Education, clinical experience, and continuous professional development",
+      intro: "Neque, pulvinar vestibulum non aliquam.",
       educationTitle: "Education",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
+      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Experience",
-      experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danisig", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
+      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
       stats: [{ n: "19+", l: "Years of experience" }, { n: "7+", l: "Certifications" }],
       certsTitle: "Certifications",
-      certsIntro: "Professional training in neuropsychology and correction methods",
+      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
       certs: [
-        { y: "2014", t: "Renessans Centre Of Psychology" },
-        { y: "2017", t: "Narmin Medical Centre" },
-        { y: "2022", t: "Logos Kids Development Centre" },
-        { y: "2024", t: "Terra Kids Development Centre" }
+        { y: "2014", t: "Renesans centre of psychology" },
+        { y: "2017", t: "Narinj medical centre" },
+        { y: "2022", t: "Loqos Kids development centre" },
+        { y: "2024", t: "Tolerans Kids devlopment centre" }
       ]
     },
     reviews: {
@@ -330,19 +330,19 @@
     },
     about: {
       title: "Мой путь",
-      intro: "Образование, клинический опыт и постоянное профессиональное развитие",
+      intro: "Neque, pulvinar vestibulum non aliquam.",
       educationTitle: "Образование",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
+      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Опыт работы",
-      experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danisig", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
+      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
       stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификаций" }],
       certsTitle: "Сертификаты",
-      certsIntro: "Повышение квалификации по нейропсихологии и коррекционным методикам",
+      certsIntro: "Neque, pulvinar vestibulum non aliquam.",
       certs: [
-        { y: "2014", t: "Центр психологии Renessans" },
-        { y: "2017", t: "Медицинский центр Narmin" },
-        { y: "2022", t: "Центр развития Logos Kids" },
-        { y: "2024", t: "Центр развития Terra Kids" }
+        { y: "2014", t: "Renesans centre of psychology" },
+        { y: "2017", t: "Narinj medical centre" },
+        { y: "2022", t: "Loqos Kids development centre" },
+        { y: "2024", t: "Tolerans Kids devlopment centre" }
       ]
     },
     reviews: {
