@@ -4,7 +4,7 @@
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Şərtlər", privacy: "Məxfilik", cookies: "Cookies" },
     home: {
       eyebrow: "Azərbaycanda beyin terapiyasında pioner",
-      title: "Doktor Vüsalə Qasımova",
+      title: "Azərbaycanda beyin terapiyasında pioner\nDoktor Vüsalə Qasımova",
       subtitle: "Neyropsixologiya və qabaqcıl texnologiyanın sintezi",
       text: "Azərbaycanın neyropsixologiya sahəsində pionerlərindən biri olan Vüsalə Qasımova ölkədə beyin neyronlarını stimullaşdıraraq koqnitiv funksiyaları yaxşılaşdıran qabaqcıl BAK terapiyasını tətbiq edən ilk mütəxəssislərdəndir.",
       cta: "Qəbul üçün yazıl",
@@ -22,9 +22,9 @@
       whatText: "Bioakustik Korreksiya (BAK) metodu Pavlov adına Eksperimental Tibb İnstitutunun aparıcı neyrofizioloqları tərəfindən hazırlanıb. Bu innovativ, qeyri-invaziv terapiya real vaxt EEG məlumatını akustik siqnallara çevirərək beynin özünü tənzimləmə prosesini aktivləşdirir və təbii balansını bərpa etməsinə dəstək olur.",
       howTitle: "BAK terapiyası necə işləyir?",
       steps: [
-        { t: "Addım 1", d: "Sensorlar başa yerləşdirilir və EEG aktivliyi izlənir." },
-        { t: "Addım 2", d: "Məlumat akustik dalğalara çevrilərək fərdi “beyin musiqisi” yaranır." },
-        { t: "Addım 3", d: "Pasiyent bu səsi dinləyərək geri əlaqə ilə özünü tənzimləməyi aktivləşdirir." }
+        { t: "Addım 1", d: "Beyin fəaliyyətini (EEG) izləmək üçün sensorlar pasiyentin başına yerləşdirilir." },
+        { t: "Addım 2", d: "Bu məlumatlar akustik dalğalara — beynin unikal “musiqisinə” çevrilir." },
+        { t: "Addım 3", d: "Pasiyent bu səsi real vaxtda dinləyir və geri əlaqə vasitəsilə beyin özünü tənzimləmə prosesini aktivləşdirir." }
       ],
       transformTitle: "Həyatınızı bu gün dəyişin",
       transformText: "BAK terapiyasının sizin və ya övladınız üçün uyğun olub-olmadığını müəyyən etmək üçün sertifikatlı mütəxəssislərimizlə konsultasiya edin.",
@@ -32,24 +32,40 @@
     },
     bac: {
       title: "BAK terapiyası nədir?",
-      intro: "Qeyri-invaziv, ağrısız və EEG əsaslı geri əlaqə metodu.",
-      howTitle: "Necə tətbiq olunur?",
-      howText: "“Sinxro-S” sistemi ilə pasiyent beyin fəaliyyətinin səs formasını eşidir.",
+      intro: "Bioakustik Korreksiya (BAK) metodu Pavlov adına Eksperimental Tibb İnstitutunun aparıcı neyrofizioloqları tərəfindən hazırlanıb. Bu innovativ, qeyri-invaziv terapiya real vaxt EEG məlumatını akustik siqnallara çevirərək beynin özünü tənzimləmə prosesini aktivləşdirir və təbii balansını bərpa etməsinə dəstək olur.",
+      howTitle: "Necə işləyir?",
+      howSubtitle: "Bioakustik korreksiya terapiyası",
+      howText: "Bioakustik korreksiya hər hansı səbəbdən pozulmuş beyin funksiyalarının bərpasına dəstək verir. Metod pasiyentin EEG göstəricilərinin kompüter vasitəsilə akustik siqnallara çevrilməsinə əsaslanır və pasiyent Sinkhro-S sistemi vasitəsilə beyninin real vaxtda necə işlədiyini “eşidə” bilir.",
       steps: [
-        { t: "Addım 1", d: "Sensorlar baş nahiyəsinə yerləşdirilir." },
-        { t: "Addım 2", d: "Məlumat fərdi “beyin musiqisinə” çevrilir." },
-        { t: "Addım 3", d: "Dinləmə prosesi neyrodinamikanı dəstəkləyir." }
+        { t: "Addım 1", d: "Beyin fəaliyyətini (EEG) izləmək üçün sensorlar pasiyentin başına yerləşdirilir." },
+        { t: "Addım 2", d: "Bu məlumatlar akustik dalğalara — beynin unikal “musiqisinə” çevrilir." },
+        { t: "Addım 3", d: "Pasiyent bu səsi real vaxtda dinləyir və geri əlaqə vasitəsilə beyin özünü tənzimləmə prosesini aktivləşdirir." }
       ],
       whoTitle: "Kimlər üçün uyğundur",
-      childrenTitle: "Uşaqlar",
-      children: ["Nitq və inkişaf gecikmələri", "Autizm spektri", "DEHB", "Tiklər və enurez"],
+      childrenTitle: "Uşaqlar (1+ yaş)",
+      children: [
+        "İnkişaf gecikmələri (nitq və ya zehni)",
+        "Autizm spektr pozuntuları",
+        "DEHB və davranış çətinlikləri",
+        "Tiklər və enurez kimi nevroloji problemlər",
+        "Beyin zədəsi və ya əməliyyatdan sonrakı bərpa"
+      ],
       adultsTitle: "Böyüklər",
-      adults: ["Stress", "Yuxu və diqqət problemləri", "Travmadan sonrakı vəziyyət", "Neyro-reabilitasiya"],
+      adults: [
+        "Stress, xroniki yorğunluq, posttravmatik stress sindromu",
+        "Anksiyete, depressiya, emosional qeyri-sabitlik kimi pozuntular",
+        "İnsult və ya beyin travmasından sonra nevroloji bərpa",
+        "Yuxu, iştaha və koqnitiv funksiyalarda pozuntular"
+      ],
       faqTitle: "Tez-tez verilən suallar",
       faq: [
-        { q: "Nəticəyə zəmanət varmı?", a: "Nəticə fərdi qiymətləndirilir." },
-        { q: "Nəticə nə vaxt görünür?", a: "Çox vaxt kurs müddətində müsbət dinamika görünür." },
-        { q: "Əks-göstərişlər varmı?", a: "Kəskin vəziyyətlərdə əvvəlcə həkim dəyərləndirməsi vacibdir." }
+        { q: "Nəticəyə zəmanət varmı?", a: "Hər pasiyentin klinik vəziyyəti fərqli olduğu üçün mütləq zəmanət verilmir, lakin düzgün seçilmiş kursda çox hallarda müsbət dinamika müşahidə olunur." },
+        { q: "Nəticə nə qədər müddətdə görünür?", a: "Bir çox pasiyentdə ilk dəyişikliklər bir neçə seansdan sonra hiss edilir, daha sabit nəticələr isə tam kursdan sonra qiymətləndirilir." },
+        { q: "Proseduru daimi etmək lazımdırmı? Nəticə müvəqqətidirmi?", a: "BAK terapiyası adətən kurs şəklində tətbiq olunur. Nəticənin davamlılığı diaqnozdan, həyat tərzindən və əlavə reabilitasiya tədbirlərindən asılıdır." },
+        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "Bu bənd məlumat xarakterli əlavə sual nümunəsi kimi təqdim olunur; fərdi cavab üçün konsultasiya tələb olunur." },
+        { q: "Kimlər BAK terapiyasından çəkinməlidir?", a: "Kəskin psixi və ya somatik vəziyyətlərdə, həmçinin xüsusi tibbi əks-göstəriş olduqda terapiya yalnız həkim rəyindən sonra planlanmalıdır." },
+        { q: "BAK terapiyasının üstünlükləri nələrdir?", a: "Metod qeyri-invaziv və ağrısızdır, beyin özünü tənzimləmə mexanizmlərini aktivləşdirir və kompleks reabilitasiyada əlavə dəstək verir." },
+        { q: "BAK terapiyası ağrılı və ya invazivdirmi?", a: "Xeyr. Sensorlar yalnız dəri səthinə yerləşdirilir, prosedur kəsik və inyeksiya tələb etmir, adətən komfortlu keçirilir." }
       ]
     },
     services: {
@@ -113,7 +129,7 @@
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
     home: {
       eyebrow: "Pioneer of brain therapy in Azerbaijan",
-      title: "Dr. Vusala Gasimova",
+      title: "Azerbaijan's Pioneer in Brain Therapy\nDr. Vusala Qasimova",
       subtitle: "Creating a symbiotic relationship between neuropsychology and advanced technology",
       text: "Azerbaijan's pioneering neuropsychologist Dr. Vusala Gasimova is the first in the country to utilize groundbreaking BAC therapy technology that stimulates brain neurons for improved cognitive function.",
       cta: "Book Appointment",
@@ -131,27 +147,51 @@
       whatText: "The Bioacoustic Correction (BAC) method was developed by leading neurophysiologists at the Pavlov Institute of Experimental Medicine. This innovative, non-invasive therapy uses real-time EEG data transformed into acoustic signals, allowing the brain to initiate self-regulation and restore its natural balance.",
       howTitle: "How BAC therapy works",
       steps: [
-        { t: "Step 1", d: "Sensors monitor brain activity (EEG)." },
-        { t: "Step 2", d: "The data is transformed into acoustic waves." },
-        { t: "Step 3", d: "The patient listens in real time and activates feedback." }
+        { t: "Step 1", d: "Sensors are placed on the patient’s head to monitor brain activity (EEG)." },
+        { t: "Step 2", d: "This data is converted into acoustic waves – the brain’s unique “music.”" },
+        { t: "Step 3", d: "The patient listens to this sound in real time, encouraging the brain to self-correct through feedback." }
       ],
       transformTitle: "Transform your life today",
       transformText: "Consult with our certified specialists to determine if BAC Therapy is right for you or your child.",
       transformCta: "Book Appointment"
     },
     bac: {
-      title: "What is BAC therapy?",
-      intro: "Non-invasive, painless and EEG-feedback based method.",
+      title: "What is BAC Therapy?",
+      intro: "The Bioacoustic Correction (BAC) method was developed by leading neurophysiologists at the Pavlov Institute of Experimental Medicine. This innovative, non-invasive therapy uses real-time EEG data transformed into acoustic signals, allowing the brain to initiate self-regulation and restore its natural balance.",
       howTitle: "How does it work?",
-      howText: "With “Synchro-S”, the patient hears brain activity in real time.",
-      steps: [{ t: "Step 1", d: "Sensors are placed." }, { t: "Step 2", d: "Data transforms to sound." }, { t: "Step 3", d: "Feedback supports adaptation." }],
+      howSubtitle: "Bio Acoustic Correction Therapy",
+      howText: "Bioacoustic correction helps restore the brain's normal functioning if it has been disrupted for any reason. Method of bioacustic correction is based on computerized transformation of the patient’s EEG into acoustic signals, allowing the patient to “hear his or her brain working” in real time using Sinkhro-S system (Sinkor, St. Petersburg, Russia).",
+      steps: [
+        { t: "Step 1", d: "Sensors are placed on the patient’s head to monitor brain activity (EEG)." },
+        { t: "Step 2", d: "This data is converted into acoustic waves – the brain’s unique “music.”" },
+        { t: "Step 3", d: "The patient listens to this sound in real time, encouraging the brain to self-correct through feedback." }
+      ],
       whoTitle: "Who can benefit",
-      childrenTitle: "Children",
-      children: ["Speech/development delays", "Autism support", "ADHD", "Tics/enuresis"],
+      childrenTitle: "Children (1+ y.o.)",
+      children: [
+        "Developmental delays (speech or mental)",
+        "Autism spectrum disorders",
+        "ADHD and behavioral challenges",
+        "Neurological issues like tics and enuresis",
+        "Recovery from brain injuries or surgeries"
+      ],
       adultsTitle: "Adults",
-      adults: ["Stress", "Sleep/focus issues", "Post-trauma", "Neuro-rehab"],
+      adults: [
+        "Stress, chronic fatigue, post-traumatic stress syndrome",
+        "Emotional disorders like anxiety, depression, mood instability",
+        "Neurological recovery after strokes or brain trauma",
+        "Sleep, appetite, and cognitive impairments"
+      ],
       faqTitle: "Frequently asked questions",
-      faq: [{ q: "Guaranteed result?", a: "Results are individual." }, { q: "How soon?", a: "Positive dynamics often during course." }, { q: "Contraindications?", a: "Physician assessment required in acute states." }]
+      faq: [
+        { q: "Is there a guarantee of results?", a: "No method can guarantee identical outcomes for every patient. Results depend on diagnosis, baseline condition, and adherence to the recommended plan." },
+        { q: "How soon can I see results?", a: "Many patients notice early positive changes within the first sessions, while stable clinical effects are usually evaluated after completing a full course." },
+        { q: "Do I need to undergo the procedure constantly? Is the result temporary?", a: "BAC Therapy is typically delivered in courses rather than continuously. Duration of results varies and is influenced by diagnosis, lifestyle, and complementary rehabilitation." },
+        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "This item is kept as an additional placeholder-style FAQ line; for a personalized response, specialist consultation is required." },
+        { q: "Who should avoid BAC Therapy?", a: "Patients in acute medical or psychiatric states, or with specific contraindications, should undergo physician evaluation before starting therapy." },
+        { q: "What are the benefits of BAC Therapy?", a: "BAC Therapy is non-invasive and painless, supports brain self-regulation, and can be integrated into broader neurorehabilitation programs." },
+        { q: "Is BAC Therapy painful or invasive?", a: "No. Sensors are placed on the scalp surface only; there are no injections or surgical interventions during the procedure." }
+      ]
     },
     services: {
       title: "Services",
@@ -214,7 +254,7 @@
     footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
     home: {
       eyebrow: "Пионер Азербайджана в области терапии мозга",
-      title: "Доктор Вусала Касимова",
+      title: "Пионер Азербайджана\nв терапии мозга\nДоктор Вусала Касимова",
       subtitle: "Создание симбиотических отношений между нейропсихологией и передовыми технологиями",
       text: "Пионер нейропсихологии в Азербайджане доктор Вусала Касимова первой в стране внедрила передовую BAC-терапию, которая стимулирует нейроны мозга и способствует улучшению когнитивных функций.",
       cta: "Book Appointment",
@@ -242,17 +282,41 @@
     },
     bac: {
       title: "Что такое BAC-терапия?",
-      intro: "Неинвазивный и безболезненный метод на основе ЭЭГ-обратной связи.",
+      intro: "Метод биоакустической коррекции (BAC) был разработан ведущими нейрофизиологами Института экспериментальной медицины имени Павлова. Эта инновационная неинвазивная терапия использует данные ЭЭГ в реальном времени, преобразуя их в акустические сигналы, что помогает мозгу запускать механизмы саморегуляции и восстанавливать естественный баланс.",
       howTitle: "Как это работает?",
-      howText: "Система «Синхро-С» позволяет слышать активность мозга в реальном времени.",
-      steps: [{ t: "Шаг 1", d: "Устанавливаются датчики." }, { t: "Шаг 2", d: "Сигнал преобразуется в звук." }, { t: "Шаг 3", d: "Обратная связь поддерживает адаптацию." }],
+      howSubtitle: "Терапия биоакустической коррекции",
+      howText: "Биоакустическая коррекция помогает восстановить нормальное функционирование мозга, если оно было нарушено по любой причине. Метод основан на компьютерном преобразовании ЭЭГ пациента в акустические сигналы, что позволяет пациенту в реальном времени “слышать работу своего мозга” с использованием системы Sinkhro-S (Sinkor, Санкт-Петербург, Россия).",
+      steps: [
+        { t: "Шаг 1", d: "Датчики размещаются на голове пациента для мониторинга активности мозга (ЭЭГ)." },
+        { t: "Шаг 2", d: "Эти данные преобразуются в акустические волны — уникальную «музыку» мозга." },
+        { t: "Шаг 3", d: "Пациент слушает этот звук в реальном времени, побуждая мозг к самокоррекции через обратную связь." }
+      ],
       whoTitle: "Кому подходит",
-      childrenTitle: "Дети",
-      children: ["Задержки речи/развития", "Поддержка при РАС", "СДВГ", "Тики/энурез"],
+      childrenTitle: "Дети (от 1 года)",
+      children: [
+        "Задержки развития (речевого или психического)",
+        "Расстройства аутистического спектра",
+        "СДВГ и поведенческие трудности",
+        "Неврологические проблемы: тики, энурез",
+        "Восстановление после травм или операций на головном мозге"
+      ],
       adultsTitle: "Взрослые",
-      adults: ["Стресс", "Проблемы сна/концентрации", "Посттравматические состояния", "Нейрореабилитация"],
+      adults: [
+        "Стресс, хроническая усталость, посттравматический стрессовый синдром",
+        "Эмоциональные расстройства: тревожность, депрессия, нестабильность настроения",
+        "Неврологическое восстановление после инсультов и черепно-мозговых травм",
+        "Нарушения сна, аппетита и когнитивных функций"
+      ],
       faqTitle: "Часто задаваемые вопросы",
-      faq: [{ q: "Есть гарантия?", a: "Результат индивидуален." }, { q: "Когда эффект?", a: "Часто в ходе курса." }, { q: "Противопоказания?", a: "Нужна оценка врача при острых состояниях." }]
+      faq: [
+        { q: "Есть ли гарантия результата?", a: "Универсальной гарантии быть не может: результат зависит от диагноза, исходного состояния и соблюдения индивидуального плана терапии." },
+        { q: "Через сколько можно увидеть результат?", a: "У многих пациентов первые положительные изменения заметны уже в начале курса, а устойчивый эффект оценивается после его завершения." },
+        { q: "Нужно ли проходить процедуру постоянно? Временный ли эффект?", a: "Обычно BAC-терапия проводится курсами, а не постоянно. Длительность эффекта индивидуальна и зависит от диагноза, образа жизни и дополнительной реабилитации." },
+        { q: "Elementum ullamcorper felis nulla scelerisque. Nunc enim nunc mattis leo massa.", a: "Этот пункт сохранён как дополнительная строка FAQ; для персонального ответа необходима консультация специалиста." },
+        { q: "Кому следует избегать BAC-терапии?", a: "При острых медицинских или психических состояниях, а также при специфических противопоказаниях, решение принимается только после консультации врача." },
+        { q: "Каковы преимущества BAC-терапии?", a: "Метод безболезненный и неинвазивный, поддерживает механизмы саморегуляции мозга и хорошо дополняет комплексные программы нейрореабилитации." },
+        { q: "BAC-терапия болезненна или инвазивна?", a: "Нет. Датчики устанавливаются поверхностно на кожу головы, процедура не требует инъекций и хирургического вмешательства." }
+      ]
     },
     services: {
       title: "Услуги",
@@ -431,7 +495,9 @@ function renderBac(t) {
 
   setText("bac-title", d.title);
   setText("bac-intro", d.intro);
+  setText("bac-book", t.nav.book || t.home.cta);
   setText("bac-how-title", d.howTitle);
+  setText("bac-how-subtitle", d.howSubtitle || t.home.whatSubtitle);
   setText("bac-how-text", d.howText);
   setText("bac-who-title", d.whoTitle);
   setText("bac-children-title", d.childrenTitle);

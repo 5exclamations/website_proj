@@ -30,6 +30,11 @@ body {
 }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; }
 .brand { text-decoration: none; color: #5562a7; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; }
+.brand img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
 .main-nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
 .main-nav a {
   text-decoration: none;
@@ -95,6 +100,7 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
 }
 .hero-grid { display: grid; grid-template-columns: 1.02fr 1fr; gap: 1.8rem; align-items: center; }
 .hero-text { max-width: 520px; }
+.home-page #hero-title { white-space: pre-line; }
 .hero-photo-wrap {
   justify-self: center;
   width: min(430px, 100%);
