@@ -6,37 +6,58 @@
     <title>BAC Azerbaijan | About us</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="about">
+  <body data-page="about" class="about-page">
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html">BAC Azerbaijan</a>
+        <a class="brand" href="index.html">DR. VUSALA GASIMOVA</a>
         <nav class="main-nav" id="main-nav"></nav>
-        <div class="lang-switch" aria-label="Language switcher">
-          <button data-lang="az">AZ</button>
-          <button data-lang="en">EN</button>
-          <button data-lang="ru">RU</button>
+        <div class="nav-right">
+          <div class="lang-switch" aria-label="Language switcher">
+            <button data-lang="az">AZ</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="ru">RU</button>
+          </div>
+          <a class="btn btn-primary book-appointment-trigger" href="#" id="nav-book">Book Appointment</a>
         </div>
       </div>
     </header>
 
-    <main class="section">
-      <div class="container">
-        <h1 id="about-title"></h1>
-        <p id="about-intro"></p>
+    <main>
+      <section class="section about-journey">
+        <div class="container section-head">
+          <h1 id="journey-title"></h1>
+          <p id="journey-intro"></p>
+        </div>
 
-        <div class="two-cols">
-          <div class="card">
+        <div class="container about-grid">
+          <div class="about-copy">
             <h2 id="education-title"></h2>
-            <ul id="education-list"></ul>
-          </div>
-          <div class="card">
+            <ul class="timeline-list" id="education-list"></ul>
+
             <h2 id="experience-title"></h2>
-            <ul id="experience-list"></ul>
+            <ul class="timeline-list" id="experience-list"></ul>
+          </div>
+          <div class="about-side">
+            <div class="stats compact" id="about-stats"></div>
           </div>
         </div>
 
-        <div class="stats" id="about-stats"></div>
-      </div>
+        <div class="container certs-wrap">
+          <h2 id="certs-title"></h2>
+          <p id="certs-intro"></p>
+          <div class="cert-grid" id="cert-grid"></div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container cta-box">
+          <div>
+            <h2 id="transform-title"></h2>
+            <p id="transform-text"></p>
+          </div>
+          <a class="btn btn-white book-appointment-trigger" href="#" id="transform-cta"></a>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -45,6 +66,24 @@
         <div class="footer-links" id="footer-links"></div>
       </div>
     </footer>
+
+    <div class="booking-modal" id="booking-modal" aria-hidden="true">
+      <div class="booking-backdrop" data-close-booking></div>
+      <div class="booking-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <button class="booking-close" type="button" data-close-booking aria-label="Close">&times;</button>
+        <h3 id="booking-title">Book Appointment</h3>
+        <p id="booking-subtitle">Please leave your details and we will contact you.</p>
+        <form class="booking-form">
+          <label for="booking-name" id="booking-name-label">Your name, surname</label>
+          <input id="booking-name" type="text" />
+          <label for="booking-phone" id="booking-phone-label">Your number</label>
+          <input id="booking-phone" type="text" />
+          <label for="booking-question" id="booking-question-label">Your question</label>
+          <textarea id="booking-question" rows="4"></textarea>
+          <button type="button" class="btn btn-primary" id="booking-submit">Send message</button>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

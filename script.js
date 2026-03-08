@@ -63,13 +63,21 @@
       ]
     },
     about: {
-      title: "Haqqımızda",
-      intro: "Müasir neyropsixoloji xidmətləri daha əlçatan edirik.",
+      title: "Mənim yolum",
+      intro: "Təhsil, klinik təcrübə və davamlı peşəkar inkişaf",
       educationTitle: "Təhsil",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
       experienceTitle: "İş təcrübəsi",
       experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danışıq", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
-      stats: [{ n: "19+", l: "İl təcrübə" }, { n: "7+", l: "Sertifikat" }, { n: "1000+", l: "Pasiyent" }]
+      stats: [{ n: "19+", l: "İl təcrübə" }, { n: "7+", l: "Sertifikat" }],
+      certsTitle: "Sertifikatlar",
+      certsIntro: "Neyropsixologiya və korreksiya metodları üzrə ixtisasartırma",
+      certs: [
+        { y: "2014", t: "Renessans Psixologiya Mərkəzi" },
+        { y: "2017", t: "Nərmin Tibb Mərkəzi" },
+        { y: "2022", t: "Loqos Uşaq İnkişaf Mərkəzi" },
+        { y: "2024", t: "Terra Kids İnkişaf Mərkəzi" }
+      ]
     },
     contact: {
       title: "Əlaqə",
@@ -139,13 +147,21 @@
       ]
     },
     about: {
-      title: "About us",
-      intro: "Advanced neuropsychological care in Azerbaijan.",
+      title: "My journey",
+      intro: "Education, clinical experience, and continuous professional development",
       educationTitle: "Education",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
       experienceTitle: "Experience",
       experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danisig", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
-      stats: [{ n: "19+", l: "Years" }, { n: "7+", l: "Certificates" }, { n: "1000+", l: "Patients" }]
+      stats: [{ n: "19+", l: "Years of experience" }, { n: "7+", l: "Certifications" }],
+      certsTitle: "Certifications",
+      certsIntro: "Professional training in neuropsychology and correction methods",
+      certs: [
+        { y: "2014", t: "Renessans Centre Of Psychology" },
+        { y: "2017", t: "Narmin Medical Centre" },
+        { y: "2022", t: "Logos Kids Development Centre" },
+        { y: "2024", t: "Terra Kids Development Centre" }
+      ]
     },
     contact: {
       title: "Contact",
@@ -215,13 +231,21 @@
       ]
     },
     about: {
-      title: "О нас",
-      intro: "Делаем передовую нейропсихологическую помощь доступнее.",
+      title: "Мой путь",
+      intro: "Образование, клинический опыт и постоянное профессиональное развитие",
       educationTitle: "Образование",
       education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute"],
       experienceTitle: "Опыт работы",
       experience: ["2006–2009 — Nigar-leben", "2009–2012 — ultraMed Dialab", "2012–2015 — Selist Danisig", "2015–2023 — Loqos", "2023–2024 — Tolerans"],
-      stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификатов" }, { n: "1000+", l: "Пациентов" }]
+      stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификаций" }],
+      certsTitle: "Сертификаты",
+      certsIntro: "Повышение квалификации по нейропсихологии и коррекционным методикам",
+      certs: [
+        { y: "2014", t: "Центр психологии Renessans" },
+        { y: "2017", t: "Медицинский центр Narmin" },
+        { y: "2022", t: "Центр развития Logos Kids" },
+        { y: "2024", t: "Центр развития Terra Kids" }
+      ]
     },
     contact: {
       title: "Свяжитесь с нами",
@@ -285,6 +309,17 @@ function renderFooter(t) {
 }
 
 function fillList(id, data) { const node = el(id); if (node) node.innerHTML = data.map((x) => `<li>${x}</li>`).join(""); }
+
+function fillTimeline(id, data) {
+  const node = el(id);
+  if (!node) return;
+  node.innerHTML = data.map((entry) => {
+    const [yearPart, ...rest] = String(entry).split("—");
+    const year = yearPart ? yearPart.trim() : "";
+    const value = rest.length ? rest.join("—").trim() : String(entry);
+    return `<li><div class="timeline-row"><span class="year">${year}</span><span class="value">${value}</span></div></li>`;
+  }).join("");
+}
 
 function renderHome(t) {
   const d = t.home;
@@ -424,14 +459,35 @@ function renderServices(t) {
 
 function renderAbout(t) {
   const d = t.about;
-  if (!el("about-title")) return;
-  el("about-title").textContent = d.title;
-  el("about-intro").textContent = d.intro;
-  el("education-title").textContent = d.educationTitle;
-  el("experience-title").textContent = d.experienceTitle;
-  fillList("education-list", d.education);
-  fillList("experience-list", d.experience);
-  el("about-stats").innerHTML = d.stats.map((s) => `<div class="stat"><div class="num">${s.n}</div><div>${s.l}</div></div>`).join("");
+  if (!el("journey-title")) return;
+
+  const setText = (id, value) => {
+    const node = el(id);
+    if (node) node.textContent = value;
+  };
+
+  setText("journey-title", d.title);
+  setText("journey-intro", d.intro);
+  setText("education-title", d.educationTitle);
+  setText("experience-title", d.experienceTitle);
+  setText("certs-title", d.certsTitle);
+  setText("certs-intro", d.certsIntro);
+  setText("transform-title", t.home.transformTitle);
+  setText("transform-text", t.home.transformText);
+  setText("transform-cta", t.home.transformCta);
+
+  fillTimeline("education-list", d.education);
+  fillTimeline("experience-list", d.experience);
+
+  const statsNode = el("about-stats");
+  if (statsNode) {
+    statsNode.innerHTML = d.stats.map((s) => `<div class="stat"><div class="num">${s.n}</div><div>${s.l}</div></div>`).join("");
+  }
+
+  const certNode = el("cert-grid");
+  if (certNode) {
+    certNode.innerHTML = (d.certs || []).map((c) => `<article class="cert-card"><span>${c.y}</span><p>${c.t}</p></article>`).join("");
+  }
 }
 
 function renderContact(t) {
