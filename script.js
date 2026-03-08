@@ -413,9 +413,16 @@ const clinicInfo = {
   phone: "+994 55 477 02 66",
   address: "Aşıq Molla Cümə 3, Baku 1075, Azerbaijan",
   mapUrl: "https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7",
-  instagramUrl: "https://instagram.com/",
+  instagramUrl: "https://www.instagram.com/neyropsixoloq_qasimova_vusale?igsh=MWw1ZG9xenF0eDBqZA%3D%3D&utm_source=qr",
   whatsappUrl: "https://wa.me/994554770266"
 };
+
+function socialIcon(kind) {
+  if (kind === "instagram") {
+    return `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" r="1.2" fill="currentColor"></circle></svg>`;
+  }
+  return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.4c0 4.4-3.8 8-8.5 8-1.1 0-2.2-.2-3.1-.6L4 20l1.3-4c-.8-1.3-1.2-2.8-1.2-4.4C4.1 7.2 8 3.6 12.6 3.6c4.7 0 8.4 3.6 8.4 7.8Z" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M9.5 9.3c.2-.5.4-.5.7-.5h.6c.2 0 .4 0 .5.3.2.4.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.4.5-.2.2-.3.3-.1.6.2.3.8 1.2 2 1.9 1.5.9 2 .9 2.3.8.3-.1 1-.8 1.1-1 .1-.2.3-.2.5-.1.2.1 1.6.8 1.9 1 .2.1.3.2.3.3 0 .1-.1.8-.4 1.3-.3.5-1.5 1-2 1-.5 0-1 0-1.7-.3-.7-.2-1.5-.6-2.6-1.3-2.1-1.3-3.5-2.9-3.9-3.6-.4-.7-.8-1.2-.8-2 0-.8.4-1.2.6-1.6Z" fill="currentColor"></path></svg>`;
+}
 
 function currentLang() { return localStorage.getItem("lang") || "ru"; }
 function setLang(lang) { localStorage.setItem("lang", lang); render(); }
@@ -436,11 +443,15 @@ function renderFooter(t) {
   if (el("footer-copy")) el("footer-copy").textContent = t.footer.copy;
   if (el("footer-links")) {
     el("footer-links").innerHTML = `
-      <a href="terms.html">${t.footer.terms}</a>
-      <a href="privacy.html">${t.footer.privacy}</a>
-      <a href="cookies.html">${t.footer.cookies}</a>
-      <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener">Instagram</a>
-      <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="footer-links-main">
+        <a href="terms.html">${t.footer.terms}</a>
+        <a href="privacy.html">${t.footer.privacy}</a>
+        <a href="cookies.html">${t.footer.cookies}</a>
+      </div>
+      <div class="footer-socials">
+        <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">${socialIcon("instagram")}</a>
+        <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">${socialIcon("whatsapp")}</a>
+      </div>
     `;
   }
 }
@@ -642,8 +653,18 @@ function renderContact(t) {
   el("contact-note").textContent = d.note;
   if (el("contact-location-title")) el("contact-location-title").textContent = d.locationTitle;
   if (el("contact-map-link")) el("contact-map-link").textContent = d.openMap;
-  if (el("contact-instagram-link")) el("contact-instagram-link").textContent = d.instagram || "Instagram";
-  if (el("contact-whatsapp-link")) el("contact-whatsapp-link").textContent = d.whatsapp || "WhatsApp";
+  if (el("contact-instagram-link")) {
+    el("contact-instagram-link").href = clinicInfo.instagramUrl;
+    el("contact-instagram-link").setAttribute("aria-label", d.instagram || "Instagram");
+    el("contact-instagram-link").classList.add("social-link");
+    el("contact-instagram-link").innerHTML = socialIcon("instagram");
+  }
+  if (el("contact-whatsapp-link")) {
+    el("contact-whatsapp-link").href = clinicInfo.whatsappUrl;
+    el("contact-whatsapp-link").setAttribute("aria-label", d.whatsapp || "WhatsApp");
+    el("contact-whatsapp-link").classList.add("social-link");
+    el("contact-whatsapp-link").innerHTML = socialIcon("whatsapp");
+  }
   el("label-name").textContent = d.name;
   el("label-number").textContent = d.number;
   el("label-question").textContent = d.question;
@@ -752,8 +773,8 @@ function bindBookingModal(t) {
       <p class="booking-note">${t.contact?.note || ""}</p>
       <p><a href="${clinicInfo.mapUrl}" target="_blank" rel="noopener">${t.contact?.openMap || "Open in Google Maps"}</a></p>
       <p class="booking-socials">
-        <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener">${t.contact?.instagram || "Instagram"}</a>
-        <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener">${t.contact?.whatsapp || "WhatsApp"}</a>
+        <a href="${clinicInfo.instagramUrl}" target="_blank" rel="noopener" class="social-link" aria-label="${t.contact?.instagram || "Instagram"}">${socialIcon("instagram")}</a>
+        <a href="${clinicInfo.whatsappUrl}" target="_blank" rel="noopener" class="social-link" aria-label="${t.contact?.whatsapp || "WhatsApp"}">${socialIcon("whatsapp")}</a>
       </p>
     `;
   }
