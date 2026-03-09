@@ -408,6 +408,23 @@ const serviceImageNames = [
   imageNames.integration
 ];
 
+const certificateImageNames = [
+  "photo_1_2026-03-10_02-39-54.jpg",
+  "photo_2_2026-03-10_02-39-54.jpg",
+  "photo_3_2026-03-10_02-39-54.jpg",
+  "photo_4_2026-03-10_02-39-54.jpg",
+  "photo_5_2026-03-10_02-39-54.jpg",
+  "photo_6_2026-03-10_02-39-54.jpg",
+  "photo_7_2026-03-10_02-39-54.jpg",
+  "photo_8_2026-03-10_02-39-54.jpg",
+  "photo_9_2026-03-10_02-39-54.jpg",
+  "photo_10_2026-03-10_02-39-54.jpg",
+  "photo_11_2026-03-10_02-39-54.jpg",
+  "photo_12_2026-03-10_02-39-54.jpg",
+  "photo_13_2026-03-10_02-39-54.jpg",
+  "photo_14_2026-03-10_02-39-54.jpg"
+];
+
 const clinicInfo = {
   phone: "+994 55 477 02 66",
   address: "Aşıq Molla Cümə 3, Baku 1075, Azerbaijan",
@@ -648,7 +665,6 @@ function renderAbout(t) {
   setText("education-title", d.educationTitle);
   setText("experience-title", d.experienceTitle);
   setText("certs-title", d.certsTitle);
-  setText("certs-intro", d.certsIntro);
   setText("transform-title", t.home.transformTitle);
   setText("transform-text", t.home.transformText);
   setText("transform-cta", t.home.transformCta);
@@ -663,7 +679,11 @@ function renderAbout(t) {
 
   const certNode = el("cert-grid");
   if (certNode) {
-    certNode.innerHTML = (d.certs || []).map((c) => `<article class="cert-card"><span>${c.y}</span><p>${c.t}</p></article>`).join("");
+    certNode.innerHTML = certificateImageNames.map((name, index) => `
+      <article class="cert-card">
+        <img class="cert-image" src="${imgPath(`certificates/${name}`)}" alt="Certificate ${index + 1}" loading="lazy" />
+      </article>
+    `).join("");
   }
 }
 

@@ -430,23 +430,17 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
 .about-page .cert-card {
   min-height: 185px;
   border-radius: 16px;
-  background: var(--primary-grad);
+  background: #fff;
   border: 1px solid #dfe6fb;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: 0;
+  overflow: hidden;
 }
-.about-page .cert-card span {
-  color: #6b76ae;
-  font-size: 0.74rem;
-  font-weight: 700;
-}
-.about-page .cert-card p {
-  margin-top: 0.3rem;
-  color: #6571ac;
-  font-size: 0.74rem;
-  line-height: 1.45;
+.about-page .cert-image {
+  width: 100%;
+  height: 100%;
+  min-height: 185px;
+  display: block;
+  object-fit: cover;
 }
 
 .two-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
