@@ -145,7 +145,6 @@
       integrationMore: "Learn more",
       integrationCta: "Book Appointment",
       whatTitle: "What is BAC therapy?",
-      whatSubtitle: "Bio-acoustic correction therapy",
       whatText: "The Bioacoustic Correction (BAC) method was developed by leading neurophysiologists at the Pavlov Institute of Experimental Medicine. This innovative, non-invasive therapy uses real-time EEG data transformed into acoustic signals, allowing the brain to initiate self-regulation and restore its natural balance.",
       howTitle: "How BAC therapy works",
       steps: [
@@ -161,7 +160,6 @@
       title: "What is BAC Therapy?",
       intro: "The Bioacoustic Correction (BAC) method was developed by leading neurophysiologists at the Pavlov Institute of Experimental Medicine. This innovative, non-invasive therapy uses real-time EEG data transformed into acoustic signals, allowing the brain to initiate self-regulation and restore its natural balance.",
       howTitle: "How does it work?",
-      howSubtitle: "Bio Acoustic Correction Therapy",
       howText: "Bioacoustic correction helps restore the brain's normal functioning if it has been disrupted for any reason. Method of bioacustic correction is based on computerized transformation of the patient’s EEG into acoustic signals, allowing the patient to “hear his or her brain working” in real time using Sinkhro-S system (Sinkor, St. Petersburg, Russia).",
       steps: [
         { t: "Step 1", d: "Sensors are placed on the patient’s head to monitor brain activity (EEG)." },
