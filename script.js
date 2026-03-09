@@ -82,10 +82,10 @@
       title: "Mənim yolum",
       intro: "Neyropsixologiya üzrə təhsil, klinik təcrübə və davamlı peşəkar inkişaf yolu.",
       educationTitle: "Təhsil",
-      education: ["1993–1999 — Azerbaijan Medical University", "2012-2014 — N.P. Bekhterev Brain Institute, neyropsixoloji korreksiya"],
+      education: ["1993–1999 — Azərbaycan Tibb Universiteti", "2012-2014 — N.P. Bekhterev Beyin İnstitutu, neyropsixoloji korreksiya"],
       experienceTitle: "İş təcrübəsi",
-      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre", "2024-2026 — FLEKS neyropsixoloji mərkəzi"],
-      stats: [{ n: "19+", l: "İl təcrübəsi" }, { n: "7+", l: "Sertifikat" }],
+      experience: ["2006-2009 — Nigar-leben klinikası", "2009-2012 — ultraMed Dialab klinikası", "2012-2015 — Selist Danışıq mərkəzi", "2015 - 2023 — Loqos psixologiya və nitq inkişafı mərkəzi", "2023-2024 — Tolerans psixologiya və nitq inkişafı mərkəzi", "2024-2026 — FLEKS neyropsixoloji mərkəzi"],
+      stats: [{ n: "20+", l: "İl təcrübəsi" }, { n: "14", l: "Sertifikat" }],
       certsTitle: "Sertifikatlar",
       certsIntro: "Neyropsixologiya və reabilitasiya metodları üzrə peşəkar sertifikatlar.",
       certs: [
@@ -210,7 +210,7 @@
       education: ["1993–1999 — Azerbaijan Medical University", "2012-2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Experience",
       experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre", "2024-2026 — FLEKS neuropsychological center"],
-      stats: [{ n: "19+", l: "Years of experience" }, { n: "7+", l: "Certifications" }],
+      stats: [{ n: "20+", l: "Years of experience" }, { n: "14", l: "Certifications" }],
       certsTitle: "Certifications",
       certsIntro: "Professional certifications in neuropsychology and rehabilitation methods.",
       certs: [
@@ -336,8 +336,8 @@
       educationTitle: "Образование",
       education: ["1993–1999 — Азербайджанский медицинский университет", "2012-2014 — Институт мозга им. Н.П. Бехтерева, нейропсихологическая коррекция"],
       experienceTitle: "Опыт работы",
-      experience: ["2006-2009 — клиника Nigar-leben", "2009-2012 — клиника ultraMed Dialab", "2012-2015 — центр Selist Danisig", "2015 - 2023 — центр психологии и речевого развития Loqos", "2023-2024 — центр психологии и речевого развития Tolerans", "2024-2026 — FLEKS нейропсихологический центр"],
-      stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификаций" }],
+      experience: ["2006-2009 — Nigar-leben клиника", "2009-2012 — ultraMed Dialab клиника", "2012-2015 — Selist Danisig центр", "2015 - 2023 — Loqos центр психологии и речевого развития", "2023-2024 — Tolerans центр психологии и речевого развития", "2024-2026 — FLEKS нейропсихологический центр"],
+      stats: [{ n: "20+", l: "Лет опыта" }, { n: "14", l: "Сертификаций" }],
       certsTitle: "Сертификаты",
       certsIntro: "Профессиональные сертификаты по нейропсихологии и методам реабилитации.",
       certs: [
@@ -424,6 +424,11 @@ const certificateImageNames = [
   "photo_13_2026-03-10_02-39-54.jpg",
   "photo_14_2026-03-10_02-39-54.jpg"
 ];
+
+const horizontalCertificateImageNames = new Set([
+  "photo_5_2026-03-10_02-39-54.jpg",
+  "photo_9_2026-03-10_02-39-54.jpg"
+]);
 
 const clinicInfo = {
   phone: "+994 55 477 02 66",
@@ -585,6 +590,12 @@ function renderBac(t) {
   setText("transform-text", t.home.transformText);
   setText("transform-cta", t.home.transformCta);
 
+  const diplomaNode = el("education-diploma");
+  if (diplomaNode) {
+    diplomaNode.src = imgPath("certificates/diploma.jpg");
+    diplomaNode.alt = "Diploma";
+  }
+
   const heroImage = el("bac-hero-image");
   if (heroImage) heroImage.src = imgPath(imageNames.what);
 
@@ -669,6 +680,12 @@ function renderAbout(t) {
   setText("transform-text", t.home.transformText);
   setText("transform-cta", t.home.transformCta);
 
+  const diplomaNode = el("education-diploma");
+  if (diplomaNode) {
+    diplomaNode.src = imgPath("certificates/diploma.jpg");
+    diplomaNode.alt = "Diploma";
+  }
+
   fillTimeline("education-list", d.education);
   fillTimeline("experience-list", d.experience);
 
@@ -681,7 +698,7 @@ function renderAbout(t) {
   if (certNode) {
     certNode.innerHTML = certificateImageNames.map((name, index) => `
       <article class="cert-card">
-        <img class="cert-image" src="${imgPath(`certificates/${name}`)}" alt="Certificate ${index + 1}" loading="lazy" />
+        <img class="cert-image ${horizontalCertificateImageNames.has(name) ? "cert-image-contain" : ""}" src="${imgPath(`certificates/${name}`)}" alt="Certificate ${index + 1}" loading="lazy" />
       </article>
     `).join("");
   }
