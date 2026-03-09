@@ -1,7 +1,7 @@
 ﻿const site = {
   az: {
     nav: { home: "Ana s\u0259hif\u0259", bac: "BAK terapiya", services: "Xidm\u0259tl\u0259r", about: "Haqq\u0131m\u0131zda", contact: "\u018flaq\u0259", book: "Q\u0259bul \u00fc\u00e7\u00fcn yaz\u0131l" },
-    footer: { copy: "© 2026 BAC Azerbaijan", terms: "Şərtlər", privacy: "Məxfilik", cookies: "Cookies" },
+    footer: { copy: "© 2026 Vusala Gasimova", terms: "Şərtlər", privacy: "Məxfilik", cookies: "Cookies"},
     home: {
       eyebrow: "Azərbaycanda beyin terapiyasında pioner",
       title: "Azərbaycanda beyin terapiyasında pioner\nDoktor Vüsalə Qasımova",
@@ -127,7 +127,7 @@
   },
   en: {
     nav: { home: "Home", bac: "BAC therapy", services: "Services", about: "About us", contact: "Contact", book: "Book Appointment" },
-    footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
+    footer: { copy: "© 2026 Vusala Gasimova", terms: "Terms", privacy: "Privacy", cookies: "Cookies"},
     home: {
       eyebrow: "Pioneer of brain therapy in Azerbaijan",
       title: "Azerbaijan's Pioneer in Brain Therapy\nDr. Vusala Qasimova",
@@ -253,7 +253,7 @@
   },
   ru: {
     nav: { home: "\u0413\u043b\u0430\u0432\u043d\u0430\u044f", bac: "BAC \u0442\u0435\u0440\u0430\u043f\u0438\u044f", services: "\u0423\u0441\u043b\u0443\u0433\u0438", about: "\u041e \u043d\u0430\u0441", contact: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b", book: "\u0417\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f" },
-    footer: { copy: "© 2026 BAC Azerbaijan", terms: "Terms", privacy: "Privacy", cookies: "Cookies" },
+    footer: { copy: "© 2026 Vusala Gasimova", terms: "Terms", privacy: "Privacy", cookies: "Cookies"},
     home: {
       eyebrow: "Пионер Азербайджана в области терапии мозга",
       title: "Пионер Азербайджана\nв терапии мозга\nДоктор Вусала Касимова",
@@ -444,7 +444,7 @@ function socialIcon(kind) {
   if (kind === "instagram") {
     return `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" r="1.2" fill="currentColor"></circle></svg>`;
   }
-  return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.4c0 4.4-3.8 8-8.5 8-1.1 0-2.2-.2-3.1-.6L4 20l1.3-4c-.8-1.3-1.2-2.8-1.2-4.4C4.1 7.2 8 3.6 12.6 3.6c4.7 0 8.4 3.6 8.4 7.8Z" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M9.5 9.3c.2-.5.4-.5.7-.5h.6c.2 0 .4 0 .5.3.2.4.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.4.5-.2.2-.3.3-.1.6.2.3.8 1.2 2 1.9 1.5.9 2 .9 2.3.8.3-.1 1-.8 1.1-1 .1-.2.3-.2.5-.1.2.1 1.6.8 1.9 1 .2.1.3.2.3.3 0 .1-.1.8-.4 1.3-.3.5-1.5 1-2 1-.5 0-1 0-1.7-.3-.7-.2-1.5-.6-2.6-1.3-2.1-1.3-3.5-2.9-3.9-3.6-.4-.7-.8-1.2-.8-2 0-.8.4-1.2.6-1.6Z" fill="currentColor"></path></svg>`;
+  return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.8a8.2 8.2 0 0 0-7.1 12.3L4 20l3.9-1a8.2 8.2 0 1 0 4.1-15.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9.2 8.8c.2-.3.4-.3.6-.3h.4c.2 0 .3 0 .4.2.1.3.6 1.4.7 1.5.1.2.1.3 0 .4l-.3.4c-.1.1-.2.2-.1.4.2.3.7 1 1.5 1.5.9.6 1.3.7 1.5.6.2-.1.6-.6.7-.8.1-.2.2-.2.4-.1.2.1 1.3.6 1.5.7.2.1.3.2.3.2 0 .3-.1.8-.4 1.1-.3.4-.8.6-1.1.6-.3 0-.7.1-2-.5-1.3-.6-2.8-2-3.3-2.9-.5-.9-.5-1.4-.5-1.7 0-.3.2-.7.5-1Z" fill="currentColor"></path></svg>`;
 }
 
 function currentLang() { return localStorage.getItem("lang") || "ru"; }
@@ -463,7 +463,9 @@ function renderNav(t, page) {
 }
 
 function renderFooter(t) {
-  if (el("footer-copy")) el("footer-copy").textContent = t.footer.copy;
+  if (el("footer-copy")) {
+    el("footer-copy").innerHTML = `${t.footer.copy} <img src="img/logo_dev.png" alt="Developer logo" class="footer-dev-logo" />`;
+  }
   if (el("footer-links")) {
     el("footer-links").innerHTML = `
       <div class="footer-links-main">

@@ -301,7 +301,21 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
   align-items: center;
   gap: 1rem;
 }
-.footer-grid p { color: #5160a8; font-size: 0.82rem; justify-self: start; }
+.footer-grid p {
+  color: #5160a8;
+  font-size: 0.82rem;
+  justify-self: start;
+  align-self: center;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.footer-dev-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
 .footer-links { display: contents; }
 .footer-links-main {
   display: flex;
