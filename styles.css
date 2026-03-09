@@ -94,7 +94,6 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
   content: "";
   position: absolute;
   inset: auto -15% 8% -15%;
-  height: 120px;
   background: radial-gradient(circle at 15% 45%, rgba(108, 134, 255, 0.22), transparent 40%), radial-gradient(circle at 85% 55%, rgba(255, 175, 146, 0.2), transparent 42%);
   pointer-events: none;
 }
