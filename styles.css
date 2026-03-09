@@ -668,6 +668,13 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
   align-items: center;
   cursor: pointer;
 }
+.bac-page .faq-arrow {
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #8d95be;
+  transition: transform 0.2s ease;
+}
 .bac-page .faq-a {
   display: none;
   color: #8d95be;
@@ -675,6 +682,9 @@ p { color: var(--muted); line-height: 1.65; margin: 0; }
 }
 .bac-page .faq-item.open .faq-a {
   display: block;
+}
+.bac-page .faq-item.open .faq-arrow {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 760px) {

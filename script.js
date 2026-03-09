@@ -65,7 +65,8 @@
         { q: "Kimlər BAK terapiyasından çəkinməlidir?", a: "Kəskin psixi və ya somatik vəziyyətlərdə, həmçinin xüsusi tibbi əks-göstəriş olduqda terapiya yalnız həkim rəyindən sonra planlanmalıdır." },
         { q: "BAK terapiyasının üstünlükləri nələrdir?", a: "Metod qeyri-invaziv və ağrısızdır, beyin özünü tənzimləmə mexanizmlərini aktivləşdirir və kompleks reabilitasiyada əlavə dəstək verir." },
         { q: "BAK terapiyası ağrılı və ya invazivdirmi?", a: "Xeyr. Sensorlar yalnız dəri səthinə yerləşdirilir, prosedur kəsik və inyeksiya tələb etmir, adətən komfortlu keçirilir." }
-      ]
+      ],
+      askCta: "Sual ver"
     },
     services: {
       title: "Xidmətlər",
@@ -81,9 +82,9 @@
       title: "Mənim yolum",
       intro: "Neyropsixologiya üzrə təhsil, klinik təcrübə və davamlı peşəkar inkişaf yolu.",
       educationTitle: "Təhsil",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
+      education: ["1993–1999 — Azerbaijan Medical University", "2012-2014 — N.P. Bekhterev Brain Institute, neyropsixoloji korreksiya"],
       experienceTitle: "İş təcrübəsi",
-      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
+      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre", "2024-2026 — FLEKS neyropsixoloji mərkəzi"],
       stats: [{ n: "19+", l: "İl təcrübəsi" }, { n: "7+", l: "Sertifikat" }],
       certsTitle: "Sertifikatlar",
       certsIntro: "Neyropsixologiya və reabilitasiya metodları üzrə peşəkar sertifikatlar.",
@@ -91,7 +92,7 @@
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
         { y: "2022", t: "Loqos Kids development centre" },
-        { y: "2024", t: "Tolerans Kids devlopment centre" }
+        { y: "2024", t: "Tolerans Kids development centre" }
       ]
     },
     reviews: {
@@ -191,7 +192,8 @@
         { q: "Who should avoid BAC Therapy?", a: "Patients in acute medical or psychiatric states, or with specific contraindications, should undergo physician evaluation before starting therapy." },
         { q: "What are the benefits of BAC Therapy?", a: "BAC Therapy is non-invasive and painless, supports brain self-regulation, and can be integrated into broader neurorehabilitation programs." },
         { q: "Is BAC Therapy painful or invasive?", a: "No. Sensors are placed on the scalp surface only; there are no injections or surgical interventions during the procedure." }
-      ]
+      ],
+      askCta: "Ask question"
     },
     services: {
       title: "Services",
@@ -207,9 +209,9 @@
       title: "My journey",
       intro: "Education, clinical practice, and continuous professional growth in neuropsychology.",
       educationTitle: "Education",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
+      education: ["1993–1999 — Azerbaijan Medical University", "2012-2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
       experienceTitle: "Experience",
-      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
+      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre", "2024-2026 — FLEKS neuropsychological center"],
       stats: [{ n: "19+", l: "Years of experience" }, { n: "7+", l: "Certifications" }],
       certsTitle: "Certifications",
       certsIntro: "Professional certifications in neuropsychology and rehabilitation methods.",
@@ -217,7 +219,7 @@
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
         { y: "2022", t: "Loqos Kids development centre" },
-        { y: "2024", t: "Tolerans Kids devlopment centre" }
+        { y: "2024", t: "Tolerans Kids development centre" }
       ]
     },
     reviews: {
@@ -253,14 +255,14 @@
   },
   ru: {
     nav: { home: "\u0413\u043b\u0430\u0432\u043d\u0430\u044f", bac: "БАК \u0442\u0435\u0440\u0430\u043f\u0438\u044f", services: "\u0423\u0441\u043b\u0443\u0433\u0438", about: "\u041e \u043d\u0430\u0441", contact: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b", book: "\u0417\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f" },
-    footer: { copy: "© 2026 Vusala Gasimova", terms: "Terms", privacy: "Privacy", cookies: "Cookies"},
+    footer: { copy: "© 2026 Vusala Gasimova", terms: "Условия", privacy: "Конфиденциальность", cookies: "Cookies"},
     home: {
       eyebrow: "Пионер Азербайджана в области терапии мозга",
       title: "Пионер Азербайджана\nв терапии мозга\nДоктор Вусала Касимова",
       subtitle: "Создание симбиотических отношений между нейропсихологией и передовыми технологиями",
       text: "Пионер нейропсихологии в Азербайджане доктор Вусала Касимова первой в стране внедрила передовую БАК-терапию, которая стимулирует нейроны мозга и способствует улучшению когнитивных функций.",
-      cta: "Book Appointment",
-      more: "Learn more",
+      cta: "Записаться",
+      more: "Подробнее",
       approachTitle: "Мой подход",
       approachText: "Создание симбиотических отношений между нейропсихологией и передовыми технологиями",
       approachDetailTitle: "Нейропсихология и передовые технологии",
@@ -268,7 +270,7 @@
       integrationTitle: "Интеграция БАК-терапии в нейропсихологию в Азербайджане",
       integrationText: "Одним из ключевых достижений, которые я внедряю в нейропсихологию Азербайджана, является биоакустическая коррекция мозга (БАК-терапия). Этот инновационный и неинвазивный метод объединяет науку и практическую помощь, давая надежду и ощутимые результаты пациентам с неврологическими и психологическими трудностями. Внедряя БАК-терапию в свою практику, я стремлюсь сделать современные нейропсихологические решения более доступными и открывать путь к лучшим результатам и более качественной жизни.",
       integrationMore: "Подробнее",
-      integrationCta: "Book Appointment",
+      integrationCta: "Записаться",
       whatTitle: "Что Такое БАК-Терапия",
       whatSubtitle: "Биоакустическая коррекционная терапия",
       whatText: "Метод биоакустической коррекции (БАК) был разработан ведущими нейрофизиологами Института экспериментальной медицины имени Павлова. Эта инновационная неинвазивная терапия использует данные ЭЭГ в реальном времени, преобразуя их в акустические сигналы, что помогает мозгу запускать механизмы саморегуляции и восстанавливать естественный баланс.",
@@ -280,13 +282,13 @@
       ],
       transformTitle: "Преобразуйте Свою Жизнь Сегодня",
       transformText: "Проконсультируйтесь с нашими сертифицированными специалистами, чтобы определить, подходит ли БАК-терапия вам или вашему ребёнку.",
-      transformCta: "Book Appointment"
+      transformCta: "Записаться"
     },
     bac: {
       title: "Что такое БАК-терапия?",
       intro: "Метод биоакустической коррекции (БАК) был разработан ведущими нейрофизиологами Института экспериментальной медицины имени Павлова. Эта инновационная неинвазивная терапия использует данные ЭЭГ в реальном времени, преобразуя их в акустические сигналы, что помогает мозгу запускать механизмы саморегуляции и восстанавливать естественный баланс.",
       howTitle: "Как это работает?",
-      howSubtitle: "Терапия биоакустической коррекции",
+      howSubtitle: "",
       howText: "Биоакустическая коррекция помогает восстановить нормальное функционирование мозга, если оно было нарушено по любой причине. Метод основан на компьютерном преобразовании ЭЭГ пациента в акустические сигналы, что позволяет пациенту в реальном времени “слышать работу своего мозга” с использованием системы Sinkhro-S (Sinkor, Санкт-Петербург, Россия).",
       steps: [
         { t: "Шаг 1", d: "Датчики размещаются на голове пациента для мониторинга активности мозга (ЭЭГ)." },
@@ -317,7 +319,8 @@
         { q: "Кому следует избегать БАК-терапии?", a: "При острых медицинских или психических состояниях, а также при специфических противопоказаниях, решение принимается только после консультации врача." },
         { q: "Каковы преимущества БАК-терапии?", a: "Метод безболезненный и неинвазивный, поддерживает механизмы саморегуляции мозга и хорошо дополняет комплексные программы нейрореабилитации." },
         { q: "БАК-терапия болезненна или инвазивна?", a: "Нет. Датчики устанавливаются поверхностно на кожу головы, процедура не требует инъекций и хирургического вмешательства." }
-      ]
+      ],
+      askCta: "Задать вопрос"
     },
     services: {
       title: "Услуги",
@@ -333,9 +336,9 @@
       title: "Мой путь",
       intro: "Образование, клиническая практика и постоянное профессиональное развитие в нейропсихологии.",
       educationTitle: "Образование",
-      education: ["1993–1999 — Azerbaijan Medical University", "2014 — N.P. Bekhterev Brain Institute, Neuropsychological Correction"],
+      education: ["1993–1999 — Азербайджанский медицинский университет", "2012-2014 — Институт мозга им. Н.П. Бехтерева, нейропсихологическая коррекция"],
       experienceTitle: "Опыт работы",
-      experience: ["2006-2009 — Nigar-leben Clinic", "2009-2012 — ultraMed Dialab clinic", "2012-2015 — Selist Danisig centre", "2015 - 2023 — Loqos psychology and speech development centre", "2023-2024 — Tolerans psychology and speech development centre"],
+      experience: ["2006-2009 — клиника Nigar-leben", "2009-2012 — клиника ultraMed Dialab", "2012-2015 — центр Selist Danisig", "2015 - 2023 — центр психологии и речевого развития Loqos", "2023-2024 — центр психологии и речевого развития Tolerans", "2024-2026 — FLEKS нейропсихологический центр"],
       stats: [{ n: "19+", l: "Лет опыта" }, { n: "7+", l: "Сертификаций" }],
       certsTitle: "Сертификаты",
       certsIntro: "Профессиональные сертификаты по нейропсихологии и методам реабилитации.",
@@ -343,7 +346,7 @@
         { y: "2014", t: "Renesans centre of psychology" },
         { y: "2017", t: "Narinj medical centre" },
         { y: "2022", t: "Loqos Kids development centre" },
-        { y: "2024", t: "Tolerans Kids devlopment centre" }
+        { y: "2024", t: "Tolerans Kids development centre" }
       ]
     },
     reviews: {
@@ -392,6 +395,7 @@ const imageNames = {
   approach: "нейропсихология и передовые технологии.png",
   integration: "Интеграция BAC-терапии в нейропсихологию в Азербайджане.png",
   what: "Что такое ВАС-терапия.png",
+  psychocorrection: "psychocorrection.jpg",
   steps: [
     "Датчики размещаются на голове пациента для мониторинга активности мозга (ЭЭГ)..png",
     "Эти данные преобразуются в акустические волны - уникальную музыку мозга..png",
@@ -402,7 +406,7 @@ const imageNames = {
 const serviceImageNames = [
   imageNames.approach,
   imageNames.what,
-  imageNames.what,
+  imageNames.psychocorrection,
   imageNames.integration
 ];
 
@@ -447,7 +451,7 @@ function socialIcon(kind) {
   return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.8a8.2 8.2 0 0 0-7.1 12.3L4 20l3.9-1a8.2 8.2 0 1 0 4.1-15.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9.2 8.8c.2-.3.4-.3.6-.3h.4c.2 0 .3 0 .4.2.1.3.6 1.4.7 1.5.1.2.1.3 0 .4l-.3.4c-.1.1-.2.2-.1.4.2.3.7 1 1.5 1.5.9.6 1.3.7 1.5.6.2-.1.6-.6.7-.8.1-.2.2-.2.4-.1.2.1 1.3.6 1.5.7.2.1.3.2.3.2 0 .3-.1.8-.4 1.1-.3.4-.8.6-1.1.6-.3 0-.7.1-2-.5-1.3-.6-2.8-2-3.3-2.9-.5-.9-.5-1.4-.5-1.7 0-.3.2-.7.5-1Z" fill="currentColor"></path></svg>`;
 }
 
-function currentLang() { return localStorage.getItem("lang") || "ru"; }
+function currentLang() { return localStorage.getItem("lang") || "az"; }
 function setLang(lang) { localStorage.setItem("lang", lang); render(); }
 function el(id) { return document.getElementById(id); }
 function imgPath(name) { return encodeURI(`img/${name}`); }
@@ -522,6 +526,7 @@ function renderHome(t) {
   setText("what-subtitle", d.whatSubtitle);
   setText("what-text", d.whatText);
   setText("how-title", d.howTitle);
+  setText("how-more", d.more);
 
   const stepsNode = el("how-steps");
   if (stepsNode) {
@@ -555,12 +560,12 @@ function renderBac(t) {
   setText("bac-intro", d.intro);
   setText("bac-book", t.nav.book || t.home.cta);
   setText("bac-how-title", d.howTitle);
-  setText("bac-how-subtitle", d.howSubtitle || t.home.whatSubtitle);
   setText("bac-how-text", d.howText);
   setText("bac-who-title", d.whoTitle);
   setText("bac-children-title", d.childrenTitle);
   setText("bac-adults-title", d.adultsTitle);
   setText("faq-title", d.faqTitle);
+  setText("faq-ask", d.askCta || t.nav.book || t.home.cta);
   setText("transform-title", t.home.transformTitle);
   setText("transform-text", t.home.transformText);
   setText("transform-cta", t.home.transformCta);
@@ -579,8 +584,8 @@ function renderBac(t) {
   const faqNode = el("faq-list");
   if (faqNode) {
     faqNode.innerHTML = d.faq.map((f, i) => `
-      <div class="faq-item ${i === 2 ? "open" : ""}">
-        <button class="faq-q" type="button">${f.q}<span>${i === 2 ? "?" : "?"}</span></button>
+      <div class="faq-item">
+        <button class="faq-q" type="button">${f.q}<span class="faq-arrow">▾</span></button>
         <p class="faq-a">${f.a}</p>
       </div>
     `).join("");
@@ -592,13 +597,9 @@ function renderBac(t) {
         const isOpen = item.classList.contains("open");
         faqNode.querySelectorAll(".faq-item").forEach((node) => {
           node.classList.remove("open");
-          const marker = node.querySelector(".faq-q span");
-          if (marker) marker.textContent = "?";
         });
         if (!isOpen) {
           item.classList.add("open");
-          const marker = item.querySelector(".faq-q span");
-          if (marker) marker.textContent = "?";
         }
       };
     });
