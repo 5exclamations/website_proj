@@ -6,7 +6,7 @@ const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/, "
 const DOMAIN = "https://drvusalagasimova.com";
 // Increment whenever shared CSS or JS changes so GitHub Pages/browser caches
 // cannot combine a new document with stale assets after a deployment.
-const ASSET_VERSION = "20260821-2";
+const ASSET_VERSION = "20260821-3";
 const LANGS = ["az", "ru", "en", "de"];
 const PAGES = ["home", "bac", "services", "about", "contact", "terms", "privacy", "cookies"];
 
@@ -326,7 +326,7 @@ function servicesPage(lang) {
 function aboutPage(lang) {
   const d = site[lang].about;
   const timeline = (items) => `<ul class="timeline-list">${items.map((item) => { const parts = String(item).split("—"); return `<li><span class="year">${esc(parts.shift()?.trim())}</span><span>${esc(parts.join("—").trim())}</span></li>`; }).join("")}</ul>`;
-  return `<main id="main-content" class="about-page"><section class="section about-journey"><div class="container section-head"><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p></div><div class="container about-grid"><div><h2>${esc(d.experienceTitle)}</h2>${timeline(d.experience)}<h2>${esc(d.educationTitle)}</h2>${timeline(d.education)}<img class="education-diploma" src="/img/certificates/diploma.jpg" width="927" height="1280" alt="Diploma of Vüsalə Qasımova" loading="lazy"></div><aside class="stats compact">${d.stats.map((stat) => `<div class="stat"><strong class="num">${esc(stat.n)}</strong><span>${esc(stat.l)}</span></div>`).join("")}</aside></div><div class="container certs-wrap"><h2>${esc(d.certsTitle)}</h2><p>${esc(d.certsIntro || "")}</p><div class="cert-grid">${Array.from({ length: 14 }, (_, index) => `<a class="cert-card" href="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" target="_blank" rel="noopener"><img class="cert-image" src="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" width="900" height="1200" alt="Certificate ${index + 1} — Vüsalə Qasımova" loading="lazy"></a>`).join("")}</div></div></section>${cta(lang)}</main>`;
+  return `<main id="main-content" class="about-page"><section class="section about-journey"><div class="container section-head"><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p></div><div class="container about-grid"><div><h2>${esc(d.experienceTitle)}</h2>${timeline(d.experience)}<h2>${esc(d.educationTitle)}</h2>${timeline(d.education)}<a class="education-diploma-link" href="/img/certificates/diploma.jpg" target="_blank" rel="noopener"><img class="education-diploma" src="/img/certificates/diploma.jpg" width="1280" height="927" alt="Diploma of Vüsalə Qasımova" loading="lazy"></a></div><aside class="stats compact">${d.stats.map((stat) => `<div class="stat"><strong class="num">${esc(stat.n)}</strong><span>${esc(stat.l)}</span></div>`).join("")}</aside></div><div class="container certs-wrap"><h2>${esc(d.certsTitle)}</h2><p>${esc(d.certsIntro || "")}</p><div class="cert-grid">${Array.from({ length: 14 }, (_, index) => `<a class="cert-card" href="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" target="_blank" rel="noopener"><img class="cert-image" src="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" width="900" height="1200" alt="Certificate ${index + 1} — Vüsalə Qasımova" loading="lazy"></a>`).join("")}</div></div></section>${cta(lang)}</main>`;
 }
 
 function contactPage(lang) {

@@ -403,12 +403,22 @@ h1, h2 { text-wrap: balance; }
   font-size: 0.76rem;
 }
 .about-page .education-diploma {
-  margin-top: 0.9rem;
   width: 100%;
-  max-width: 520px;
+  height: auto;
   border: 1px solid #dfe6fb;
   border-radius: 14px;
   display: block;
+}
+.about-page .education-diploma-link {
+  display: block;
+  width: min(100%, 680px);
+  margin: 1rem auto 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(74, 96, 184, 0.1);
+}
+.about-page .education-diploma-link:focus-visible {
+  outline: 3px solid rgba(72, 92, 196, 0.35);
+  outline-offset: 4px;
 }
 .about-page .about-side {
   align-self: center;
