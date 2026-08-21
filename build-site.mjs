@@ -4,6 +4,9 @@ import vm from "node:vm";
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/, "$1"));
 const DOMAIN = "https://drvusalagasimova.com";
+// Increment whenever shared CSS or JS changes so GitHub Pages/browser caches
+// cannot combine a new document with stale assets after a deployment.
+const ASSET_VERSION = "20260821-2";
 const LANGS = ["az", "ru", "en", "de"];
 const PAGES = ["home", "bac", "services", "about", "contact", "terms", "privacy", "cookies"];
 
@@ -208,9 +211,9 @@ function head(lang, page) {
   <meta name="theme-color" content="#f6f8fd">
   <meta name="generator" content="Vusala static multilingual site">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}">
   <script type="application/ld+json">${schema(lang, page)}</script>
-  <script src="/client.js" defer></script>
+  <script src="/client.js?v=${ASSET_VERSION}" defer></script>
 </head>`;
 }
 
@@ -364,7 +367,7 @@ fs.writeFileSync(path.join(ROOT, "404.html"), `<!DOCTYPE html>
   <meta name="robots" content="noindex">
   <title>Səhifə tapılmadı | Vüsalə Qasımova</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}">
 </head>
 <body><main id="main-content" class="section policy-page"><article class="container card policy-card"><p class="eyebrow">404</p><h1>Səhifə tapılmadı</h1><p>Страница не найдена · Page not found · Seite nicht gefunden</p><div class="hero-actions"><a class="btn btn-primary" href="/">AZ</a><a class="btn btn-ghost" href="/ru/">RU</a><a class="btn btn-ghost" href="/en/">EN</a><a class="btn btn-ghost" href="/de/">DE</a></div></article></main></body>
 </html>\n`, "utf8");
