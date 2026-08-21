@@ -1,77 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="az">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BAC Azerbaijan | Services</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body data-page="services" class="services-page">
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="index.html"><img src="img/logo.png" alt="Vusala Gasimova" /></a>
-        <nav class="main-nav" id="main-nav"></nav>
-        <div class="nav-right">
-          <div class="lang-switch" aria-label="Language switcher">
-            <button data-lang="az">AZ</button>
-            <button data-lang="en">EN</button>
-            <button data-lang="ru">RU</button>
-          </div>
-          <a class="btn btn-primary book-appointment-trigger" href="#" id="nav-book">Book Appointment</a>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section class="section services-hero">
-        <div class="container section-head">
-          <h1 id="services-title"></h1>
-          <p id="services-intro"></p>
-        </div>
-
-        <div class="container services-grid" id="services-cards"></div>
-
-        <div class="container center-actions single">
-          <a class="btn btn-white book-appointment-trigger" href="#" id="services-book">Book Appointment</a>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="container cta-box">
-          <div>
-            <h2 id="transform-title"></h2>
-            <p id="transform-text"></p>
-          </div>
-          <a class="btn btn-white book-appointment-trigger" href="#" id="transform-cta"></a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <p id="footer-copy"></p>
-        <div class="footer-links" id="footer-links"></div>
-      </div>
-    </footer>
-
-    <div class="booking-modal" id="booking-modal" aria-hidden="true">
-      <div class="booking-backdrop" data-close-booking></div>
-      <div class="booking-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title">
-        <button class="booking-close" type="button" data-close-booking aria-label="Close">&times;</button>
-        <h3 id="booking-title">Book Appointment</h3>
-        <p id="booking-subtitle">Please leave your details and we will contact you.</p>
-        <form class="booking-form">
-          <label for="booking-name" id="booking-name-label">Your name, surname</label>
-          <input id="booking-name" type="text" />
-          <label for="booking-phone" id="booking-phone-label">Your number</label>
-          <input id="booking-phone" type="text" />
-          <label for="booking-question" id="booking-question-label">Your question</label>
-          <textarea id="booking-question" rows="4"></textarea>
-          <button type="button" class="btn btn-primary" id="booking-submit">Send message</button>
-        </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bakıda neyropsixoloq xidmətləri | Vüsalə Qasımova</title>
+  <meta name="description" content="Neyropsixoloji qiymətləndirmə, korreksiya, bioakustik korreksiya və digər dəstək üsulları barədə məlumat.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://drvusalagasimova.com/services.html">
+  <link rel="alternate" hreflang="az" href="https://drvusalagasimova.com/services.html">
+  <link rel="alternate" hreflang="ru" href="https://drvusalagasimova.com/ru/services.html">
+  <link rel="alternate" hreflang="en" href="https://drvusalagasimova.com/en/services.html">
+  <link rel="alternate" hreflang="de" href="https://drvusalagasimova.com/de/services.html">
+  <link rel="alternate" hreflang="x-default" href="https://drvusalagasimova.com/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vüsalə Qasımova">
+  <meta property="og:locale" content="az_AZ">
+  <meta property="og:title" content="Bakıda neyropsixoloq xidmətləri | Vüsalə Qasımova">
+  <meta property="og:description" content="Neyropsixoloji qiymətləndirmə, korreksiya, bioakustik korreksiya və digər dəstək üsulları barədə məlumat.">
+  <meta property="og:url" content="https://drvusalagasimova.com/services.html">
+  <meta property="og:image" content="https://drvusalagasimova.com/img/optimized/hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f8fd">
+  <meta name="generator" content="Vusala static multilingual site">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://drvusalagasimova.com/#website","url":"https://drvusalagasimova.com","name":"Vüsalə Qasımova","inLanguage":"az"},{"@type":"MedicalBusiness","@id":"https://drvusalagasimova.com/#practice","name":"Vüsalə Qasımova — Neuropsychology","url":"https://drvusalagasimova.com/","telephone":"+994554770266","image":"https://drvusalagasimova.com/img/optimized/hero.webp","address":{"@type":"PostalAddress","streetAddress":"Aşıq Molla Cümə 3","addressLocality":"Baku","postalCode":"AZ1075","addressCountry":"AZ"},"areaServed":{"@type":"City","name":"Baku"},"sameAs":["https://www.instagram.com/neyropsixoloq_qasimova_vusale"]},{"@type":"Person","@id":"https://drvusalagasimova.com/#vusala","name":"Vüsalə Qasımova","alternateName":["Vusala Gasimova","Вусала Касимова"],"jobTitle":"Neuropsychologist","worksFor":{"@id":"https://drvusalagasimova.com/#practice"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Azerbaijan Medical University"}}]}</script>
+  <script src="/client.js" defer></script>
+</head>
+<body data-static-site="true" data-lang="az" data-page="services" data-success="Müraciət göndərildi. Sizinlə tezliklə əlaqə saxlayacağıq." data-error="Müraciəti göndərmək mümkün olmadı. WhatsApp və ya telefonla əlaqə saxlayın.">
+  <a class="skip-link" href="#main-content">Əsas məzmuna keç</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/" aria-label="Vüsalə Qasımova">
+        <img src="/img/logo.png" width="210" height="39" alt="Vüsalə Qasımova">
+      </a>
+      <nav class="main-nav" aria-label="Ana səhifə">
+        <a href="/">Ana səhifə</a><a href="/bac-therapy.html">BAK terapiya</a><a href="/services.html" class="active" aria-current="page">Xidmətlər</a><a href="/about.html">Haqqımızda</a><a href="/contact.html">Əlaqə</a>
+      </nav>
+      <div class="nav-right">
+        <nav class="lang-switch" aria-label="Language">
+          <a href="/services.html" hreflang="az" lang="az" class="active" aria-current="true">AZ</a><a href="/ru/services.html" hreflang="ru" lang="ru">RU</a><a href="/en/services.html" hreflang="en" lang="en">EN</a><a href="/de/services.html" hreflang="de" lang="de">DE</a>
+        </nav>
+        <button class="btn btn-primary book-appointment-trigger" type="button">Qəbul üçün yazıl</button>
       </div>
     </div>
-
-    <script src="script.js"></script>
-  </body>
+  </header>
+<main id="main-content" class="services-page"><section class="section services-hero"><div class="container section-head"><h1>Xidmətlər</h1><p>Neyropsixoloji qiymətləndirmədən BAK terapiyası kimi innovativ üsullara qədər inkişaf, emosional və nevroloji çətinliklərin həlli üçün geniş xidmətlər təqdim edirik.</p></div><div class="container services-grid"><article class="service-card"><img class="service-photo" src="/img/optimized/approach.webp" width="572" height="440" alt="Neyropsixoloji qiymətləndirmə" loading="lazy"><div class="service-copy"><h2>Neyropsixoloji qiymətləndirmə</h2><p>Koqnitiv, emosional və davranış funksiyalarının qiymətləndirilməsi fərdi tövsiyələrin hazırlanmasına kömək edir. Qiymətləndirmə diaqnoz qoymaq səlahiyyəti olan həkimin müayinəsini əvəz etmir.</p></div></article><article class="service-card"><img class="service-photo" src="/img/optimized/bac-therapy.webp" width="1199" height="416" alt="Bioakustik beyin korreksiyası" loading="lazy"><div class="service-copy"><h2>Bioakustik beyin korreksiyası</h2><p>EEG siqnallarının real vaxtda səsə çevrildiyi qeyri-invaziv üsul. Uyğunluq, məqsədlər və məhdudiyyətlər əvvəlcədən fərdi qaydada qiymətləndirilir.</p></div></article><article class="service-card"><img class="service-photo" src="/img/optimized/psychocorrection.webp" width="1200" height="800" alt="Neyropsixoloji korreksiya" loading="lazy"><div class="service-copy"><h2>Neyropsixoloji korreksiya</h2><p>• Psixo-nitq inkişafında ləngimə<br>• Autizm spektr pozuntuları<br>• Davranış pozuntuları<br>• Diqqət çatışmazlığı və hiperaktivlik pozuntusu (DEHB)<br>• Neyrodinamik pozuntular<br>• Epilepsiya<br>• Ağır çoxsaylı inkişaf pozuntuları<br>• Daun sindromu</p></div></article><article class="service-card"><img class="service-photo" src="/img/optimized/integration.webp" width="572" height="440" alt="N.Yu. Kojuşko metodu ilə transkranial mikropolyarizasiya" loading="lazy"><div class="service-copy"><h2>N.Yu. Kojuşko metodu ilə transkranial mikropolyarizasiya</h2><p>Yalnız peşəkar qiymətləndirmədən, məqsədlərin və mümkün əks-göstərişlərin müzakirəsindən sonra nəzərdən keçirilən dəstək üsulu.</p></div></article></div></section><section class="section alt"><div class="container cta-box"><div><h2>Həyatınızı bu gün dəyişin</h2><p>BAK terapiyasının sizin və ya övladınız üçün uyğun olub-olmadığını müəyyən etmək üçün sertifikatlı mütəxəssislərimizlə konsultasiya edin.</p></div><button class="btn btn-white book-appointment-trigger" type="button">Qəbul üçün yazıl</button></div></section></main>
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Vüsalə Qasımova</strong><p>Saytdakı məlumat diaqnoz və tibbi konsultasiyanı əvəz etmir.</p></div>
+      <div class="footer-links-main">
+        <a href="/terms.html">Şərtlər</a>
+        <a href="/privacy.html">Məxfilik</a>
+        <a href="/cookies.html">Cookies</a>
+        <a href="https://www.instagram.com/neyropsixoloq_qasimova_vusale" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p>© 2026 Vusala Gasimova</p>
+    </div>
+  </footer>
+  <div class="booking-modal" id="booking-modal" hidden>
+    <div class="booking-backdrop" data-close-booking></div>
+    <section class="booking-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-title" tabindex="-1">
+      <button class="booking-close" type="button" data-close-booking aria-label="Bağla">&times;</button>
+      <h2 id="booking-title">Qəbul üçün yazıl</h2>
+      <p>Konsultasiya üçün bizimlə əlaqə saxlayın.</p>
+      <form class="form js-contact-form" data-form-type="booking" novalidate>
+    <label for="booking-name">Ad, Soyad</label>
+    <input id="booking-name" name="name" type="text" autocomplete="name" required maxlength="100">
+    <label for="booking-phone">Nömrəniz</label>
+    <input id="booking-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30">
+    <label for="booking-message">Sualınız</label>
+    <textarea id="booking-message" name="message" rows="4" required maxlength="1500"></textarea>
+    <label class="consent-row"><input id="booking-consent" name="consent" type="checkbox" required> <span>Məxfilik siyasəti ilə tanış oldum və müraciətimin emalına razıyam. <a href="/privacy.html">Məxfilik</a></span></label>
+    <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true">
+    <button type="submit" class="btn btn-primary">Göndər</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+    </section>
+  </div>
+</body>
 </html>

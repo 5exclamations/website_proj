@@ -1,0 +1,9 @@
+{
+  "name": "vusala-gasimova-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-site.mjs",
+    "check:html": "npx --yes html-validate \"*.html\" \"{ru,en,de}/*.html\""
+  }
+}

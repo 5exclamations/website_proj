@@ -377,6 +377,122 @@
       question: "Ваш вопрос",
       send: "Отправить"
     }
+  },
+  de: {
+    nav: { home: "Startseite", bac: "BAK-Therapie", services: "Leistungen", about: "Über mich", contact: "Kontakt", book: "Termin anfragen" },
+    footer: { copy: "© 2026 Vusala Gasimova", terms: "Nutzungsbedingungen", privacy: "Datenschutz", cookies: "Cookies" },
+    home: {
+      eyebrow: "Neuropsychologische Begleitung in Baku",
+      title: "Neuropsychologin in Baku\nVüsalə Qasımova",
+      subtitle: "Neuropsychologie und moderne unterstützende Verfahren",
+      text: "Vüsalə Qasımova begleitet Kinder und Erwachsene bei kognitiven, entwicklungsbezogenen und emotionalen Fragestellungen. Nach einer individuellen Einschätzung wird ein passender Unterstützungsplan besprochen.",
+      cta: "Termin anfragen",
+      more: "Mehr erfahren",
+      approachTitle: "Mein Ansatz",
+      approachText: "Eine sorgfältige neuropsychologische Einschätzung verbindet sich mit verständlicher Beratung und einem individuellen Vorgehen.",
+      approachDetailTitle: "Neuropsychologie und moderne Verfahren",
+      approachDetailText: "Jede Situation ist unterschiedlich. Deshalb stehen zunächst das persönliche Gespräch, die Vorgeschichte und die neuropsychologische Einschätzung im Mittelpunkt. Moderne Verfahren können eine umfassende Begleitung ergänzen, ersetzen aber keine ärztliche Diagnose oder notwendige medizinische Behandlung.",
+      integrationTitle: "Bioakustische Korrektur in Baku",
+      integrationText: "Die bioakustische Korrektur (BAK) ist ein nichtinvasives Verfahren, bei dem EEG-Signale in Echtzeit in akustische Signale umgewandelt werden. Ob das Verfahren im individuellen Fall sinnvoll ist, wird vor Beginn in einem persönlichen Beratungsgespräch geklärt.",
+      integrationMore: "Mehr erfahren",
+      integrationCta: "Termin anfragen",
+      whatTitle: "Was ist BAK-Therapie?",
+      whatSubtitle: "Bioakustische Korrektur",
+      whatText: "Bei der bioakustischen Korrektur werden EEG-Daten in Echtzeit in hörbare Signale umgewandelt. Das Verfahren ist nichtinvasiv. Eignung, mögliche Ziele und Grenzen werden individuell besprochen.",
+      howTitle: "So läuft eine BAK-Sitzung ab",
+      steps: [
+        { t: "Schritt 1", d: "Sensoren werden auf der Kopfhaut angebracht, um die EEG-Aktivität zu erfassen." },
+        { t: "Schritt 2", d: "Die Messdaten werden in akustische Signale umgewandelt." },
+        { t: "Schritt 3", d: "Die Patientin oder der Patient hört die Signale während der Sitzung in Echtzeit." }
+      ],
+      transformTitle: "Persönliche Beratung vereinbaren",
+      transformText: "In einem Erstgespräch klären wir Ihr Anliegen und besprechen, welche Form der neuropsychologischen Unterstützung geeignet sein kann.",
+      transformCta: "Termin anfragen"
+    },
+    bac: {
+      title: "Was ist BAK-Therapie?",
+      intro: "Die bioakustische Korrektur (BAK) ist ein nichtinvasives Verfahren, bei dem EEG-Daten in Echtzeit in akustische Signale umgewandelt werden. Vor Beginn werden Ziele, Grenzen und mögliche Kontraindikationen individuell besprochen.",
+      howTitle: "Wie funktioniert das Verfahren?",
+      howSubtitle: "Bioakustische Korrektur",
+      howText: "Sensoren erfassen die elektrische Aktivität des Gehirns. Ein Computersystem wandelt die EEG-Daten in hörbare Signale um, die während der Sitzung wiedergegeben werden. Das Verfahren kann Bestandteil eines umfassenderen Unterstützungs- oder Rehabilitationsplans sein.",
+      steps: [
+        { t: "Schritt 1", d: "Sensoren werden auf der Kopfhaut angebracht, um die EEG-Aktivität zu erfassen." },
+        { t: "Schritt 2", d: "Die Messdaten werden in akustische Signale umgewandelt." },
+        { t: "Schritt 3", d: "Die Patientin oder der Patient hört die Signale während der Sitzung in Echtzeit." }
+      ],
+      whoTitle: "Für wen kann eine Beratung sinnvoll sein?",
+      childrenTitle: "Kinder und Jugendliche",
+      children: [
+        "Entwicklungs- und Sprachverzögerungen",
+        "Aufmerksamkeits- und Lernschwierigkeiten",
+        "Verhaltensbezogene Fragestellungen",
+        "Neuropsychologische Begleitung bei neurologischen Erkrankungen",
+        "Unterstützung im Rahmen einer abgestimmten Rehabilitation"
+      ],
+      adultsTitle: "Erwachsene",
+      adults: [
+        "Anhaltende Belastung und Erschöpfung",
+        "Aufmerksamkeits- und Gedächtnisprobleme",
+        "Schlafbezogene Beschwerden",
+        "Neuropsychologische Begleitung nach neurologischen Ereignissen"
+      ],
+      faqTitle: "Häufige Fragen",
+      faq: [
+        { q: "Gibt es eine Erfolgsgarantie?", a: "Nein. Ergebnisse sind individuell und hängen unter anderem von Ausgangssituation, Diagnose und Begleitmaßnahmen ab." },
+        { q: "Wann kann eine Veränderung bemerkbar sein?", a: "Der Verlauf ist individuell. Eine fachliche Einschätzung erfolgt während und nach dem vereinbarten Behandlungs- oder Unterstützungsplan." },
+        { q: "Wie viele Sitzungen sind erforderlich?", a: "Die Anzahl wird erst nach einem Erstgespräch und der individuellen Einschätzung empfohlen." },
+        { q: "Gibt es Kontraindikationen?", a: "Bei akuten medizinischen oder psychiatrischen Zuständen sowie möglichen Kontraindikationen ist vorab eine ärztliche Abklärung erforderlich." },
+        { q: "Ist die Sitzung schmerzhaft?", a: "Die Sensoren werden nur auf der Kopfhaut angebracht. Es erfolgen keine Injektionen oder chirurgischen Eingriffe." },
+        { q: "Ersetzt BAK eine medizinische Behandlung?", a: "Nein. Das Verfahren ersetzt keine notwendige ärztliche Diagnostik oder Behandlung." }
+      ],
+      askCta: "Frage stellen"
+    },
+    services: {
+      title: "Neuropsychologische Leistungen in Baku",
+      intro: "Die Leistungen richten sich an Kinder, Jugendliche und Erwachsene. Welche Unterstützung geeignet ist, wird nach einem persönlichen Gespräch und einer individuellen Einschätzung festgelegt.",
+      cards: [
+        { t: "Neuropsychologische Einschätzung", d: "Erfassung kognitiver, emotionaler und verhaltensbezogener Funktionen als Grundlage für weitere Empfehlungen." },
+        { t: "Bioakustische Korrektur", d: "Nichtinvasives Verfahren, bei dem EEG-Signale in Echtzeit in akustische Signale umgewandelt werden. Die Eignung wird individuell geprüft." },
+        { t: "Neuropsychologische Förderung", d: "Individuell geplante Übungen und Begleitung bei Entwicklungs-, Aufmerksamkeits-, Lern- und Verhaltensfragen." },
+        { t: "Transkranielle Mikropolarisation", d: "Ein unterstützendes Verfahren, das nur nach fachlicher Einschätzung und unter Berücksichtigung möglicher Kontraindikationen eingesetzt wird." }
+      ]
+    },
+    about: {
+      title: "Über Vüsalə Qasımova",
+      intro: "Ausbildung, berufliche Erfahrung und kontinuierliche Fortbildung im Bereich Neuropsychologie.",
+      educationTitle: "Ausbildung",
+      education: ["1993–1999 — Aserbaidschanische Medizinische Universität", "2012–2014 — N.-P.-Bechterew-Institut für Hirnforschung, neuropsychologische Korrektur"],
+      experienceTitle: "Berufserfahrung",
+      experience: ["2006–2009 — Klinik Nigar-leben", "2009–2012 — Klinik ultraMed Dialab", "2012–2015 — Zentrum Selist Danışıq", "2015–2023 — Zentrum Loqos für Psychologie und Sprachentwicklung", "2023–2024 — Zentrum Tolerans für Psychologie und Sprachentwicklung", "2024–2026 — Neuropsychologisches Zentrum FLEKS"],
+      stats: [{ n: "20+", l: "Jahre Erfahrung" }, { n: "14", l: "Zertifikate" }],
+      certsTitle: "Zertifikate",
+      certsIntro: "Fortbildungen und Zertifikate in Neuropsychologie und Rehabilitation.",
+      certs: []
+    },
+    reviews: {
+      formTitle: "Erfahrung mitteilen",
+      name: "Vor- und Nachname",
+      number: "Telefonnummer",
+      review: "Ihre Nachricht",
+      submit: "Zur Prüfung senden",
+      thanks: "Vielen Dank. Ihre Nachricht wurde zur Prüfung übermittelt.",
+      items: []
+    },
+    contact: {
+      title: "Kontakt und Terminvereinbarung",
+      intro: "Kontaktieren Sie uns für ein Erstgespräch in Baku.",
+      phone: "Telefon:",
+      address: "Adresse:",
+      locationTitle: "Standort auf der Karte",
+      openMap: "In Google Maps öffnen",
+      instagram: "Instagram",
+      whatsapp: "WhatsApp",
+      note: "Unser Team beantwortet allgemeine Fragen und unterstützt bei der Terminplanung. Eine individuelle medizinische Einschätzung erfolgt ausschließlich im persönlichen Fachgespräch.",
+      name: "Vor- und Nachname",
+      number: "Telefonnummer",
+      question: "Kurze Frage ohne sensible Gesundheitsdaten",
+      send: "Anfrage senden"
+    }
   }
 };
 
@@ -830,6 +946,7 @@ function renderReviews(t) {
 }
 
 function render() {
+  if (document.body.dataset.staticSite === "true") return;
   const lang = currentLang();
   const t = site[lang] || site.ru;
   document.documentElement.lang = lang;
@@ -949,3 +1066,96 @@ function bindBookingModal(t) {
 }
 
 render();
+
+function initializeStaticSite() {
+  if (document.body.dataset.staticSite !== "true") return;
+
+  const modal = document.getElementById("booking-modal");
+  const dialog = modal?.querySelector(".booking-dialog");
+  let lastFocused = null;
+
+  const openModal = () => {
+    if (!modal || !dialog) return;
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    dialog.focus();
+  };
+
+  const closeModal = () => {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocused instanceof HTMLElement) lastFocused.focus();
+  };
+
+  document.querySelectorAll(".book-appointment-trigger").forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+  modal?.querySelectorAll("[data-close-booking]").forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeModal();
+    if (event.key !== "Tab" || !modal || modal.hidden || !dialog) return;
+    const focusable = [...dialog.querySelectorAll('button, a[href], input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.querySelectorAll(".faq-q").forEach((button) => {
+    button.addEventListener("click", () => {
+      const answer = document.getElementById(button.getAttribute("aria-controls"));
+      if (!answer) return;
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      answer.hidden = expanded;
+    });
+  });
+
+  document.querySelectorAll(".js-contact-form").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const status = form.querySelector(".form-status");
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      if (data.get("botcheck")) return;
+      if (status) status.textContent = "";
+      if (submitButton) submitButton.disabled = true;
+
+      const ok = await submitToWeb3Forms({
+        subject: `${form.dataset.formType || "Website"} | ${document.documentElement.lang.toUpperCase()}`,
+        from_name: String(data.get("name") || ""),
+        name: String(data.get("name") || ""),
+        phone: String(data.get("phone") || ""),
+        message: String(data.get("message") || ""),
+        consent: "yes",
+        form_type: form.dataset.formType || "website",
+        source_page: window.location.pathname
+      });
+
+      if (submitButton) submitButton.disabled = false;
+      if (status) {
+        status.textContent = ok ? document.body.dataset.success : document.body.dataset.error;
+        status.classList.toggle("error", !ok);
+      }
+      if (ok) form.reset();
+    });
+  });
+}
+
+initializeStaticSite();
