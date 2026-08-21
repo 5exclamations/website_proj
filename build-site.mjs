@@ -1,14 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { articles, articleSources, articleUi } from "./articles.mjs";
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/, "$1"));
 const DOMAIN = "https://drvusalagasimova.com";
 // Increment whenever shared CSS or JS changes so GitHub Pages/browser caches
 // cannot combine a new document with stale assets after a deployment.
-const ASSET_VERSION = "20260821-3";
+const ASSET_VERSION = "20260821-4";
 const LANGS = ["az", "ru", "en", "de"];
-const PAGES = ["home", "bac", "services", "about", "contact", "terms", "privacy", "cookies"];
+const PAGES = ["home", "bac", "services", "about", "articles", "contact", "terms", "privacy", "cookies"];
 
 const source = fs.readFileSync(path.join(ROOT, "script.js"), "utf8");
 const contentSource = source.slice(source.indexOf("const site ="), source.indexOf("const links ="));
@@ -76,6 +77,7 @@ const pageFile = {
   bac: "bac-therapy.html",
   services: "services.html",
   about: "about.html",
+  articles: "articles.html",
   contact: "contact.html",
   terms: "terms.html",
   privacy: "privacy.html",
@@ -88,6 +90,7 @@ const seo = {
     bac: ["Bakıda BAK terapiyası | Bioakustik korreksiya", "Bakıda bioakustik korreksiya: prosedurun gedişi, kimlər üçün uyğun ola biləcəyi, məhdudiyyətlər və konsultasiya məlumatları."],
     services: ["Bakıda neyropsixoloq xidmətləri | Vüsalə Qasımova", "Neyropsixoloji qiymətləndirmə, korreksiya, bioakustik korreksiya və digər dəstək üsulları barədə məlumat."],
     about: ["Neyropsixoloq Vüsalə Qasımova | Təhsil və təcrübə", "Vüsalə Qasımovanın təhsili, 20 ildən artıq iş təcrübəsi, peşəkar inkişafı və sertifikatları."],
+    articles: ["Neyropsixologiya haqqında faydalı materiallar | Vüsalə Qasımova", "Uşaqlar və böyüklər üçün neyropsixoloji qiymətləndirmə, diqqət, inkişaf və BAK barədə mənbələrə əsaslanan materiallar."],
     contact: ["Neyropsixoloq qəbulu Bakıda | Əlaqə və ünvan", "Vüsalə Qasımovanın Bakıdakı qəbuluna yazılın. Telefon, WhatsApp, ünvan və Google Maps məlumatları."],
     terms: ["İstifadə şərtləri | Vüsalə Qasımova", "drvusalagasimova.com saytının istifadə şərtləri və tibbi məlumatlarla bağlı vacib qeydlər."],
     privacy: ["Məxfilik siyasəti | Vüsalə Qasımova", "Saytda ad, telefon və müraciət məlumatlarının necə emal edildiyini izah edən məxfilik siyasəti."],
@@ -98,6 +101,7 @@ const seo = {
     bac: ["БАК-терапия в Баку | Биоакустическая коррекция", "Как проходит биоакустическая коррекция в Баку, кому она может подойти, ограничения, противопоказания и запись на консультацию."],
     services: ["Услуги нейропсихолога в Баку | Вусала Касимова", "Нейропсихологическая диагностика и коррекция, БАК-терапия и поддерживающие методы для детей и взрослых."],
     about: ["Нейропсихолог Вусала Касимова | Образование и опыт", "Образование, более 20 лет профессионального опыта, повышение квалификации и сертификаты Вусалы Касимовой."],
+    articles: ["Полезные материалы о нейропсихологии | Вусала Касимова", "Материалы для родителей и взрослых о нейропсихологической диагностике, внимании, развитии и БАК-терапии."],
     contact: ["Запись к нейропсихологу в Баку | Контакты и адрес", "Запишитесь к Вусале Касимовой в Баку. Телефон, WhatsApp, адрес кабинета и маршрут в Google Maps."],
     terms: ["Условия использования | Вусала Касимова", "Условия использования сайта drvusalagasimova.com и важные ограничения медицинской информации."],
     privacy: ["Политика конфиденциальности | Вусала Касимова", "Как сайт обрабатывает имя, номер телефона и содержание обращения при записи на консультацию."],
@@ -108,6 +112,7 @@ const seo = {
     bac: ["BAC therapy in Baku | Bioacoustic correction", "Learn how bioacoustic correction sessions work, who may be suitable, important limitations and how to request a consultation in Baku."],
     services: ["Neuropsychology services in Baku | Vusala Gasimova", "Neuropsychological assessment and support, bioacoustic correction and related services for children and adults in Baku."],
     about: ["Neuropsychologist Vusala Gasimova | Education and experience", "Education, more than 20 years of professional experience, continuing development and certificates of Vusala Gasimova."],
+    articles: ["Practical neuropsychology resources | Vusala Gasimova", "Source-based guidance for parents and adults on neuropsychological assessment, attention, development and bioacoustic correction."],
     contact: ["Book a neuropsychologist in Baku | Contact and location", "Request an appointment with Vusala Gasimova in Baku. Phone, WhatsApp, clinic address and Google Maps directions."],
     terms: ["Terms of use | Vusala Gasimova", "Terms for using drvusalagasimova.com and important limitations concerning health information on the website."],
     privacy: ["Privacy policy | Vusala Gasimova", "How names, phone numbers and enquiry details are processed when visitors request a consultation."],
@@ -118,6 +123,7 @@ const seo = {
     bac: ["BAK-Therapie in Baku | Bioakustische Korrektur", "Ablauf der bioakustischen Korrektur, mögliche Eignung, wichtige Grenzen und Terminvereinbarung in Baku."],
     services: ["Neuropsychologische Leistungen in Baku | Vüsalə Qasımova", "Neuropsychologische Einschätzung und Förderung, bioakustische Korrektur und unterstützende Verfahren in Baku."],
     about: ["Neuropsychologin Vüsalə Qasımova | Ausbildung und Erfahrung", "Ausbildung, mehr als 20 Jahre Berufserfahrung, Fortbildungen und Zertifikate von Vüsalə Qasımova."],
+    articles: ["Ratgeber zur Neuropsychologie | Vüsalə Qasımova", "Quellenbasierte Informationen für Eltern und Erwachsene zu Diagnostik, Aufmerksamkeit, Entwicklung und bioakustischer Korrektur."],
     contact: ["Termin bei einer Neuropsychologin in Baku | Kontakt", "Termin bei Vüsalə Qasımova in Baku anfragen. Telefon, WhatsApp, Praxisadresse und Google-Maps-Route."],
     terms: ["Nutzungsbedingungen | Vüsalə Qasımova", "Nutzungsbedingungen für drvusalagasimova.com und wichtige Hinweise zu Gesundheitsinformationen."],
     privacy: ["Datenschutzerklärung | Vüsalə Qasımova", "Informationen zur Verarbeitung von Name, Telefonnummer und Anfrage bei der Terminvereinbarung."],
@@ -155,6 +161,13 @@ const common = {
   de: { skip: "Zum Inhalt springen", trust: "Individuelles Vorgehen und verständliche Kommunikation", experience: "Mehr als 20 Jahre Erfahrung", location: "Baku, Aserbaidschan", consult: "Erstgespräch", info: "Die Informationen ersetzen keine Diagnostik oder ärztliche Beratung.", consent: "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung dieser Anfrage zu.", status: "Ihre Anfrage wurde gesendet. Wir melden uns in Kürze.", error: "Die Anfrage konnte nicht gesendet werden. Kontaktieren Sie uns per WhatsApp oder Telefon.", close: "Schließen" }
 };
 
+const contactInfo = {
+  az: { hoursLabel: "İş saatları:", hours: "Bazar ertəsi–cümə, 09:00–18:00", landmarkLabel: "Yaxın metro:", landmark: "Nəriman Nərimanov", accessLabel: "Giriş:", access: "Binada lift var", whatsapp: "Salam! Vüsalə Qasımovanın konsultasiyasına yazılmaq istəyirəm." },
+  ru: { hoursLabel: "Часы работы:", hours: "Будни, 09:00–18:00", landmarkLabel: "Ближайшее метро:", landmark: "Нариман Нариманов", accessLabel: "Доступность:", access: "В здании есть лифт", whatsapp: "Здравствуйте! Хочу записаться на консультацию к Вусале Касимовой." },
+  en: { hoursLabel: "Opening hours:", hours: "Monday–Friday, 09:00–18:00", landmarkLabel: "Nearest metro:", landmark: "Nariman Narimanov", accessLabel: "Accessibility:", access: "The building has a lift", whatsapp: "Hello! I would like to request a consultation with Vusala Gasimova." },
+  de: { hoursLabel: "Sprechzeiten:", hours: "Montag–Freitag, 09:00–18:00", landmarkLabel: "Nächste Metro:", landmark: "Nariman Narimanov", accessLabel: "Barrierearmer Zugang:", access: "Im Gebäude gibt es einen Aufzug", whatsapp: "Guten Tag! Ich möchte ein Erstgespräch bei Vüsalə Qasımova anfragen." }
+};
+
 const images = {
   hero: ["optimized/hero.webp", 573, 480],
   approach: ["optimized/approach.webp", 572, 440],
@@ -172,6 +185,9 @@ const esc = (value = "") => String(value).replace(/[&<>"']/g, (char) => ({ "&": 
 const urlPath = (lang, page) => lang === "az" ? (page === "home" ? "/" : `/${pageFile[page]}`) : (page === "home" ? `/${lang}/` : `/${lang}/${pageFile[page]}`);
 const fullUrl = (lang, page) => `${DOMAIN}${urlPath(lang, page)}`;
 const outputPath = (lang, page) => path.join(ROOT, ...(lang === "az" ? [] : [lang]), pageFile[page]);
+const articleUrlPath = (lang, slug) => lang === "az" ? `/articles/${slug}.html` : `/${lang}/articles/${slug}.html`;
+const fullArticleUrl = (lang, slug) => `${DOMAIN}${articleUrlPath(lang, slug)}`;
+const articleOutputPath = (lang, slug) => path.join(ROOT, ...(lang === "az" ? [] : [lang]), "articles", `${slug}.html`);
 const imageUrl = (entry) => `/img/${encodeURI(entry[0])}`;
 const lines = (text) => esc(text).replace(/\n/g, "<br>");
 const list = (items, cls = "") => `<ul${cls ? ` class="${cls}"` : ""}>${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`;
@@ -179,7 +195,7 @@ const list = (items, cls = "") => `<ul${cls ? ` class="${cls}"` : ""}>${items.ma
 function schema(lang, page) {
   const graph = [
     { "@type": "WebSite", "@id": `${DOMAIN}/#website`, url: DOMAIN, name: "Vüsalə Qasımova", inLanguage: lang },
-    { "@type": "MedicalBusiness", "@id": `${DOMAIN}/#practice`, name: "Vüsalə Qasımova — Neuropsychology", url: fullUrl(lang, "home"), telephone: "+994554770266", image: `${DOMAIN}${imageUrl(images.hero)}`, address: { "@type": "PostalAddress", streetAddress: "Aşıq Molla Cümə 3", addressLocality: "Baku", postalCode: "AZ1075", addressCountry: "AZ" }, areaServed: { "@type": "City", name: "Baku" }, sameAs: ["https://www.instagram.com/neyropsixoloq_qasimova_vusale"] },
+    { "@type": "MedicalBusiness", "@id": `${DOMAIN}/#practice`, name: "Vüsalə Qasımova — Neuropsychology", url: fullUrl(lang, "home"), telephone: "+994554770266", image: `${DOMAIN}${imageUrl(images.hero)}`, address: { "@type": "PostalAddress", streetAddress: "Aşıq Molla Cümə 3", addressLocality: "Baku", postalCode: "AZ1075", addressCountry: "AZ" }, areaServed: { "@type": "City", name: "Baku" }, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" }], amenityFeature: [{ "@type": "LocationFeatureSpecification", name: "Lift", value: true }], hasMap: "https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7", sameAs: ["https://www.instagram.com/neyropsixoloq_qasimova_vusale"] },
     { "@type": "Person", "@id": `${DOMAIN}/#vusala`, name: "Vüsalə Qasımova", alternateName: ["Vusala Gasimova", "Вусала Касимова"], jobTitle: lang === "de" ? "Neuropsychologin" : "Neuropsychologist", worksFor: { "@id": `${DOMAIN}/#practice` }, alumniOf: { "@type": "CollegeOrUniversity", name: "Azerbaijan Medical University" } }
   ];
   if (page === "bac") graph.push({ "@type": "FAQPage", mainEntity: site[lang].bac.faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
@@ -217,9 +233,57 @@ function head(lang, page) {
 </head>`;
 }
 
-function header(lang, page) {
+function articleHead(lang, article) {
+  const data = article[lang];
+  const canonical = fullArticleUrl(lang, article.slug);
+  const title = data.title.length > 62 ? `${data.title.slice(0, 59).trimEnd()}…` : data.title;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    headline: data.title,
+    description: data.description,
+    url: canonical,
+    inLanguage: lang,
+    datePublished: "2026-08-21",
+    dateModified: "2026-08-21",
+    author: { "@type": "Organization", name: articleUi[lang].author },
+    about: { "@type": "MedicalSpecialty", name: "Neuropsychology" },
+    isPartOf: { "@id": `${DOMAIN}/#website` },
+    citation: articleSources(article).map((source) => source.url)
+  };
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(data.description)}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="${canonical}">
+  ${LANGS.map((code) => `<link rel="alternate" hreflang="${code}" href="${fullArticleUrl(code, article.slug)}">`).join("\n  ")}
+  <link rel="alternate" hreflang="x-default" href="${fullArticleUrl("az", article.slug)}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Vüsalə Qasımova">
+  <meta property="og:title" content="${esc(data.title)}">
+  <meta property="og:description" content="${esc(data.description)}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${DOMAIN}${imageUrl(images.hero)}">
+  <meta property="article:published_time" content="2026-08-21">
+  <meta property="article:modified_time" content="2026-08-21">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f8fd">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}">
+  <script type="application/ld+json">${JSON.stringify(articleSchema).replace(/<\//g, "<\\/")}</script>
+  <script src="/client.js?v=${ASSET_VERSION}" defer></script>
+</head>`;
+}
+
+function header(lang, page, articleSlug = "") {
   const t = site[lang];
-  const navPages = ["home", "bac", "services", "about", "contact"];
+  const navPages = ["home", "bac", "services", "about", "articles", "contact"];
+  const navLabel = (item) => item === "articles" ? articleUi[lang].nav : t.nav[item];
+  const languageUrl = (code) => articleSlug ? articleUrlPath(code, articleSlug) : urlPath(code, page);
   return `<body data-static-site="true" data-lang="${lang}" data-page="${page}" data-success="${esc(common[lang].status)}" data-error="${esc(common[lang].error)}">
   <a class="skip-link" href="#main-content">${esc(common[lang].skip)}</a>
   <header class="site-header">
@@ -228,11 +292,11 @@ function header(lang, page) {
         <img src="/img/logo.png" width="210" height="39" alt="Vüsalə Qasımova">
       </a>
       <nav class="main-nav" aria-label="${esc(t.nav.home)}">
-        ${navPages.map((item) => `<a href="${urlPath(lang, item)}"${item === page ? ' class="active" aria-current="page"' : ""}>${esc(t.nav[item])}</a>`).join("")}
+        ${navPages.map((item) => `<a href="${urlPath(lang, item)}"${item === page ? ' class="active" aria-current="page"' : ""}>${esc(navLabel(item))}</a>`).join("")}
       </nav>
       <div class="nav-right">
         <nav class="lang-switch" aria-label="Language">
-          ${LANGS.map((code) => `<a href="${urlPath(code, page)}" hreflang="${code}" lang="${code}"${code === lang ? ' class="active" aria-current="true"' : ""}>${code.toUpperCase()}</a>`).join("")}
+          ${LANGS.map((code) => `<a href="${languageUrl(code)}" hreflang="${code}" lang="${code}"${code === lang ? ' class="active" aria-current="true"' : ""}>${code.toUpperCase()}</a>`).join("")}
         </nav>
         <button class="btn btn-primary book-appointment-trigger" type="button">${esc(t.nav.book)}</button>
       </div>
@@ -246,6 +310,7 @@ function footer(lang) {
     <div class="container footer-grid">
       <div><strong>Vüsalə Qasımova</strong><p>${esc(common[lang].info)}</p></div>
       <div class="footer-links-main">
+        <a href="${urlPath(lang, "articles")}">${esc(articleUi[lang].nav)}</a>
         <a href="${urlPath(lang, "terms")}">${esc(t.footer.terms)}</a>
         <a href="${urlPath(lang, "privacy")}">${esc(t.footer.privacy)}</a>
         <a href="${urlPath(lang, "cookies")}">${esc(t.footer.cookies)}</a>
@@ -329,9 +394,23 @@ function aboutPage(lang) {
   return `<main id="main-content" class="about-page"><section class="section about-journey"><div class="container section-head"><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p></div><div class="container about-grid"><div><h2>${esc(d.experienceTitle)}</h2>${timeline(d.experience)}<h2>${esc(d.educationTitle)}</h2>${timeline(d.education)}<a class="education-diploma-link" href="/img/certificates/diploma.jpg" target="_blank" rel="noopener"><img class="education-diploma" src="/img/certificates/diploma.jpg" width="1280" height="927" alt="Diploma of Vüsalə Qasımova" loading="lazy"></a></div><aside class="stats compact">${d.stats.map((stat) => `<div class="stat"><strong class="num">${esc(stat.n)}</strong><span>${esc(stat.l)}</span></div>`).join("")}</aside></div><div class="container certs-wrap"><h2>${esc(d.certsTitle)}</h2><p>${esc(d.certsIntro || "")}</p><div class="cert-grid">${Array.from({ length: 14 }, (_, index) => `<a class="cert-card" href="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" target="_blank" rel="noopener"><img class="cert-image" src="/img/certificates/photo_${index + 1}_2026-03-10_02-39-54.jpg" width="900" height="1200" alt="Certificate ${index + 1} — Vüsalə Qasımova" loading="lazy"></a>`).join("")}</div></div></section>${cta(lang)}</main>`;
 }
 
+function articlesHubPage(lang) {
+  const ui = articleUi[lang];
+  return `<main id="main-content" class="resources-page"><section class="section resources-hero"><div class="container section-head"><p class="eyebrow">${esc(ui.nav)}</p><h1>${esc(ui.hubTitle)}</h1><p>${esc(ui.hubIntro)}</p></div><div class="container resources-grid">${articles.map((article, index) => { const data = article[lang]; return `<article class="resource-card"><span class="resource-number">${String(index + 1).padStart(2, "0")}</span><h2><a href="${articleUrlPath(lang, article.slug)}">${esc(data.title)}</a></h2><p>${esc(data.description)}</p><a class="text-link" href="${articleUrlPath(lang, article.slug)}">${esc(ui.read)} →</a></article>`; }).join("")}</div></section></main>`;
+}
+
+function articlePage(lang, article) {
+  const ui = articleUi[lang];
+  const data = article[lang];
+  const sourcesList = articleSources(article);
+  return `<main id="main-content" class="article-page"><article class="section"><header class="container article-header"><a class="article-back" href="${urlPath(lang, "articles")}">← ${esc(ui.back)}</a><p class="eyebrow">${esc(ui.nav)}</p><h1>${esc(data.title)}</h1><p class="article-lead">${esc(data.lead)}</p><dl class="article-meta"><div><dt>${esc(ui.authorLabel)}</dt><dd>${esc(ui.author)}</dd></div><div><dt>${esc(ui.updatedLabel)}</dt><dd><time datetime="2026-08-21">${esc(ui.updated)}</time></dd></div></dl></header><div class="container article-layout"><div class="article-content">${data.sections.map((section) => `<section><h2>${esc(section.h)}</h2>${(section.p || []).map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}${section.bullets?.length ? list(section.bullets, "article-list") : ""}</section>`).join("")}<div class="article-notice"><p>${esc(ui.notice)}</p></div><section class="article-sources"><h2>${esc(ui.sources)}</h2><ol>${sourcesList.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join("")}</ol></section></div><aside class="article-cta" aria-label="${esc(ui.ctaTitle)}"><h2>${esc(ui.ctaTitle)}</h2><p>${esc(ui.ctaText)}</p><button class="btn btn-primary book-appointment-trigger" type="button">${esc(ui.cta)}</button></aside></div></article></main>`;
+}
+
 function contactPage(lang) {
   const d = site[lang].contact;
-  return `<main id="main-content" class="contact-page"><section class="section"><div class="container two-cols contact-grid"><div><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p><address class="contact-details"><p><strong>${esc(d.phone)}</strong> <a href="tel:+994554770266">+994&nbsp;55&nbsp;477&nbsp;02&nbsp;66</a></p><p><strong>${esc(d.address)}</strong> Aşıq Molla Cümə 3, Baku 1075, Azerbaijan</p><p>${esc(d.note)}</p></address><div class="contact-actions"><a class="btn btn-ghost" href="https://wa.me/994554770266" target="_blank" rel="noopener">WhatsApp</a><a class="text-link" href="https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7" target="_blank" rel="noopener">${esc(d.openMap)} →</a></div><div class="map-card"><h2>${esc(d.locationTitle)}</h2><div class="map-frame"><iframe src="https://www.google.com/maps?q=A%C5%9F%C4%B1q%20Molla%20C%C3%BCm%C9%99%203,%20Baku%201075,%20Azerbaijan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="${esc(d.locationTitle)}"></iframe></div></div></div><div class="card contact-form-card"><h2>${esc(site[lang].nav.book)}</h2>${form(lang, "contact")}</div></div></section></main>`;
+  const info = contactInfo[lang];
+  const whatsappUrl = `https://wa.me/994554770266?text=${encodeURIComponent(info.whatsapp)}`;
+  return `<main id="main-content" class="contact-page"><section class="section"><div class="container two-cols contact-grid"><div><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p><address class="contact-details"><p><strong>${esc(d.phone)}</strong> <a href="tel:+994554770266">+994&nbsp;55&nbsp;477&nbsp;02&nbsp;66</a></p><p><strong>${esc(d.address)}</strong> Aşıq Molla Cümə 3, Baku 1075, Azerbaijan</p><p><strong>${esc(info.hoursLabel)}</strong> ${esc(info.hours)}</p><p><strong>${esc(info.landmarkLabel)}</strong> ${esc(info.landmark)}</p><p><strong>${esc(info.accessLabel)}</strong> ${esc(info.access)}</p><p>${esc(d.note)}</p></address><div class="contact-actions"><a class="btn btn-primary" href="${whatsappUrl}" target="_blank" rel="noopener">WhatsApp · +994 55 477 02 66</a><a class="text-link" href="https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7" target="_blank" rel="noopener">${esc(d.openMap)} →</a></div><div class="map-card"><h2>${esc(d.locationTitle)}</h2><div class="map-frame"><iframe src="https://www.google.com/maps?q=A%C5%9F%C4%B1q%20Molla%20C%C3%BCm%C9%99%203,%20Baku%201075,%20Azerbaijan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="${esc(d.locationTitle)}"></iframe></div></div></div><div class="card contact-form-card"><h2>${esc(site[lang].nav.book)}</h2>${form(lang, "contact")}</div></div></section></main>`;
 }
 
 function legalPage(lang, page) {
@@ -344,6 +423,7 @@ function pageBody(lang, page) {
   if (page === "bac") return bacPage(lang);
   if (page === "services") return servicesPage(lang);
   if (page === "about") return aboutPage(lang);
+  if (page === "articles") return articlesHubPage(lang);
   if (page === "contact") return contactPage(lang);
   return legalPage(lang, page);
 }
@@ -354,9 +434,16 @@ for (const lang of LANGS) {
     fs.mkdirSync(path.dirname(file), { recursive: true });
     fs.writeFileSync(file, `${head(lang, page)}\n${header(lang, page)}\n${pageBody(lang, page)}\n${footer(lang)}\n`, "utf8");
   }
+  for (const article of articles) {
+    const file = articleOutputPath(lang, article.slug);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, `${articleHead(lang, article)}\n${header(lang, "articles", article.slug)}\n${articlePage(lang, article)}\n${footer(lang)}\n`, "utf8");
+  }
 }
 
-const sitemapUrls = LANGS.flatMap((lang) => PAGES.map((page) => `  <url>\n    <loc>${fullUrl(lang, page)}</loc>\n    ${LANGS.map((code) => `<xhtml:link rel="alternate" hreflang="${code}" href="${fullUrl(code, page)}"/>`).join("\n    ")}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${fullUrl("az", page)}"/>\n  </url>`));
+const pageSitemapUrls = LANGS.flatMap((lang) => PAGES.map((page) => `  <url>\n    <loc>${fullUrl(lang, page)}</loc>\n    ${LANGS.map((code) => `<xhtml:link rel="alternate" hreflang="${code}" href="${fullUrl(code, page)}"/>`).join("\n    ")}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${fullUrl("az", page)}"/>\n  </url>`));
+const articleSitemapUrls = LANGS.flatMap((lang) => articles.map((article) => `  <url>\n    <loc>${fullArticleUrl(lang, article.slug)}</loc>\n    ${LANGS.map((code) => `<xhtml:link rel="alternate" hreflang="${code}" href="${fullArticleUrl(code, article.slug)}"/>`).join("\n    ")}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${fullArticleUrl("az", article.slug)}"/>\n  </url>`));
+const sitemapUrls = [...pageSitemapUrls, ...articleSitemapUrls];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapUrls.join("\n")}\n</urlset>\n`, "utf8");
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`, "utf8");
 fs.writeFileSync(path.join(ROOT, "404.html"), `<!DOCTYPE html>
@@ -372,4 +459,4 @@ fs.writeFileSync(path.join(ROOT, "404.html"), `<!DOCTYPE html>
 <body><main id="main-content" class="section policy-page"><article class="container card policy-card"><p class="eyebrow">404</p><h1>Səhifə tapılmadı</h1><p>Страница не найдена · Page not found · Seite nicht gefunden</p><div class="hero-actions"><a class="btn btn-primary" href="/">AZ</a><a class="btn btn-ghost" href="/ru/">RU</a><a class="btn btn-ghost" href="/en/">EN</a><a class="btn btn-ghost" href="/de/">DE</a></div></article></main></body>
 </html>\n`, "utf8");
 
-console.log(`Generated ${LANGS.length * PAGES.length} localized pages, 404.html, sitemap.xml and robots.txt.`);
+console.log(`Generated ${LANGS.length * (PAGES.length + articles.length)} localized pages, 404.html, sitemap.xml and robots.txt.`);
