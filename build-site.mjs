@@ -246,7 +246,15 @@ function articleHead(lang, article) {
     inLanguage: lang,
     datePublished: "2026-08-21",
     dateModified: "2026-08-21",
+    lastReviewed: "2026-08-21",
     author: { "@type": "Organization", name: articleUi[lang].author },
+    reviewedBy: {
+      "@type": "Person",
+      "@id": `${DOMAIN}/#vusala`,
+      name: "Vüsalə Qasımova",
+      alternateName: ["Vusala Gasimova", "Вусала Касимова"],
+      jobTitle: lang === "az" ? "Neyropsixoloq" : lang === "ru" ? "Нейропсихолог" : lang === "de" ? "Neuropsychologin" : "Neuropsychologist"
+    },
     about: { "@type": "MedicalSpecialty", name: "Neuropsychology" },
     isPartOf: { "@id": `${DOMAIN}/#website` },
     citation: articleSources(article).map((source) => source.url)
@@ -403,7 +411,7 @@ function articlePage(lang, article) {
   const ui = articleUi[lang];
   const data = article[lang];
   const sourcesList = articleSources(article);
-  return `<main id="main-content" class="article-page"><article class="section"><header class="container article-header"><a class="article-back" href="${urlPath(lang, "articles")}">← ${esc(ui.back)}</a><p class="eyebrow">${esc(ui.nav)}</p><h1>${esc(data.title)}</h1><p class="article-lead">${esc(data.lead)}</p><dl class="article-meta"><div><dt>${esc(ui.authorLabel)}</dt><dd>${esc(ui.author)}</dd></div><div><dt>${esc(ui.updatedLabel)}</dt><dd><time datetime="2026-08-21">${esc(ui.updated)}</time></dd></div></dl></header><div class="container article-layout"><div class="article-content">${data.sections.map((section) => `<section><h2>${esc(section.h)}</h2>${(section.p || []).map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}${section.bullets?.length ? list(section.bullets, "article-list") : ""}</section>`).join("")}<div class="article-notice"><p>${esc(ui.notice)}</p></div><section class="article-sources"><h2>${esc(ui.sources)}</h2><ol>${sourcesList.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join("")}</ol></section></div><aside class="article-cta" aria-label="${esc(ui.ctaTitle)}"><h2>${esc(ui.ctaTitle)}</h2><p>${esc(ui.ctaText)}</p><button class="btn btn-primary book-appointment-trigger" type="button">${esc(ui.cta)}</button></aside></div></article></main>`;
+  return `<main id="main-content" class="article-page"><article class="section"><header class="container article-header"><a class="article-back" href="${urlPath(lang, "articles")}">← ${esc(ui.back)}</a><p class="eyebrow">${esc(ui.nav)}</p><h1>${esc(data.title)}</h1><p class="article-lead">${esc(data.lead)}</p><dl class="article-meta"><div><dt>${esc(ui.authorLabel)}</dt><dd>${esc(ui.author)}</dd></div><div><dt>${esc(ui.updatedLabel)}</dt><dd><time datetime="2026-08-21">${esc(ui.updated)}</time></dd></div><div><dt>${esc(ui.reviewedLabel)}</dt><dd>${esc(ui.reviewer)} · <time datetime="2026-08-21">${esc(ui.reviewedDate)}</time></dd></div></dl></header><div class="container article-layout"><div class="article-content">${data.sections.map((section) => `<section><h2>${esc(section.h)}</h2>${(section.p || []).map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}${section.bullets?.length ? list(section.bullets, "article-list") : ""}</section>`).join("")}<div class="article-notice"><p>${esc(ui.notice)}</p></div><section class="article-sources"><h2>${esc(ui.sources)}</h2><ol>${sourcesList.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a></li>`).join("")}</ol></section></div><aside class="article-cta" aria-label="${esc(ui.ctaTitle)}"><h2>${esc(ui.ctaTitle)}</h2><p>${esc(ui.ctaText)}</p><button class="btn btn-primary book-appointment-trigger" type="button">${esc(ui.cta)}</button></aside></div></article></main>`;
 }
 
 function contactPage(lang) {
