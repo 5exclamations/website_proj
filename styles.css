@@ -319,6 +319,16 @@ h1, h2 { text-wrap: balance; }
   align-items: center;
   gap: 0.45rem;
 }
+/* Copyright line plus the studio attribution badge. The badge keeps its
+   natural 316x24 size and wraps onto its own line rather than shrinking; only
+   below 400px does it scale, proportionally via the viewBox, never cropped. */
+.footer-copy { flex-wrap: wrap; }
+.footer-badge { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.footer-badge svg { display: block; }
+@media (max-width: 400px) {
+  .footer-badge { flex-basis: 100%; }
+  .footer-badge svg { width: 100%; height: auto; }
+}
 .footer-dev-logo {
   height: 28px;
   width: auto;
