@@ -1,15 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { fileURLToPath } from "node:url";
+import { care } from "./care-content.mjs";
 import { articles, articleSources, articleUi } from "./articles.mjs";
 
-const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/, "$1"));
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const DOMAIN = "https://drvusalagasimova.com";
 // Increment whenever shared CSS or JS changes so GitHub Pages/browser caches
 // cannot combine a new document with stale assets after a deployment.
-const ASSET_VERSION = "20260910-1";
+const ASSET_VERSION = "20260912-1";
 const LANGS = ["az", "ru", "en", "de"];
-const PAGES = ["home", "bac", "services", "about", "articles", "contact", "terms", "privacy", "cookies"];
+const PAGES = ["home", "bac", "services", "about", "articles", "contact", "terms", "privacy", "cookies", "autism", "communication", "behaviour"];
 
 const source = fs.readFileSync(path.join(ROOT, "script.js"), "utf8");
 const contentSource = source.slice(source.indexOf("const site ="), source.indexOf("const links ="));
@@ -17,62 +19,10 @@ const sandbox = {};
 vm.runInNewContext(`${contentSource}\nglobalThis.__site = site;`, sandbox);
 const site = sandbox.__site;
 
-Object.assign(site.az.home, {
-  eyebrow: "Bakıda neyropsixoloji dəstək",
-  title: "Bakıda neyropsixoloq\nVüsalə Qasımova",
-  subtitle: "Uşaqlar və böyüklər üçün fərdi yanaşma",
-  text: "Vüsalə Qasımova koqnitiv, inkişaf və emosional çətinliklərlə bağlı uşaqlar və böyüklərlə işləyir. İlkin konsultasiya və qiymətləndirmədən sonra fərdi dəstək planı müzakirə olunur.",
-  approachDetailText: "Hər pasiyentin vəziyyəti fərqlidir. İş şəxsi söhbət, anamnez və neyropsixoloji qiymətləndirmə ilə başlayır. Müasir dəstək üsulları kompleks yanaşmanı tamamlaya bilər, lakin tibbi diaqnostikanı və zəruri müalicəni əvəz etmir.",
-  integrationText: "Bioakustik korreksiya (BAK) EEG siqnallarının real vaxtda akustik siqnallara çevrildiyi qeyri-invaziv üsuldur. Metodun konkret vəziyyətdə uyğunluğu, məqsədləri və məhdudiyyətləri konsultasiya zamanı fərdi şəkildə qiymətləndirilir.",
-  whatText: "Bioakustik korreksiya zamanı EEG məlumatları real vaxtda eşidilə bilən siqnallara çevrilir. Prosedur qeyri-invazivdir. Uyğunluq, mümkün məqsədlər və məhdudiyyətlər seanslardan əvvəl mütəxəssislə müzakirə olunur."
-});
-Object.assign(site.az.bac, {
-  intro: site.az.home.whatText,
-  howText: "Sensorlar beynin elektrik aktivliyini qeyd edir və kompüter sistemi EEG məlumatlarını eşidilə bilən siqnallara çevirir. Metod daha geniş dəstək və ya reabilitasiya planının bir hissəsi kimi nəzərdən keçirilə bilər."
-});
-site.az.bac.faq[1].a = "Dəyişikliklərin vaxtı və dərəcəsi fərdidir. Dinamika razılaşdırılmış kurs zamanı və sonrasında mütəxəssis tərəfindən qiymətləndirilir.";
-
-Object.assign(site.ru.home, {
-  eyebrow: "Нейропсихологическая помощь в Баку",
-  title: "Нейропсихолог в Баку\nВусала Касимова",
-  subtitle: "Индивидуальный подход для детей и взрослых",
-  text: "Вусала Касимова работает с детьми и взрослыми по вопросам развития, внимания, памяти, поведения и эмоционального состояния. После первичной консультации и оценки обсуждается индивидуальный план поддержки.",
-  approachDetailText: "Каждая ситуация индивидуальна. Работа начинается с беседы, сбора анамнеза и нейропсихологической оценки. Современные поддерживающие методы могут дополнять комплексную помощь, но не заменяют медицинскую диагностику и необходимое лечение.",
-  integrationText: "Биоакустическая коррекция (БАК) — неинвазивный метод, при котором сигналы ЭЭГ преобразуются в звук в реальном времени. Цели, возможная польза, ограничения и уместность метода в конкретной ситуации обсуждаются на консультации.",
-  whatText: "При биоакустической коррекции данные ЭЭГ преобразуются в слышимые сигналы в реальном времени. Процедура неинвазивна. Возможные цели, ограничения и индивидуальная уместность обсуждаются со специалистом до начала курса."
-});
-Object.assign(site.ru.bac, {
-  intro: site.ru.home.whatText,
-  howText: "Датчики регистрируют электрическую активность мозга, а компьютерная система преобразует данные ЭЭГ в слышимые сигналы. Метод может рассматриваться как часть более широкого плана поддержки или реабилитации."
-});
-site.ru.bac.faq[1].a = "Сроки и выраженность изменений индивидуальны. Динамика оценивается специалистом во время и после согласованного курса.";
-
-Object.assign(site.en.home, {
-  eyebrow: "Neuropsychological support in Baku",
-  title: "Neuropsychologist in Baku\nVusala Gasimova",
-  subtitle: "An individual approach for children and adults",
-  text: "Vusala Gasimova works with children and adults on developmental, cognitive, behavioural and emotional concerns. An individual support plan is discussed after an initial consultation and assessment.",
-  approachDetailText: "Every situation is different. Work begins with a conversation, relevant history and neuropsychological assessment. Modern supportive methods may complement a broader care plan, but they do not replace medical diagnosis or necessary treatment.",
-  integrationText: "Bioacoustic correction (BAC) is a non-invasive method that converts EEG signals into sound in real time. Its goals, possible role, limitations and suitability for an individual situation are discussed during consultation.",
-  whatText: "During bioacoustic correction, EEG data is converted into audible signals in real time. The procedure is non-invasive. Possible goals, limitations and individual suitability are discussed before a course begins."
-});
-Object.assign(site.en.bac, {
-  intro: site.en.home.whatText,
-  howText: "Sensors record electrical brain activity and a computer system converts the EEG data into audible signals. The method may be considered as one part of a broader support or rehabilitation plan."
-});
-site.en.bac.faq[1].a = "The timing and degree of change vary. Progress is reviewed by the specialist during and after the agreed course.";
-
-site.az.services.cards[0].d = "Koqnitiv, emosional və davranış funksiyalarının qiymətləndirilməsi fərdi tövsiyələrin hazırlanmasına kömək edir. Qiymətləndirmə diaqnoz qoymaq səlahiyyəti olan həkimin müayinəsini əvəz etmir.";
-site.az.services.cards[1].d = "EEG siqnallarının real vaxtda səsə çevrildiyi qeyri-invaziv üsul. Uyğunluq, məqsədlər və məhdudiyyətlər əvvəlcədən fərdi qaydada qiymətləndirilir.";
-site.az.services.cards[3].d = "Yalnız peşəkar qiymətləndirmədən, məqsədlərin və mümkün əks-göstərişlərin müzakirəsindən sonra nəzərdən keçirilən dəstək üsulu.";
-site.ru.services.cards[0].d = "Оценка когнитивных, эмоциональных и поведенческих функций помогает подготовить индивидуальные рекомендации. Она не заменяет обследование врача, уполномоченного ставить медицинский диагноз.";
-site.ru.services.cards[1].d = "Неинвазивный метод преобразования сигналов ЭЭГ в звук в реальном времени. Уместность, цели и ограничения оцениваются индивидуально до начала курса.";
-site.ru.services.cards[3].d = "Поддерживающий метод, который рассматривается только после профессиональной оценки, обсуждения целей и возможных противопоказаний.";
-site.en.services.cards[0].d = "Assessment of cognitive, emotional and behavioural functions helps inform individual recommendations. It does not replace examination by a clinician authorised to make a medical diagnosis.";
-site.en.services.cards[1].d = "A non-invasive method that converts EEG signals into sound in real time. Suitability, goals and limitations are assessed individually before a course begins.";
-site.en.services.cards[3].d = "A supportive method considered only after professional assessment and discussion of goals and possible contraindications.";
-
 const pageFile = {
+  autism: "autism-support.html",
+  communication: "social-communication.html",
+  behaviour: "behavioural-support.html",
   home: "index.html",
   bac: "bac-therapy.html",
   services: "services.html",
@@ -130,6 +80,21 @@ const seo = {
     cookies: ["Cookie-Richtlinie | Vüsalə Qasımova", "Informationen zu Browserspeicher und Drittanbieterdiensten auf drvusalagasimova.com."]
   }
 };
+
+// Keep visible copy, search metadata and FAQ structured data in sync.
+for (const lang of LANGS) {
+  const c = care[lang];
+  seo[lang].home = [({
+    az: "Bakıda BAK və neyropsixoloq | Vüsalə Qasımova",
+    ru: "БАК и нейропсихолог в Баку | Вусала Касимова",
+    en: "BAC and neuropsychology in Baku | Vusala Gasimova",
+    de: "BAK und Neuropsychologie in Baku | Vüsalə Qasımova"
+  })[lang], c.intro];
+  seo[lang].bac = [c.bac.title, c.bac.description];
+  seo[lang].services = [`${c.servicesTitle} | Vüsalə Qasımova, Baku`, c.servicesIntro];
+  for (const [key, page] of Object.entries(c.pages)) seo[lang][key] = [page.title, page.description];
+  site[lang].bac.faq = c.bac.faq.map(([q, a]) => ({ q, a }));
+}
 
 const legal = {
   az: {
@@ -325,6 +290,7 @@ function footer(lang) {
     <div class="container footer-grid">
       <div><strong>Vüsalə Qasımova</strong><p>${esc(common[lang].info)}</p></div>
       <div class="footer-links-main">
+        ${["bac", ...Object.keys(care[lang].pages)].map((key) => `<a href="${urlPath(lang, key)}">${esc(key === "bac" ? care[lang].bac.title : care[lang].pages[key].title)}</a>`).join("")}
         <a href="${urlPath(lang, "articles")}">${esc(articleUi[lang].nav)}</a>
         <a href="${urlPath(lang, "terms")}">${esc(t.footer.terms)}</a>
         <a href="${urlPath(lang, "privacy")}">${esc(t.footer.privacy)}</a>
@@ -377,33 +343,71 @@ function trustStrip(lang) {
   return `<section class="trust-strip" aria-label="${esc(c.trust)}"><div class="container trust-grid"><div><strong>${esc(c.experience)}</strong><span>${esc(c.trust)}</span></div><div><strong>${esc(c.location)}</strong><span>Aşıq Molla Cümə 3</span></div><div><strong>${esc(c.consult)}</strong><span><a href="tel:+994554770266">+994&nbsp;55&nbsp;477&nbsp;02&nbsp;66</a></span></div></div></section>`;
 }
 
+function bookingButton(lang, label, style = "btn-primary") {
+  return `<button class="btn ${style} book-appointment-trigger" type="button">${esc(label || care[lang].book)}</button>`;
+}
+
+function supportLinks(lang, includeBac = false) {
+  const c = care[lang];
+  const entries = [...(includeBac ? [["bac", c.bac]] : []), ...Object.entries(c.pages)];
+  return `<div class="care-links">${entries.map(([key, data]) => `<article class="card"><h3><a href="${urlPath(lang, key)}">${esc(data.title)}</a></h3><p>${esc(data.description)}</p></article>`).join("")}</div>`;
+}
+
+function planSection(lang) {
+  const c = care[lang];
+  return `<section class="section alt"><div class="container"><div class="section-head"><h2>${esc(c.planTitle)}</h2><p>${esc(c.planIntro)}</p></div><ol class="care-plan">${c.plan.map(([title, text]) => `<li class="card"><h3>${esc(title)}</h3><p>${esc(text)}</p></li>`).join("")}</ol></div></section>`;
+}
+
+function componentsSection(lang) {
+  const c = care[lang];
+  return `<section class="section"><div class="container"><div class="section-head"><h2>${esc(c.servicesTitle)}</h2><p>${esc(c.servicesIntro)}</p></div><div class="care-components">${c.components.map(([title, text]) => `<article class="card"><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`).join("")}</div>${supportLinks(lang)}</div></section>`;
+}
+
+function bacFeature(lang) {
+  const c = care[lang];
+  return `<section class="section bac-feature"><div class="container feature-grid"><div class="image-frame"><img src="${imageUrl(images.integration)}" width="572" height="440" alt="${esc(c.bac.title)}" loading="lazy"></div><div class="feature-copy"><h2>${esc(c.bac.title)}</h2><p>${esc(c.bac.lead)}</p><div class="hero-actions">${bookingButton(lang, c.suitable)}<a class="text-link" href="${urlPath(lang, "bac")}">${esc(c.learn)} →</a></div></div></div></section>`;
+}
+
 function homePage(lang) {
-  const t = site[lang];
-  const d = t.home;
-  return `<main id="main-content" class="home-page">
-    <section class="hero"><div class="container hero-grid"><div class="hero-content"><p class="eyebrow">${esc(d.eyebrow)}</p><h1>${lines(d.title)}</h1><p class="hero-subtitle">${esc(d.subtitle || "")}</p><p class="hero-text">${esc(d.text)}</p><div class="hero-actions"><button class="btn btn-primary book-appointment-trigger" type="button">${esc(d.cta)}</button><a class="text-link" href="${urlPath(lang, "services")}">${esc(d.more)} →</a></div></div><div class="hero-photo-wrap"><img src="${imageUrl(images.hero)}" width="573" height="480" alt="Vüsalə Qasımova, neuropsychologist in Baku" fetchpriority="high" decoding="async"></div></div></section>
-    ${trustStrip(lang)}
-    <section class="section approach-section"><div class="container section-head"><h2>${esc(d.approachTitle)}</h2><p>${esc(d.approachText)}</p></div><div class="container feature-grid"><div class="image-frame large-card"><img src="${imageUrl(images.approach)}" width="572" height="440" alt="${esc(d.approachDetailTitle)}" loading="lazy" decoding="async"></div><div class="feature-copy"><h3>${esc(d.approachDetailTitle)}</h3><p>${esc(d.approachDetailText)}</p></div></div><div class="container feature-grid reverse"><div class="feature-copy"><h3>${esc(d.integrationTitle)}</h3><p>${esc(d.integrationText)}</p><a class="text-link" href="${urlPath(lang, "bac")}">${esc(d.integrationMore)} →</a></div><div class="image-frame large-card"><img src="${imageUrl(images.integration)}" width="572" height="440" alt="${esc(d.integrationTitle)}" loading="lazy" decoding="async"></div></div></section>
-    <section class="section what-section"><div class="container section-head"><h2>${esc(d.whatTitle)}</h2><p>${esc(d.whatSubtitle || "")}</p></div><div class="container what-card"><div class="image-frame wide"><img src="${imageUrl(images.bac)}" width="1199" height="416" alt="${esc(d.whatTitle)}" loading="lazy" decoding="async"></div><p>${esc(d.whatText)}</p></div></section>
-    <section class="section how-section"><div class="container section-head"><h2>${esc(d.howTitle)}</h2></div><div class="container steps">${d.steps.map((step, index) => `<article class="step"><img class="step-image" src="${imageUrl(images.steps[index])}" width="${images.steps[index][1]}" height="${images.steps[index][2]}" alt="${esc(step.t)}" loading="lazy"><span>${esc(step.t)}</span><p>${esc(step.d)}</p></article>`).join("")}</div></section>
-    ${cta(lang)}
-  </main>`;
+  const c = care[lang];
+  return `<main id="main-content" class="home-page"><section class="hero"><div class="container hero-grid"><div class="hero-content"><p class="eyebrow">Vüsalə Qasımova · ${esc(common[lang].experience)} · ${esc(common[lang].location)}</p><h1>${esc(c.positioning)}</h1><p class="hero-text">${esc(c.intro)}</p><div class="hero-actions">${bookingButton(lang)}<a class="btn btn-white" href="${urlPath(lang, "bac")}">${esc(c.learn)}</a></div></div><div class="hero-photo-wrap"><img src="${imageUrl(images.hero)}" width="573" height="480" alt="Vüsalə Qasımova" fetchpriority="high" decoding="async"></div></div></section>${trustStrip(lang)}${bacFeature(lang)}${componentsSection(lang)}${planSection(lang)}${cta(lang)}</main>`;
 }
 
 function cta(lang) {
-  const d = site[lang].home;
-  return `<section class="section alt"><div class="container cta-box"><div><h2>${esc(d.transformTitle)}</h2><p>${esc(d.transformText)}</p></div><button class="btn btn-white book-appointment-trigger" type="button">${esc(d.transformCta)}</button></div></section>`;
+  const c = care[lang];
+  return `<section class="section alt"><div class="container cta-box"><div><h2>${esc(c.discuss)}</h2><p>${esc(c.planIntro)}</p></div>${bookingButton(lang, c.book, "btn-white")}</div></section>`;
+}
+
+function sourceNote(lang, bac = false) {
+  const c = care[lang];
+  return `<section class="article-sources"><h2>${esc(c.sources)}</h2><p>${esc(c.sourceNote)}</p><p><a href="https://www.nice.org.uk/guidance/cg170/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE CG170</a>${bac ? ' · <a href="https://sinhros.ru/" target="_blank" rel="noopener noreferrer">SINKOR / SINKHRO-S</a>' : ""}</p></section>`;
+}
+
+function careSections(sections) {
+  return sections.map(([title, text], index) => `<section id="topic-${index}"><h2>${esc(title)}</h2><p>${esc(text)}</p></section>`).join("");
+}
+
+function careAside(lang, sections, bac = false) {
+  const c = care[lang];
+  return `<aside class="article-cta care-aside"><img src="${imageUrl(images.hero)}" width="573" height="480" alt="Vüsalə Qasımova" loading="lazy"><h2>Vüsalə Qasımova</h2><p>${esc(common[lang].experience)} · ${esc(common[lang].location)}</p>${bookingButton(lang, bac ? c.suitable : c.discuss)}<nav aria-label="${esc(c.related)}">${sections.map(([title], index) => `<a href="#topic-${index}">${esc(title)}</a>`).join("")}</nav></aside>`;
 }
 
 function bacPage(lang) {
-  const d = site[lang].bac;
-  return `<main id="main-content" class="bac-page"><section class="bac-hero"><img class="bac-hero-bg" src="${imageUrl(images.bac)}" width="1199" height="416" alt="${esc(d.title)}" fetchpriority="high"><div class="container bac-hero-content"><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p><button class="btn btn-white book-appointment-trigger" type="button">${esc(site[lang].nav.book)}</button></div></section><section class="section"><div class="container section-head"><h2>${esc(d.howTitle)}</h2><p>${esc(d.howText)}</p></div><div class="container steps">${d.steps.map((step, index) => `<article class="step"><img class="step-image" src="${imageUrl(images.steps[index])}" width="${images.steps[index][1]}" height="${images.steps[index][2]}" alt="${esc(step.t)}" loading="lazy"><span>${esc(step.t)}</span><p>${esc(step.d)}</p></article>`).join("")}</div></section><section class="section who-section"><div class="container section-head"><h2>${esc(d.whoTitle)}</h2></div><div class="container two-cols"><article class="card"><h3>${esc(d.childrenTitle)}</h3>${list(d.children)}</article><article class="card"><h3>${esc(d.adultsTitle)}</h3>${list(d.adults)}</article></div></section><section class="section faq-section"><div class="container"><div class="section-head"><h2>${esc(d.faqTitle)}</h2></div><div class="faq-list">${d.faq.map((item, index) => `<article class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-${index}">${esc(item.q)}<span aria-hidden="true">＋</span></button></h3><div class="faq-a" id="faq-${index}" hidden><p>${esc(item.a)}</p></div></article>`).join("")}</div></div></section>${cta(lang)}</main>`;
+  const c = care[lang];
+  const d = c.bac;
+  return `<main id="main-content" class="bac-page"><section class="bac-hero"><img class="bac-hero-bg" src="${imageUrl(images.bac)}" width="1199" height="416" alt="${esc(d.title)}" fetchpriority="high"><div class="container bac-hero-content"><h1>${esc(d.title)}</h1><p>${esc(d.lead)}</p>${bookingButton(lang, c.suitable, "btn-white")}</div></section><section class="section"><div class="container article-layout"><div class="article-content">${careSections(d.sections)}${sourceNote(lang, true)}</div>${careAside(lang, d.sections, true)}</div></section>${componentsSection(lang)}${planSection(lang)}<section class="section faq-section"><div class="container"><div class="section-head"><h2>${esc(site[lang].bac.faqTitle)}</h2></div><div class="faq-list">${d.faq.map(([q, a], index) => `<article class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-${index}">${esc(q)}<span aria-hidden="true">＋</span></button></h3><div class="faq-a" id="faq-${index}" hidden><p>${esc(a)}</p></div></article>`).join("")}</div></div></section>${cta(lang)}</main>`;
 }
 
 function servicesPage(lang) {
-  const d = site[lang].services;
-  const serviceImages = [images.approach, images.bac, images.psychocorrection, images.integration];
-  return `<main id="main-content" class="services-page"><section class="section services-hero"><div class="container section-head"><h1>${esc(d.title)}</h1><p>${esc(d.intro)}</p></div><div class="container services-grid">${d.cards.map((card, index) => `<article class="service-card"><img class="service-photo" src="${imageUrl(serviceImages[index])}" width="${serviceImages[index][1]}" height="${serviceImages[index][2]}" alt="${esc(card.t)}" loading="lazy"><div class="service-copy"><h2>${esc(card.t)}</h2><p>${lines(card.d)}</p></div></article>`).join("")}</div></section>${cta(lang)}</main>`;
+  const c = care[lang];
+  const other = site[lang].services.cards[3];
+  return `<main id="main-content" class="services-page"><section class="section"><div class="container section-head"><h1>${esc(c.servicesTitle)}</h1><p>${esc(c.servicesIntro)}</p></div></section>${bacFeature(lang)}${componentsSection(lang)}<section class="section"><div class="container card"><h2>${esc(other.t)}</h2><p>${esc(({az: "Bu prosedur ayrıca peşəkar qiymətləndirmə, məqsədlərin və mümkün əks-göstərişlərin müzakirəsini tələb edir.", ru: "Эта процедура требует отдельной профессиональной оценки, обсуждения целей и возможных противопоказаний.", en: "This procedure requires separate professional assessment and discussion of goals and possible contraindications.", de: "Dieses Verfahren erfordert eine gesonderte fachliche Einschätzung sowie die Besprechung von Zielen und möglichen Kontraindikationen."})[lang])}</p></div></section>${planSection(lang)}${cta(lang)}</main>`;
+}
+
+function supportPage(lang, key) {
+  const c = care[lang];
+  const d = c.pages[key];
+  return `<main id="main-content" class="article-page"><section class="section"><header class="container article-header"><p class="eyebrow">Vüsalə Qasımova · ${esc(common[lang].location)}</p><h1>${esc(d.title)}</h1><p class="article-lead">${esc(d.lead)}</p><div class="hero-actions">${bookingButton(lang, c.discuss)}</div></header><div class="container article-layout"><div class="article-content">${careSections(d.sections)}${sourceNote(lang)}</div>${careAside(lang, d.sections)}</div></section><section class="section"><div class="container"><div class="section-head"><h2>${esc(c.related)}</h2></div>${supportLinks(lang, true)}</div></section>${cta(lang)}</main>`;
 }
 
 function aboutPage(lang) {
@@ -437,6 +441,7 @@ function legalPage(lang, page) {
 }
 
 function pageBody(lang, page) {
+  if (care[lang].pages[page]) return supportPage(lang, page);
   if (page === "home") return homePage(lang);
   if (page === "bac") return bacPage(lang);
   if (page === "services") return servicesPage(lang);
