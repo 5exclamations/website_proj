@@ -548,8 +548,8 @@ const horizontalCertificateImageNames = new Set([
 
 const clinicInfo = {
   phone: "+994 55 477 02 66",
-  address: "Aşıq Molla Cümə 3, Baku 1075, Azerbaijan",
-  mapUrl: "https://maps.app.goo.gl/SyPMxCkYc1H4ZJ5g7",
+  address: "Aliyar Aliyev 39, Baku 1052, Azerbaijan",
+  mapUrl: "https://www.google.com/maps?q=Aliyar%20Aliyev%2039%2C%20Baku%2C%20Azerbaijan",
   instagramUrl: "https://www.instagram.com/neyropsixoloq_qasimova_vusale?igsh=MWw1ZG9xenF0eDBqZA%3D%3D&utm_source=qr",
   whatsappUrl: "https://wa.me/994554770266"
 };

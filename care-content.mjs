@@ -55,7 +55,7 @@ export const care = {
         ['Как строится поддержка', 'Обсуждаем посильную нагрузку и предсказуемые переходы, учим доступному способу общения, поддерживаем эмоциональную регуляцию. Родители пробуют согласованные способы в обычных ситуациях и сообщают, что происходит. План пересматривается по наблюдениям, с учётом безопасности и благополучия ребёнка.']
       ]}
     },
-    related: 'Подробнее о поддержке', sources: 'Источники и границы информации', sourceNote: 'NICE CG170 описывает поддержку детей с РАС. Техническое описание БАК доступно у производителя оборудования; оно не подтверждает клиническую результативность при конкретном расстройстве.'
+    related: 'Подробнее о поддержке', sources: 'Источники и границы информации', sourceNote: 'NICE CG170 описывает поддержку детей с РАС. Техническое описание БАК доступно у производителя оборудования.'
   },
   en: {
     positioning: 'BAC and neuropsychological support for children and adults',
@@ -103,7 +103,7 @@ export const care = {
         ['Goals that can be reviewed', 'A goal might be to teach an understandable way to request help or a break. Another might be fewer occasions of abandoning a manageable task when it gets difficult. Record a starting point, then agree the measures and review period individually.'],
         ['Building support', 'Discuss manageable demands and predictable transitions, teach an accessible way to communicate and support emotional regulation. Parents try agreed approaches in daily situations and share what happens. Observations guide revisions, with the child’s safety and wellbeing in mind.']
       ]}
-    }, related: 'Explore support', sources: 'Sources and scope', sourceNote: 'NICE CG170 covers support for autistic children. The equipment manufacturer describes BAC technology; this does not establish clinical efficacy for a particular condition.'
+    }, related: 'Explore support', sources: 'Sources and scope', sourceNote: 'NICE CG170 covers support for autistic children. The equipment manufacturer describes BAC technology.'
   }
 };
 
@@ -153,7 +153,7 @@ care.az = {
       ['Yoxlanıla bilən məqsədlər', 'Məqsəd uşağa yardım və ya fasiləni anlaşıqlı üsulla istəməyi öyrətmək ola bilər. Digər nümunə: bacardığı tapşırığı çətinlik yarananda atdığı halların sayını azaltmaq. Əvvəl başlanğıc müşahidələr qeydə alınır, sonra ölçmə üsulu və qiymətləndirmə vaxtı fərdi razılaşdırılır.'],
       ['Dəstəyin qurulması', 'Uyğun yük və əvvəlcədən anlaşılan keçidlər müzakirə edilir, əlçatan ünsiyyət üsulu öyrədilir və emosional tənzimləmə dəstəklənir. Valideynlər razılaşdırılmış üsulları gündəlik şəraitdə sınayıb müşahidələrini bölüşürlər. Plan uşağın təhlükəsizliyi və rifahı nəzərə alınaraq yenilənir.']
     ]}
-  }, related: 'Dəstək haqqında ətraflı', sources: 'Mənbələr və məlumatın sərhədləri', sourceNote: 'NICE CG170 autizmli uşaqlara dəstəyi təsvir edir. BAK texnologiyasının təsviri avadanlıq istehsalçısında mövcuddur; bu, konkret pozuntu zamanı klinik nəticəni sübut etmir.'
+  }, related: 'Dəstək haqqında ətraflı', sources: 'Mənbələr və məlumatın sərhədləri', sourceNote: 'NICE CG170 autizmli uşaqlara dəstəyi təsvir edir. BAK texnologiyasının təsviri avadanlıq istehsalçısında mövcuddur.'
 };
 
 care.de = {
@@ -202,5 +202,5 @@ care.de = {
       ['Überprüfbare Ziele', 'Ein Ziel kann sein, auf verständliche Weise um Hilfe oder eine Pause zu bitten. Ein anderes sind weniger Abbrüche einer bewältigbaren Aufgabe bei Schwierigkeiten. Zunächst wird die Ausgangslage festgehalten, danach werden Messung und Überprüfungszeitpunkt individuell vereinbart.'],
       ['Unterstützung gestalten', 'Angemessene Anforderungen und vorhersehbare Übergänge werden besprochen, zugängliche Kommunikation vermittelt und Emotionsregulation unterstützt. Eltern erproben vereinbarte Ansätze im Alltag und berichten darüber. Beobachtungen leiten Anpassungen unter Berücksichtigung von Sicherheit und Wohlbefinden des Kindes.']
     ]}
-  }, related: 'Mehr zur Unterstützung', sources: 'Quellen und Geltungsbereich', sourceNote: 'NICE CG170 beschreibt die Unterstützung autistischer Kinder. Der Gerätehersteller erläutert die BAK-Technik; das belegt keine klinische Wirksamkeit bei einer bestimmten Störung.'
+  }, related: 'Mehr zur Unterstützung', sources: 'Quellen und Geltungsbereich', sourceNote: 'NICE CG170 beschreibt die Unterstützung autistischer Kinder. Der Gerätehersteller erläutert die BAK-Technik.'
 };
